@@ -1,0 +1,224 @@
+[
+  {
+    "id": "heavy-transport-trucks",
+    "slug": "heavy-transport-trucks",
+    "title": "Heavy Transport & Tractor Trucks",
+    "h1": "Heavy Transport Truck Rental Saudi Arabia",
+    "shortSummary": "GulfFast supplies heavy-duty tractor trucks and transport head units across Saudi Arabia, supporting long-haul logistics and site heavy haulage. Operating from Al Khobar, our Mercedes Actros, Volvo FH, and MAN fleets are equipped with Aramco gate passes and certified drivers.",
+    "description": "GulfFast Heavy Vehicle Rentals delivers heavy-duty tractor trucks and prime movers for industrial haulage across Saudi Arabia. Serving oilfield logistics contractors, EPC project managers, and heavy freight haulers, our heavy transport fleet handles demanding highway haulage and rugged desert site transit.\n\nOur fleet comprises 4x2, 6x4, and 6x6 heavy tractor trucks manufactured by Mercedes-Benz (Actros series), Volvo Trucks (FH/FMX), and MAN. Every truck is equipped with GPS fleet tracking, IVMS (In-Vehicle Monitoring Systems), emergency cutoff switches, and site safety kits required for entry into Saudi Aramco, SABIC, and SEC industrial zones.\n\nWhether you need monthly tractor truck rental with SAG-licensed professional drivers or bare-lease prime movers for fleet expansion, GulfFast provides direct-supplier vehicle rentals backed by 24/7 mobile mechanic support.",
+    "specs": [
+      { "name": "Drive Configurations", "value": "4x2, 6x4, 6x6 Prime Movers & Heavy Tractors" },
+      { "name": "Engine Horsepower", "value": "400 HP to 600 HP (Euro 5 / Heavy Duty Tropical Cooling)" },
+      { "name": "Vehicle Brands", "value": "Mercedes-Benz Actros, Volvo FH/FMX, MAN TGS" },
+      { "name": "Safety Systems", "value": "Aramco Gate Pass Ready, IVMS GPS Tracking, Speed Limiters" }
+    ],
+    "applications": [
+      "Long-distance heavy machinery & container transport across KSA highways",
+      "Off-road oilfield rig relocation & structural steel transport",
+      "Precast concrete beam haulage for mega infrastructure projects",
+      "Refinery equipment & heavy drum logistics"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Tabuk"],
+    "faq": [
+      {
+        "question": "Are your heavy transport trucks equipped with IVMS tracking for Aramco sites?",
+        "answer": "Yes. All GulfFast heavy transport trucks feature approved IVMS (In-Vehicle Monitoring System) devices and speed governors compliant with Saudi Aramco and SABIC transport safety manuals."
+      },
+      {
+        "question": "Can I rent tractor trucks with professional heavy transport drivers?",
+        "answer": "Yes, we provide option for fully driven rentals with experienced, SAG-licensed heavy transport drivers holding valid Aramco driver safety certifications."
+      },
+      {
+        "question": "What trailer types can be coupled with your prime movers?",
+        "answer": "Our tractor trucks fit standard kingpin sizes for flatbed trailers, lowbed heavy haulers, fuel tankers, water tankers, and skeletal container chassis."
+      }
+    ],
+    "relatedSlugs": ["flatbed-trailers", "lowbed-trailers", "tanker-trucks"],
+    "blogPostSlugs": ["heavy-transport-compliance-aramco", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "flatbed-trailers",
+    "slug": "flatbed-trailers",
+    "title": "Flatbed Trailers & Cargo Haulers",
+    "h1": "Flatbed Trailer Rental Saudi Arabia",
+    "shortSummary": "GulfFast offers 40ft and 50ft flatbed trailer rentals across Saudi Arabia, hauling steel structural members, pipes, containers, and general cargo. Based in Al Khobar, our trailers are engineered with heavy-duty drop sides and container locks.",
+    "description": "Flatbed trailers remain the backbone of industrial cargo movement throughout the Kingdom of Saudi Arabia. GulfFast Trailer Rentals supplies heavy-duty multi-axle flatbed trailers built to withstand high payloads and severe road conditions in urban and desert environments.\n\nOur trailer fleet includes 12-meter (40ft) and 15-meter (50ft) tri-axle flatbed trailers with high-tensile steel main beams, heavy wooden or diamond-plate steel flooring, removable drop sides, twist locks for ISO shipping containers, and heavy lashing winches for secure cargo tying.\n\nAll trailers undergo regular brake, tire, and suspension safety inspections, ensuring full compliance with Saudi Ministry of Transport (MOT) regulations and Aramco site safety requirements.",
+    "specs": [
+      { "name": "Trailer Dimensions", "value": "40ft (12m) & 50ft (15m) Tri-Axle Flatbeds" },
+      { "name": "Payload Capacity", "value": "45 Ton to 60 Ton Max Payload" },
+      { "name": "Axle & Suspension", "value": "Heavy-Duty BPW / SAF Axles with Mechanical Leaf Spring Suspension" },
+      { "name": "Features", "value": "ISO Twist Locks, Side Gates, Lashing Winches, Spare Tire Carrier" }
+    ],
+    "applications": [
+      "Oil & gas line pipe transport from ports to desert pipeline rights-of-way",
+      "Structural steel beam, rebar & scaffolding bundle haulage",
+      "ISO shipping container haulage for site office setup",
+      "General construction materials delivery to high-density job sites"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Wa'ad Al Shamal"],
+    "faq": [
+      {
+        "question": "Do your flatbeds have twist locks for 20ft and 40ft containers?",
+        "answer": "Yes, all our flatbed trailers are equipped with heavy twist-lock assemblies designed to safely lock down standard 20ft and 40ft ISO shipping containers."
+      },
+      {
+        "question": "What is the maximum payload capacity of your tri-axle flatbeds?",
+        "answer": "Our heavy-duty tri-axle flatbeds carry certified payload capacities up to 50 Metric Tons, compliant with KSA axle weight standards."
+      },
+      {
+        "question": "Can flatbeds be rented on long-term bare leases?",
+        "answer": "Yes, we offer flexible long-term monthly and annual bare trailer leases for transport fleets operating across Saudi Arabia."
+      }
+    ],
+    "relatedSlugs": ["heavy-transport-trucks", "lowbed-trailers", "pickup-trucks"],
+    "blogPostSlugs": ["heavy-transport-compliance-aramco", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "lowbed-trailers",
+    "slug": "lowbed-trailers",
+    "title": "Lowbed Trailers & Heavy Machinery Haulers",
+    "h1": "Lowbed Trailer Rental Saudi Arabia",
+    "shortSummary": "GulfFast supplies heavy-duty lowbed trailers and extendable low-loaders across Saudi Arabia for transporting bulldozers, excavators, transformers, and oversized machinery. Based in Al Khobar, our lowbed fleet handles up to 100-ton super loads.",
+    "description": "Moving heavy tracked earthmoving machinery and high-tonnage industrial equipment requires low deck heights and high axle loading capabilities. GulfFast Lowbed Rentals supplies multi-axle heavy haulage lowbed trailers designed for safe equipment loading and highway transport across KSA.\n\nOur lowbed lineup ranges from standard 50-ton heavy lowbeds up to 100-ton multi-axle extendable low-loaders and drop-deck trailers with hydraulic ramps. Featuring low ground clearance for overhead bridge clearance and wide outriggers for wide-track dozers, these units ensure safe transportation of high-value machinery.\n\nWe provide complete heavy transport logistics support including escort vehicle planning, ministry overload permits, and Aramco transport clearance.",
+    "specs": [
+      { "name": "Payload Capacity", "value": "50 Ton to 100 Ton Multi-Axle Lowbeds" },
+      { "name": "Deck Length & Height", "value": "9m to 14m Deck Length, Low Ground Clearance (0.8m - 0.95m)" },
+      { "name": "Ramp System", "value": "Heavy Hydraulic or Manual Loading Ramps with Wood Inlay" },
+      { "name": "Options", "value": "Extendable Deck, Detachable Gooseneck, Multi-Axle Steering" }
+    ],
+    "applications": [
+      "Mobilization of heavy excavators, bulldozers & asphalt pavers",
+      "Over-dimensional transformer, vessel & boiler transportation",
+      "Offshore crane component & crawler crane track mobilization",
+      "Defense & heavy industrial equipment transportation"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Tabuk"],
+    "faq": [
+      {
+        "question": "Can GulfFast handle highway permits for oversized heavy equipment haulage?",
+        "answer": "Yes. Our logistics team handles Ministry of Transport overload permits and police/pilot escort coordination for over-dimensional heavy loads."
+      },
+      {
+        "question": "What is the lowest deck height available for tall equipment transportation?",
+        "answer": "We offer drop-deck lowbeds with deck heights as low as 0.8 meters to pass under highway power lines and overpass bridges safely."
+      },
+      {
+        "question": "Do lowbed trailers come with hydraulic loading ramps for tracked dozers?",
+        "answer": "Yes, our lowbeds feature heavy-duty spring-assisted or hydraulic ramps lined with timber inserts to prevent steel track slipping."
+      }
+    ],
+    "relatedSlugs": ["heavy-transport-trucks", "flatbed-trailers", "heavy-equipment"],
+    "blogPostSlugs": ["heavy-transport-compliance-aramco", "crane-safety-lifting-standards-ksa"]
+  },
+  {
+    "id": "tanker-trucks",
+    "slug": "tanker-trucks",
+    "title": "Fuel & Water Tanker Trucks",
+    "h1": "Tanker Truck Rental Saudi Arabia",
+    "shortSummary": "GulfFast supplies diesel fuel tanker trucks, potable water tankers, and brackish water tankers for rental across Saudi Arabia. Headquartered in Al Khobar, our fleet services construction camps, oilfield drill rigs, and dust suppression operations.",
+    "description": "Reliable fuel and water logistics are vital for remote construction projects and desert oilfield camps. GulfFast Tanker Truck Rentals provides certified liquid transport tankers equipped with high-flow pumps, digital meters, and safety containment features across KSA.\n\nOur tanker fleet includes diesel fuel tankers (10,000 to 32,000 liters) with calibrated flow meters and safety discharge nozzles for site generator refueling, food-grade stainless steel potable water tankers for worker accommodation camps, and heavy steel brackish water tankers (4,000 to 8,000 gallons) fitted with rear water spray bars for earthwork dust suppression.\n\nAll fuel and water tankers carry Civil Defense certificates, Saudi Aramco site approval stickers, and are operated by trained drivers skilled in hazardous liquid handling.",
+    "specs": [
+      { "name": "Tank Capacity", "value": "10,000 Liters to 32,000 Liters (4,000 Gal - 8,000 Gal)" },
+      { "name": "Tank Types", "value": "Diesel Fuel Tankers, Potable Water (Stainless Steel), Sewage & Brackish Water" },
+      { "name": "Pumping System", "value": "High-Flow PTO Pump, Digital Calibrated Meter, Rear Spray Bars" },
+      { "name": "Certifications", "value": "Civil Defense Approved, Aramco Safety Compliant, TPI Inspected" }
+    ],
+    "applications": [
+      "On-site diesel fuel delivery for generator fleets & heavy machinery",
+      "Potable drinking water supply for remote worker accommodation camps",
+      "Dust control & soil compaction watering for road excavation",
+      "Emergency water supply for industrial plant fire loops"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Khafji"],
+    "faq": [
+      {
+        "question": "Are your fuel tanker meters calibrated and stamped for commercial accuracy?",
+        "answer": "Yes, all diesel fuel distribution meters are calibrated by certified third-party testing agencies and stamped for precise site delivery auditing."
+      },
+      {
+        "question": "Are water tankers certified for drinking water supply to labor camps?",
+        "answer": "Our potable water tankers are constructed from food-grade stainless steel or epoxy-lined tanks and undergo regular water quality testing."
+      },
+      {
+        "question": "Do water tankers have rear spray nozzles for earthwork dust control?",
+        "answer": "Yes, our brackish water tankers feature PTO-driven rear spray bars for uniform water dispersion during soil compaction and grading."
+      }
+    ],
+    "relatedSlugs": ["heavy-transport-trucks", "flatbed-trailers", "pickup-trucks"],
+    "blogPostSlugs": ["heavy-transport-compliance-aramco", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "buses-crew-transport",
+    "slug": "buses-crew-transport",
+    "title": "Passenger Buses & Crew Transport Vans",
+    "h1": "Crew Bus Rental Saudi Arabia",
+    "shortSummary": "GulfFast supplies 15-seat vans, 30-seat coaster buses, and 50-seat AC passenger buses for workforce transportation across Saudi Arabia. Operating from Al Khobar, our vehicles feature high-capacity tropical air conditioning and site safety compliance.",
+    "description": "Safe, reliable daily transport of workforce personnel between accommodation camps and job sites is essential for project productivity. GulfFast Crew Transport Rentals supplies modern air-conditioned passenger buses and minivans tailored for Saudi Arabia's high ambient temperatures.\n\nOur passenger fleet includes 15-seater Toyota HiAce vans, 30-seater Toyota Coaster / Mitsubishi Fuso buses, and 50-seater luxury coach buses (Daewoo, Hyundai, King Long). Every vehicle is equipped with dual high-capacity roof AC units, individual seat belts, fire extinguishers, first aid kits, emergency window hammers, and IVMS tracking.\n\nGulfFast provides long-term daily crew transport contracts with experienced SAG-licensed drivers as well as bare vehicle leases for contractor site management.",
+    "specs": [
+      { "name": "Seating Capacity", "value": "15-Seat Vans, 30-Seat Coaster Buses, 50-Seat AC Passenger Coaches" },
+      { "name": "Vehicle Brands", "value": "Toyota HiAce, Toyota Coaster, Mitsubishi Fuso, Hyundai, Daewoo" },
+      { "name": "Comfort Features", "value": "Dual Tropical Roof Air Conditioning, Reclining Seats, Tinted Windows" },
+      { "name": "Safety Systems", "value": "Seatbelts on All Seats, IVMS Tracking, Speed Limiters, Gate Passes" }
+    ],
+    "applications": [
+      "Daily worker transit between housing camps & refinery job sites",
+      "Site visitor, engineer & management team site inspection transport",
+      "Airport transfer & project mobilization transport for technical crews",
+      "Inter-city project shuttle service across Eastern Province & Riyadh"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Abha"],
+    "faq": [
+      {
+        "question": "Are all seats equipped with individual seat belts for site gate entry?",
+        "answer": "Yes. Every passenger vehicle in our fleet features three-point or lap seat belts on all passenger seats, fully compliant with Saudi Aramco and SABIC site access rules."
+      },
+      {
+        "question": "Do passenger buses feature high-capacity air conditioning for summer heat?",
+        "answer": "All buses feature heavy-duty tropical-spec dual AC compressors engineered to maintain interior comfort in temperatures exceeding 50°C."
+      },
+      {
+        "question": "Can we rent buses with dedicated drivers for fixed daily shifts?",
+        "answer": "Yes, we offer turnkey workforce transportation packages including professional drivers, fuel management, vehicle maintenance, and backup replacement vehicles."
+      }
+    ],
+    "relatedSlugs": ["pickup-trucks", "heavy-transport-trucks", "tanker-trucks"],
+    "blogPostSlugs": ["heavy-transport-compliance-aramco", "manpower-supply-compliance-tuv-aramco"]
+  },
+  {
+    "id": "pickup-trucks",
+    "slug": "pickup-trucks",
+    "title": "Pickup Trucks 4x4 & Double Cabins",
+    "h1": "Pickup Truck Rental Saudi Arabia",
+    "shortSummary": "GulfFast rents 4x4 single and double-cabin pickup trucks across Saudi Arabia for site engineers, supervisors, and light material transport. Headquartered in Al Khobar, our fleet features Toyota Hilux, Isuzu D-Max, and Ford F-150 vehicles.",
+    "description": "For daily site mobility, field engineering inspections, and light equipment transport, GulfFast Pickup Rentals offers reliable 4x4 single and double-cabin pickup truck rentals across the Kingdom of Saudi Arabia.\n\nOur pickup fleet features market-leading models including Toyota Hilux (2.4L / 2.8L Turbo Diesel 4x4), Isuzu D-Max, Ford F-150, and Nissan Navara. Vehicles are outfitted with roll cages, steel bed liners, high-visibility strobe beacons, reverse buzzers, reflective tape, and IVMS tracking as required for oil & gas site clearance.\n\nAvailable on short-term daily, monthly, or multi-year corporate fleet lease agreements with full maintenance and replacement vehicle guarantees.",
+    "specs": [
+      { "name": "Body Style", "value": "Single Cabin & Double Cabin 4x4 / 4x2" },
+      { "name": "Vehicle Models", "value": "Toyota Hilux, Isuzu D-Max, Ford F-150, Nissan Navara" },
+      { "name": "Engine Options", "value": "Turbo Diesel & Heavy Duty Gasoline Engines" },
+      { "name": "Site Specs", "value": "Roll Cage, Spark Arrestor, IVMS, Beacon Light, Aramco Sticker" }
+    ],
+    "applications": [
+      "Site supervisor & field engineer daily mobility across pipeline sites",
+      "Light tool, welding lead & spare parts transportation",
+      "Off-road desert survey & pipeline inspection patrols",
+      "Corporate site fleet leasing for project management teams"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Najran"],
+    "faq": [
+      {
+        "question": "Do your pickup trucks have internal/external roll cages for oilfield entry?",
+        "answer": "Yes, we supply oilfield-spec double cabin pickups fitted with certified internal or external roll cages, spark arrestors, and fire extinguishers."
+      },
+      {
+        "question": "Can I rent pickups on long-term monthly or annual contracts with full maintenance?",
+        "answer": "Yes, our corporate fleet rental program includes routine preventative maintenance, tire replacement, insurance, and immediate replacement vehicles in case of service."
+      },
+      {
+        "question": "Are 4x4 options available for rough terrain desert driving?",
+        "answer": "Our entire double cabin fleet features selectable 4WD high/low range transfer cases designed for soft sand and unpaved construction zones."
+      }
+    ],
+    "relatedSlugs": ["buses-crew-transport", "flatbed-trailers", "heavy-transport-trucks"],
+    "blogPostSlugs": ["heavy-transport-compliance-aramco", "aramco-heavy-equipment-compliance"]
+  }
+]

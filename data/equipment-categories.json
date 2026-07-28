@@ -1,0 +1,298 @@
+[
+  {
+    "id": "heavy-equipment",
+    "slug": "heavy-equipment",
+    "title": "Heavy Construction Equipment",
+    "h1": "Heavy Equipment Rental Saudi Arabia",
+    "shortSummary": "GulfFast provides certified heavy construction equipment rental across Saudi Arabia, supplying excavators, bulldozers, wheel loaders, and graders directly from our Al Khobar operations hub to major oil, gas, and infrastructure sites. All machinery is maintained to Aramco, SABIC, and SEC safety specifications with optional certified operators.",
+    "description": "GulfFast Rentals delivers fleet-ready heavy earthmoving and construction equipment to contractor job sites throughout the Kingdom of Saudi Arabia. Founded as part of GulfFast Trading (est. 1999 in Al Khobar), our heavy equipment division serves main contractors across the Eastern Province, Dammam, Jubail, Riyadh, and mega-projects like NEOM and the Red Sea Development.\n\nOur heavy machinery fleet includes high-tonnage excavators (Caterpillar, Komatsu), D8/D10 heavy dozers, articulated motor graders, and wheel loaders tested for extreme ambient temperatures and desert conditions. Every piece of equipment undergoes rigorous Third-Party Inspection (TPI) and comes with complete maintenance history records, daily pre-op checklists, and site-ready safety features required for Aramco gas plants and SABIC petrochemical complexes.\n\nWhether your project demands long-term monthly rental contracts for site preparation or rapid short-term mobilization for emergency civil works, GulfFast offers direct-supplier reliability without middleman markup. We provide options for bare-rentals as well as fully operated and maintained (O&M) packages with Aramco-certified heavy equipment operators.",
+    "specs": [
+      { "name": "Available Fleet", "value": "Excavators (20T - 50T), Dozers (D6 - D10), Loaders (CAT 966/980), Graders (140K/160M)" },
+      { "name": "Certification Standards", "value": "Saudi Aramco Approved, SABIC Compliant, TPI Certified" },
+      { "name": "Rental Terms", "value": "Daily, Monthly, Annual & Long-term Lease" },
+      { "name": "Mobilization Time", "value": "24-48 Hours within Eastern Province & Major KSA Cities" }
+    ],
+    "applications": [
+      "Bulk earthmoving & site grading for mega-infrastructure",
+      "Trenching and pipeline excavation for Oil & Gas fields",
+      "Quarrying, aggregate loading, and road base construction",
+      "Industrial plant site preparation and foundation backfilling"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Tabuk"],
+    "faq": [
+      {
+        "question": "Does GulfFast provide Aramco-certified heavy equipment operators?",
+        "answer": "Yes. GulfFast supplies both bare equipment rentals and fully operated rentals with Aramco-certified, SAG-licensed heavy equipment operators holding valid Third-Party Inspection (TPI) cards."
+      },
+      {
+        "question": "What is the typical mobilization time for heavy equipment in Jubail or Dammam?",
+        "answer": "Standard mobilization for available heavy equipment within the Eastern Province (Al Khobar, Dammam, Jubail, Ras Tanura) is 24 to 48 hours following contract execution and gate pass approval."
+      },
+      {
+        "question": "Are all heavy machines inspected for Aramco and SABIC site access?",
+        "answer": "All GulfFast rental machinery undergoes stringent TPI certification and meets Saudi Aramco Safety Handbook guidelines, including spark arrestors, fire suppression, reverse alarms, and beacon lights."
+      }
+    ],
+    "relatedSlugs": ["generators-power", "lifting-cranes", "compaction-equipment"],
+    "blogPostSlugs": ["aramco-heavy-equipment-compliance", "selecting-right-excavator-ksa"]
+  },
+  {
+    "id": "generators-power",
+    "slug": "generators-power",
+    "title": "Industrial Generators & Power Systems",
+    "h1": "Industrial Generator Rental Saudi Arabia",
+    "shortSummary": "GulfFast supplies heavy-duty diesel generator rental solutions from 20 kVA to 1500 kVA across Saudi Arabia, backing critical oilfield, construction, and plant shutdown power needs. Headquartered in Al Khobar, we offer full power packages including fuel tanks, distribution panels, step-up transformers, and 24/7 technical support.",
+    "description": "When main grid power is unavailable or site uptime is non-negotiable, GulfFast Industrial Power Rentals provides dependable diesel generator rental units engineered for harsh Middle Eastern climates. Serving oilfield drill sites, remote pipeline corridors, infrastructure camps, and commercial construction projects throughout KSA, our power generation fleet is backed by over two decades of GulfFast industrial supply excellence.\n\nOur inventory consists of low-decibel, sound-attenuated diesel generators manufactured by industry leaders such as Cummins, Perkins, Caterpillar, and Denyo. Units range from compact 20 kVA mobile towable sets for site offices up to multi-megawatt synchronized power modules designed for refinery shutdowns and heavy industrial processing facilities.\n\nEach generator rental package includes external dual-wall fuel storage tanks, heavy-duty armored power cables, automatic transfer switches (ATS), load banks for pre-commissioning testing, and step-up/step-down transformers. GulfFast power technicians handle delivery, cabling, site installation, fuel management, and round-the-clock maintenance to ensure zero uninterrupted downtime for your operations.",
+    "specs": [
+      { "name": "Power Capacity", "value": "20 kVA to 1500 kVA (Single Units & Multi-MW Synchronized)" },
+      { "name": "Engine Brands", "value": "Cummins, Caterpillar, Perkins, Denyo" },
+      { "name": "Frequency & Voltage", "value": "60Hz / 50Hz (380V, 400V, 480V, 4160V High Voltage Options)" },
+      { "name": "Enclosure Type", "value": "Super Silent Soundproof Weatherproof Canopy (65-75 dBA @ 7m)" }
+    ],
+    "applications": [
+      "Continuous base-load power for off-grid construction camps & remote wells",
+      "Emergency standby power during plant turnarounds & maintenance shutdowns",
+      "High-voltage power generation for mining, dewatering & heavy pumps",
+      "Temporary power supply for outdoor events, temporary offices & HVAC systems"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Abha"],
+    "faq": [
+      {
+        "question": "Can GulfFast handle complete turnkey power generation setup including cabling and fuel management?",
+        "answer": "Yes. We supply complete turnkey power solutions including delivery, heavy distribution cables, ATS panels, external fuel tanks, and optional on-site refueling and maintenance technicians."
+      },
+      {
+        "question": "What generator ratings are available for Aramco project sites?",
+        "answer": "We provide soundproof diesel generators fully compliant with Aramco standards, equipped with emergency stop buttons, spark arrestors, neutral earthing kits, and external fuel containment bunds."
+      },
+      {
+        "question": "How quickly can an emergency replacement generator be dispatched?",
+        "answer": "For emergency power outages in the Eastern Province, GulfFast dispatches backup generators within 2 to 4 hours from our Al Khobar and Jubail yards."
+      }
+    ],
+    "relatedSlugs": ["heavy-equipment", "tower-lights", "air-compressors"],
+    "blogPostSlugs": ["diesel-generator-sizing-saudi-climate", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "lifting-cranes",
+    "slug": "lifting-cranes",
+    "title": "Mobile Cranes & Lifting Equipment",
+    "h1": "Mobile Crane Rental Saudi Arabia",
+    "shortSummary": "GulfFast supplies mobile cranes, rough-terrain cranes, crawler cranes, and telescopic handlers for heavy lifting operations across Saudi Arabia. Based in Al Khobar, our certified crane fleet is supported by Saudi Aramco certified riggers and crane operators for safe industrial erection and plant maintenance.",
+    "description": "GulfFast Mobile Crane & Lifting Rentals provides certified heavy-lift machinery and rigging support to construction sites, petrochemical plants, steel fabricators, and logistics terminals across Saudi Arabia. From quick 25-ton pick-and-carry tasks to complex 500-ton multi-crane industrial lifts, our fleet delivers maximum structural reach and load capacity.\n\nOur lifting inventory includes rough-terrain cranes (Liebherr, Tadano, Kato), all-terrain hydraulic cranes, crawler cranes for soft-soil pipeline jobs, and heavy-duty telehandlers (JCB, Manitou). All lifting equipment undergoes periodic Third-Party Inspection (TPI) by authorized certification bodies in Saudi Arabia, ensuring full compliance with Saudi Aramco GI 7.027 and SAG safety directives.\n\nIn addition to bare crane rentals, GulfFast provides complete lifting packages comprising TUV-certified riggers (Level 1, 2, and 3), certified crane operators, lift plan engineering support, and certified rigging tackle (shackles, wire rope slings, spreader bars, web slings).",
+    "specs": [
+      { "name": "Lifting Capacity", "value": "25 Ton to 500 Ton All-Terrain & Rough-Terrain Cranes" },
+      { "name": "Boom Length", "value": "Up to 80m Main Boom + Jib Extensions" },
+      { "name": "Equipment Brands", "value": "Liebherr, Tadano, Kato, Terex, Manitou" },
+      { "name": "Certifications", "value": "Aramco Certified Operator & Crane TPI Sticker" }
+    ],
+    "applications": [
+      "Heavy steel structure erection & modular industrial assembly",
+      "Petrochemical vessel, heat exchanger & pipe rack installation",
+      "Precast concrete beam positioning for highway & bridge construction",
+      "Offshore module loading & port cargo heavy-lift maneuvering"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Khafji", "Wa'ad Al Shamal"],
+    "faq": [
+      {
+        "question": "Are GulfFast cranes allowed on Saudi Aramco and SABIC facilities?",
+        "answer": "Yes. Our cranes hold valid TPI inspection stickers and calibration certificates required for immediate site entry across Saudi Aramco, SABIC, SEC, and Ma'aden projects."
+      },
+      {
+        "question": "Do you provide critical lift plan development for heavy lifts?",
+        "answer": "Yes, our technical team works alongside certified Level 3 rigging supervisors to prepare Aramco-compliant 3D lift plans and ground load calculation sheets."
+      },
+      {
+        "question": "What crane capacities are best for rough terrain desert sites?",
+        "answer": "Rough-terrain cranes ranging from 30T to 100T with 4x4 crab steering and oversized flotation tires are optimal for sandy or unpaved desert pipeline rights-of-way."
+      }
+    ],
+    "relatedSlugs": ["heavy-equipment", "scaffolding-formwork", "generators-power"],
+    "blogPostSlugs": ["crane-safety-lifting-standards-ksa", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "air-compressors",
+    "slug": "air-compressors",
+    "title": "Air Compressors & Pneumatic Tools",
+    "h1": "Air Compressor Rental Saudi Arabia",
+    "shortSummary": "GulfFast offers portable diesel air compressors and high-pressure oil-free compressor rentals across Saudi Arabia, supplying sandblasting, pipeline pigging, and industrial plant operations. Headquartered in Al Khobar, our compressor fleet features Atlas Copco, Ingersoll Rand, and Doosan units.",
+    "description": "For high-reliability compressed air in demanding industrial environments, GulfFast provides air compressor rental services engineered for Saudi Arabia's extreme temperatures and dust conditions. Supporting abrasive sandblasting contractors, pipeline testing crews, utility maintenance teams, and refinery turnaround operations, our compressor fleet covers high-volume CFM and ultra-high PSI requirements.\n\nOur inventory ranges from 185 CFM towable rotary screw air compressors for pneumatic break-outs up to 1600 CFM high-pressure diesel compressors (up to 350 PSI) for pipeline drying, hydrotesting backup, and deep-well blowout prevention. We also offer 100% oil-free Class 0 air compressors for sensitive food processing, pharmaceutical, and instrument air systems.\n\nAll compressor rentals come complete with heavy-duty air hoses, moisture separators, aftercoolers, air receivers, and pneumatic accessories including jackhammers, rock drills, sandblasting pots, and pneumatic impact wrenches.",
+    "specs": [
+      { "name": "Air Flow Capacity", "value": "185 CFM to 1600 CFM (7 bar to 25 bar / 100 to 350 PSI)" },
+      { "name": "Compressor Types", "value": "Diesel Portable Rotary Screw, High-Pressure, Class 0 Oil-Free" },
+      { "name": "Brands Fleet", "value": "Atlas Copco, Ingersoll Rand, Doosan, Sullair" },
+      { "name": "Accessories Included", "value": "Aftercoolers, Air Dryer Modules, Air Hoses, Blast Pots, Pneumatic Tools" }
+    ],
+    "applications": [
+      "Industrial abrasive sandblasting & protective tank coating",
+      "Pipeline pressure testing, pigging & nitrogen purging support",
+      "Pneumatic drilling, concrete breaking & rock excavation",
+      "Plant instrument air backup during utility air compressor overhaul"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Rabigh", "Jizan"],
+    "faq": [
+      {
+        "question": "Do you rent high-pressure compressors suitable for pipeline hydrotest drying?",
+        "answer": "Yes. We stock 1000 CFM to 1600 CFM high-pressure air compressors delivering up to 350 PSI with integrated desiccant air dryers for dew point verification."
+      },
+      {
+        "question": "What safety fittings are included with air compressor hose assemblies?",
+        "answer": "Every hose assembly supplied by GulfFast includes whip-check safety cables, Chicago/claw couplings, and safety pin locks as mandated by Aramco and OSHA safety rules."
+      },
+      {
+        "question": "Can I rent pneumatic tools and sandblasting pots along with the compressor?",
+        "answer": "Yes. We offer complete packages including 6 cu ft blast pots, deadman handles, moisture separators, pneumatic jackhammers, and air hoses."
+      }
+    ],
+    "relatedSlugs": ["welding-machines", "generators-power", "pumps-dewatering"],
+    "blogPostSlugs": ["selecting-right-excavator-ksa", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "welding-machines",
+    "slug": "welding-machines",
+    "title": "Industrial Welding Machines",
+    "h1": "Welding Machine Rental Saudi Arabia",
+    "shortSummary": "GulfFast supplies multi-process diesel welder generators and electric welding machine rentals across Saudi Arabia for cross-country pipelines, plant shutdowns, and structural fabrication. Based in Al Khobar, our fleet features Miller, Lincoln Electric, and Denyo welding machines.",
+    "description": "Precision welding integrity requires stable arc performance and rugged, site-tested power source units. GulfFast Industrial Welding Rentals provides heavy-duty diesel welding generators and multi-process electric welding power sources designed for rigorous pipeline welding, tank erection, and plant maintenance across KSA.\n\nOur welding inventory features 400 Amp to 600 Amp single-operator and dual-operator diesel welder generators (Lincoln Vantage, Miller Big Blue, Denyo), capable of SMAW (Stick), GTAW (TIG), GMAW (MIG), and FCAW (Flux-Cored) welding processes. Units are enclosed in heavy steel roll cages with lifting eyes, spark arrestors, and auxiliary 110V/220V power outlets to operate grinding tools and line-up clamps simultaneously.\n\nWe also supply specialized multi-station welding banks (6-pack and 8-pack welding racks) for high-density structural and piping projects, complete with welding leads, ground clamps, electrode holders, and calibrated TPI certificates.",
+    "specs": [
+      { "name": "Current Output", "value": "400A, 500A, 600A Single & Multi-Operator Racks" },
+      { "name": "Welding Processes", "value": "SMAW (Stick), GTAW (TIG), GMAW (MIG), FCAW (Flux-Cored), Gouging" },
+      { "name": "Brands Fleet", "value": "Lincoln Electric Vantage, Miller Big Blue, Denyo" },
+      { "name": "Features", "value": "Auxiliary Power 10-15 kW, Roll Cage, TPI Calibrated, Spark Arrestor" }
+    ],
+    "applications": [
+      "Oil & gas cross-country pipeline field joint welding",
+      "Storage tank fabrication & refinery pipe rack erection",
+      "Structural steel joint welding for high-rise & industrial sheds",
+      "Emergency repair welding during plant shutdown turnarounds"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Udhailiyah"],
+    "faq": [
+      {
+        "question": "Are your welding machines calibrated for Aramco WPS qualification tests?",
+        "answer": "Yes. All GulfFast welding machines carry valid third-party calibration certificates detailing voltage and amperage accuracy required for Aramco Procedure Qualification Records (PQR)."
+      },
+      {
+        "question": "What is a 6-Pack welding rack and do you supply them for plant turnarounds?",
+        "answer": "A 6-Pack rack centralizes six inverter welding power sources in a single mobile frame powered by one main cable, reducing cable clutter during intensive shutdown work."
+      },
+      {
+        "question": "Are auxiliary power outlets available on your diesel welder generators?",
+        "answer": "Yes, our Miller and Lincoln diesel welders feature 10 kW to 15 kW auxiliary 120V/240V/480V power generators to run angle grinders, lighting, and power tools."
+      }
+    ],
+    "relatedSlugs": ["air-compressors", "generators-power", "scaffolding-formwork"],
+    "blogPostSlugs": ["aramco-heavy-equipment-compliance", "crane-safety-lifting-standards-ksa"]
+  },
+  {
+    "id": "tower-lights",
+    "slug": "tower-lights",
+    "title": "Tower Lights & Mobile Lighting Systems",
+    "h1": "Lighting Tower Rental Saudi Arabia",
+    "shortSummary": "GulfFast rents high-output diesel mobile tower lights and solar hybrid light towers across Saudi Arabia for 24/7 night construction, oilfield rig work, and highway projects. Operating out of Al Khobar, we supply telescopic light towers with LED and Metal Halide floodlights.",
+    "description": "Continuous round-the-clock site operations in Saudi Arabia demand safe, intense, and fuel-efficient illumination. GulfFast Mobile Lighting Rentals supplies heavy-duty diesel and solar-powered light towers tailored for night shifts, road paving, oilfield operations, and remote site security across the Kingdom.\n\nOur light tower fleet features vertical telescopic masts extending up to 9 meters with 360-degree rotation, fitted with 4x1000W Metal Halide or high-efficiency 4x350W LED floodlights delivering over 440,000 lumens. Powered by ultra-quiet Kubota or Perkins diesel engines with 110-liter long-run fuel tanks, these units run continuously for up to 60-70 hours per fill.\n\nDesigned for extreme desert conditions, GulfFast light towers feature heavy-duty outriggers tested for 80 km/h wind resistance, automatic dusk-to-dawn sensors, and towable road-legal trailers for effortless relocation between site zones.",
+    "specs": [
+      { "name": "Mast Height & Type", "value": "9 Meter Hydraulic / Pneumatic Vertical Telescopic Mast" },
+      { "name": "Luminaires", "value": "4x350W Ultra-Bright LED or 4x1000W Metal Halide (440,000 Lumens)" },
+      { "name": "Run Time", "value": "Up to 70 Hours Continuous Operation per Fuel Tank" },
+      { "name": "Power System", "value": "Low-Noise Diesel Engine or Zero-Emission Solar Battery Hybrid" }
+    ],
+    "applications": [
+      "Night shift earthmoving, concreting & highway paving",
+      "Oil & gas drilling rig perimeter & well pad illumination",
+      "Industrial plant maintenance turnarounds & emergency repairs",
+      "Remote security checkpoint & laydown yard lighting"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Najran"],
+    "faq": [
+      {
+        "question": "What is the difference between LED and Metal Halide light towers?",
+        "answer": "LED light towers consume up to 70% less fuel, offer instant on/off without warm-up delays, and provide crisp white daylight illumination ideal for precision site work."
+      },
+      {
+        "question": "How wind-resistant are your lighting masts on exposed desert sites?",
+        "answer": "Our light towers feature heavy-duty 4-point adjustable outriggers engineered to withstand wind gusts up to 80 km/h."
+      },
+      {
+        "question": "Do you offer solar-powered lighting towers for eco-sensitive sites like NEOM?",
+        "answer": "Yes, we supply silent, zero-emission solar hybrid light towers equipped with high-capacity lithium battery storage ideal for NEOM and Red Sea eco-resort sites."
+      }
+    ],
+    "relatedSlugs": ["generators-power", "heavy-equipment", "pumps-dewatering"],
+    "blogPostSlugs": ["diesel-generator-sizing-saudi-climate", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "pumps-dewatering",
+    "slug": "pumps-dewatering",
+    "title": "Dewatering & High-Head Pumps",
+    "h1": "Dewatering Pump Rental Saudi Arabia",
+    "shortSummary": "GulfFast provides heavy-duty self-priming dewatering pumps, submersible sludge pumps, and high-pressure hydrotest pumps for rental in Saudi Arabia. Headquartered in Al Khobar, our pumping fleet supports coastal foundation excavations, pipeline testing, and municipal bypass.",
+    "description": "High groundwater tables along coastal Eastern Province sites and heavy flash flood runoff require high-capacity, non-clogging pumping solutions. GulfFast Dewatering & Industrial Pump Rentals provides heavy-duty diesel and electric pump packages designed for continuous water management across Saudi Arabia.\n\nOur pumping inventory covers 4-inch to 12-inch fully automatic prime-assisted centrifugal pumps (Godwin, Flygt, Sykes), heavy solids-handling trash pumps capable of passing up to 3-inch solids, and high-head multistage booster pumps for pipeline hydrotesting. All diesel units are housed in sound-attenuated acoustic canopies with high-efficiency diesel engines.\n\nGulfFast provides complete dewatering packages including suction/discharge layflat hoses, HD-PE piping headers, quick-connect Bauer couplings, check valves, wellpoint dewatering rings, and on-site pump operators.",
+    "specs": [
+      { "name": "Flow Rate Capacity", "value": "100 m³/hr to 1500 m³/hr (4\" to 12\" Suction/Discharge Size)" },
+      { "name": "Pump Types", "value": "Diesel Automatic Self-Priming, Electric Submersible, Wellpoint, High-Head Hydrotest" },
+      { "name": "Solids Handling", "value": "Up to 75mm (3 Inches) Spherical Solids" },
+      { "name": "Brands Fleet", "value": "Godwin, Flygt, Sykes, Pioneer, Grindex" }
+    ],
+    "applications": [
+      "Deep foundation & trench dewatering for civil construction",
+      "Pipeline hydrotest water filling, boosting & dewatering",
+      "Sewer bypass pumping & municipal storm water management",
+      "Industrial pond sludge pumping & refinery tank cleaning"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Khafji"],
+    "faq": [
+      {
+        "question": "Do you provide wellpoint dewatering systems for coastal excavation in Khobar/Dammam?",
+        "answer": "Yes. We supply complete wellpoint dewatering systems including header pipes, jetting pumps, riser pipes, and swing hoses tailored for sandy coastal soils."
+      },
+      {
+        "question": "What pump sizes are available for high-volume pipeline filling?",
+        "answer": "We stock 8-inch, 10-inch, and 12-inch high-flow centrifugal pumps delivering up to 1200 m³/hr for rapid pipeline water filling prior to pressure testing."
+      },
+      {
+        "question": "Are your diesel dewatering pumps soundproofed for urban night work?",
+        "answer": "Yes, our silent pump canopies lower noise levels to under 68 dBA at 7 meters, making them suitable for residential areas and city center excavations."
+      }
+    ],
+    "relatedSlugs": ["heavy-equipment", "generators-power", "air-compressors"],
+    "blogPostSlugs": ["selecting-right-excavator-ksa", "aramco-heavy-equipment-compliance"]
+  },
+  {
+    "id": "scaffolding-formwork",
+    "slug": "scaffolding-formwork",
+    "title": "Industrial Scaffolding & Formwork Systems",
+    "h1": "Scaffolding Rental Saudi Arabia",
+    "shortSummary": "GulfFast rents certified Cuplock, Ringlock, and aluminum scaffolding systems across Saudi Arabia for industrial plant turnarounds, commercial high-rises, and masonry work. Based in Al Khobar, we supply certified scaffolding materials alongside certified scaffolders.",
+    "description": "Safe elevated working access is paramount for industrial maintenance, structural erection, and building facades. GulfFast Scaffolding Systems provides complete modular scaffolding rentals and formwork equipment compliant with Saudi Aramco Scaffolding Manual (GI 8.001) and Saudi Building Code (SBC).\n\nOur inventory stocks heavy-duty galvanized Cuplock systems, Ringlock modular systems, tube & coupler pipe scaffolding, mobile aluminum towers, beam clamps, drop-forged couplers, steel walk planks, and safety netting. Every component is inspected for wall thickness, hot-dip galvanizing quality, and load rating stability.\n\nGulfFast provides complete scaffolding material rentals as well as full design, erection, and dismantling services managed by Aramco-certified Scaffolding Supervisors and Inspectors (Supervisor I/II and Inspector qualified).",
+    "specs": [
+      { "name": "System Types", "value": "Cuplock System, Ringlock Modular, Tube & Coupler, Mobile Aluminum Towers" },
+      { "name": "Standards Compliance", "value": "Aramco GI 8.001, BS EN 12810 / 12811, OSHA Compliant" },
+      { "name": "Accessories", "value": "Steel Planks, Base Jacks, Swivel Couplers, Ladder Beams, Safety Nets" },
+      { "name": "Services", "value": "Material Supply Only or Complete Erection, Inspection & Tagging" }
+    ],
+    "applications": [
+      "Refinery column & boiler maintenance scaffolding during turnarounds",
+      "High-rise building perimeter safety scaffolding & formwork shoring",
+      "Bridge pier heavy falsework & slab support shoring systems",
+      "Suspended scaffolding for pipe rack access & overhead steelwork"
+    ],
+    "cityCoverage": ["Al Khobar", "Dammam", "Jubail", "Riyadh", "Jeddah", "Yanbu", "NEOM", "Ras Tanura", "Jizan", "Tabuk"],
+    "faq": [
+      {
+        "question": "Does GulfFast supply certified Scaffolding Inspectors and Supervisors?",
+        "answer": "Yes. We supply certified Scaffolding Supervisors and Inspectors qualified under Saudi Aramco and TUV standards for structure sign-off and green tagging."
+      },
+      {
+        "question": "What scaffolding system is best for complex industrial pipe rack access?",
+        "answer": "Ringlock modular scaffolding offers 360-degree connection nodes at multi-angles, making it ideal for tight pipe racks and irregular refinery equipment."
+      },
+      {
+        "question": "Are steel walk planks hot-dip galvanized for corrosion resistance?",
+        "answer": "Yes, all our steel scaffolding boards and pipes feature heavy hot-dip galvanizing to resist saltwater corrosion in Eastern Province coastal facilities."
+      }
+    ],
+    "relatedSlugs": ["lifting-cranes", "welding-machines", "heavy-equipment"],
+    "blogPostSlugs": ["manpower-supply-compliance-tuv-aramco", "crane-safety-lifting-standards-ksa"]
+  }
+]
