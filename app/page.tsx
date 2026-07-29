@@ -1,64 +1,70 @@
 import Link from 'next/link';
+import DynamicCatalog from '@/components/DynamicCatalog';
+import ServiceAreaMap from '@/components/ServiceAreaMap';
 import TrustBar from '@/components/TrustBar';
-import ServicePillars from '@/components/ServicePillars';
 import QuoteForm from '@/components/QuoteForm';
+import { getEquipmentCategories, getVehicleCategories, getJobTitles } from '@/lib/data';
 
 export default function HomePage() {
+  const equipmentCategories = getEquipmentCategories();
+  const vehicleCategories = getVehicleCategories();
+  const manpowerCategories = getJobTitles();
+
   return (
-    <div className="bg-slate-50 text-slate-900">
-      {/* Short Corporate Hero Section */}
-      <section className="bg-white border-b border-slate-200 py-12 sm:py-16">
+    <div className="bg-[#F5F2EB] text-[#1E293B] min-h-screen">
+      
+      {/* Hero Section */}
+      <section className="bg-white border-b border-[#E2DED4] py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             {/* Left Hero Content */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-900 text-xs font-bold">
+            <div className="lg:col-span-7 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C2410C] text-xs font-bold">
                 <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                Direct Industrial Fleet &amp; Manpower Owner • Al Khobar, KSA
+                Direct Heavy Equipment &amp; Technical Workforce Owner • Est. 1999
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-                Industrial Equipment Rental, Fleet &amp; <span className="text-amber-700">Manpower Supply</span>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0F2942] leading-tight tracking-tight">
+                Saudi Arabia Industrial <span className="text-[#C2410C]">Fleet &amp; Manpower</span> Catalog
               </h1>
 
-              <p className="text-slate-600 text-base leading-relaxed font-normal max-w-2xl">
-                Arabian Gulf Fast Contracting Co. (GulfFast) supplies Aramco and SABIC-approved heavy machinery, transportation trucks, and certified technical workforce directly to project sites across Saudi Arabia since 1999.
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+                Arabian Gulf Fast Contracting Co. (GulfFast) provides Aramco &amp; SABIC compliant heavy machinery rentals, transport fleets, and certified trade crews directly from our Al Khobar operations hub.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Link
-                  href="/equipment-rental"
-                  className="px-6 py-3 rounded-md bg-blue-900 hover:bg-slate-900 text-white font-bold text-sm shadow-sm transition-all"
-                >
-                  Explore Equipment Fleet →
-                </Link>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   href="/request-a-quote"
-                  className="px-6 py-3 rounded-md bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm shadow-sm transition-all"
+                  className="px-6 py-3 rounded-xl bg-[#0F2942] hover:bg-[#C2410C] text-white font-bold text-sm shadow-sm transition-all"
                 >
-                  Request Instant Quote
+                  Request Fast Quote →
                 </Link>
+                <a
+                  href="tel:+966568676710"
+                  className="px-6 py-3 rounded-xl bg-[#F5F2EB] hover:bg-[#E2DED4] text-[#0F2942] font-bold text-sm border border-[#E2DED4] transition-all flex items-center gap-2"
+                >
+                  <span>📞</span> +966 56 867 6710
+                </a>
               </div>
 
-              {/* Badges bar */}
-              <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-4 text-xs text-slate-600 font-medium">
-                <div className="flex items-center gap-2">
+              <div className="pt-4 border-t border-[#E2DED4] grid grid-cols-3 gap-3 text-xs text-slate-600 font-semibold">
+                <div className="flex items-center gap-1.5">
                   <span className="text-emerald-600 font-bold">✓</span>
-                  <span>Direct Fleet Owner</span>
+                  <span>100% Direct Owner</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <span className="text-emerald-600 font-bold">✓</span>
                   <span>Aramco Gate Passes</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <span className="text-emerald-600 font-bold">✓</span>
                   <span>24/7 Site Support</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Hero Quote Request Card */}
+            {/* Right Hero Quote Form */}
             <div className="lg:col-span-5">
               <QuoteForm serviceType="general" />
             </div>
@@ -67,40 +73,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust Bar (25+ Years, Direct Owner, Vendor Status) */}
-      <TrustBar />
+      {/* Main Interactive Catalog Dashboard Component */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <DynamicCatalog
+          equipmentCategories={equipmentCategories}
+          vehicleCategories={vehicleCategories}
+          manpowerCategories={manpowerCategories}
+        />
 
-      {/* 3 Core Service Hub Cards (Links out to full category hubs) */}
-      <ServicePillars />
+        {/* Stylized KSA Interactive Service Map */}
+        <div className="my-8">
+          <ServiceAreaMap />
+        </div>
+
+        {/* Corporate Trust & Credentials Bar */}
+        <div className="my-8">
+          <TrustBar />
+        </div>
+      </div>
 
       {/* Corporate Call to Action Section */}
-      <section className="bg-slate-900 text-white py-14">
+      <section className="bg-[#0F2942] text-white py-14 border-t border-[#1E3A8A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <span className="bg-amber-600/20 text-amber-400 text-xs font-bold px-3 py-1 rounded border border-amber-500/30 uppercase tracking-wider">
-            Al Khobar Head Office Sales Desk
+          <span className="bg-[#FFF7ED] text-[#C2410C] text-xs font-bold px-3 py-1 rounded-full border border-[#FFEDD5] uppercase tracking-wider">
+            Al Khobar Head Office Operations Desk
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
             Need Immediate Mobilization for Your Site?
           </h2>
           <p className="text-slate-300 font-normal text-sm max-w-2xl mx-auto leading-relaxed">
-            Contact our project desk for competitive daily, monthly, or long-term lease quotations.
+            Speak directly with our technical sales engineers in Al Khobar for daily, monthly, or annual lease contracts.
           </p>
           <div className="pt-3 flex flex-wrap justify-center gap-4">
             <Link
               href="/request-a-quote"
-              className="px-7 py-3 rounded-md bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm transition-all"
+              className="px-7 py-3 rounded-xl bg-[#C2410C] hover:bg-amber-600 text-white font-bold text-sm transition-all shadow-md"
             >
               Submit Quote Request →
             </Link>
             <Link
               href="/contact"
-              className="px-7 py-3 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-sm border border-slate-700 transition-all"
+              className="px-7 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all"
             >
               View Head Office Contact Info
             </Link>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

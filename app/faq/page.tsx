@@ -42,7 +42,7 @@ export default function FaqPage() {
   ];
 
   return (
-    <div className="py-10 bg-slate-50 text-slate-900 min-h-screen">
+    <div className="py-10 bg-[#F5F2EB] text-[#1E293B] min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs
@@ -52,11 +52,11 @@ export default function FaqPage() {
           ]}
         />
 
-        <div className="my-6 border-b border-slate-200 pb-6">
-          <span className="text-amber-700 font-bold text-xs uppercase tracking-wider bg-amber-50 px-3 py-1 rounded border border-amber-200">
+        <div className="my-6 border-b border-[#E2DED4] pb-6">
+          <span className="text-[#C2410C] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
             Sitewide Information &amp; Policy Guidance
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F2942] mt-2">
             Frequently Asked Questions
           </h1>
           <p className="text-slate-600 text-sm max-w-2xl mt-2 leading-relaxed">
@@ -68,21 +68,21 @@ export default function FaqPage() {
         <FaqAccordion faqs={sitewideFaqs} title="General Service &amp; Operations FAQ" />
 
         {/* Direct Contact Callout */}
-        <div className="bg-white border border-slate-200 rounded-lg p-8 text-center my-10 space-y-4 shadow-sm">
-          <h2 className="text-xl font-bold text-slate-900">Have a Specific Project Requirement Not Covered Here?</h2>
-          <p className="text-slate-600 text-xs max-w-xl mx-auto">
+        <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-4 shadow-sm">
+          <h2 className="text-xl font-extrabold text-[#0F2942]">Have a Specific Project Requirement Not Covered Here?</h2>
+          <p className="text-slate-600 text-xs max-w-xl mx-auto leading-relaxed">
             Speak directly with our technical sales engineers at our Al Khobar headquarters.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <a
               href="tel:+966568676710"
-              className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-md transition-colors"
+              className="px-6 py-2.5 bg-[#0F2942] hover:bg-[#C2410C] text-white font-bold text-xs rounded-xl transition-colors shadow-sm"
             >
               Call +966 56 867 6710
             </a>
             <a
               href="mailto:sales@gulffast.co"
-              className="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-blue-900 font-bold text-xs rounded-md transition-colors border border-slate-300"
+              className="px-6 py-2.5 bg-[#F5F2EB] hover:bg-[#E2DED4] text-[#0F2942] font-bold text-xs rounded-xl transition-colors border border-[#E2DED4]"
             >
               Email sales@gulffast.co
             </a>

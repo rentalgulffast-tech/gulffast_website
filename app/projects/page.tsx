@@ -53,7 +53,7 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="py-10 bg-slate-50 text-slate-900 min-h-screen">
+    <div className="py-10 bg-[#F5F2EB] text-[#1E293B] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs
@@ -63,11 +63,11 @@ export default function ProjectsPage() {
           ]}
         />
 
-        <div className="my-6 border-b border-slate-200 pb-6">
-          <span className="text-amber-700 font-bold text-xs uppercase tracking-wider bg-amber-50 px-3 py-1 rounded border border-amber-200">
+        <div className="my-6 border-b border-[#E2DED4] pb-6">
+          <span className="text-[#C2410C] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
             Industrial Project Showcase
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F2942] mt-2">
             Case Studies &amp; Site Mobilization Showcase
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
@@ -76,10 +76,10 @@ export default function ProjectsPage() {
         </div>
 
         {/* Client Confidentiality Alert */}
-        <div className="bg-white border border-slate-200 rounded-lg p-5 mb-8 flex items-start gap-4 text-xs text-slate-700 shadow-sm">
-          <span className="w-8 h-8 rounded-md bg-blue-50 text-blue-900 flex items-center justify-center font-bold text-base shrink-0">ℹ️</span>
+        <div className="bg-white border border-[#E2DED4] rounded-2xl p-5 mb-8 flex items-start gap-4 text-xs text-slate-700 shadow-sm">
+          <span className="w-8 h-8 rounded-xl bg-[#FFF7ED] text-[#C2410C] flex items-center justify-center font-bold text-base shrink-0 border border-[#FFEDD5]">ℹ️</span>
           <div>
-            <strong className="text-slate-900 block mb-1">Direct Supplier Confidentiality Notice</strong>
+            <strong className="text-[#0F2942] block mb-1">Direct Supplier Confidentiality Notice</strong>
             <span>
               Per GulfFast strict client NDA policies, specific main contractor and oil major project titles are represented via structured technical templates. Full verifiable reference lists are provided directly to pre-qualified procurement teams upon request.
             </span>
@@ -89,14 +89,14 @@ export default function ProjectsPage() {
         {/* Case Studies Grid */}
         <div className="space-y-6 my-8">
           {caseStudies.map((cs) => (
-            <div key={cs.id} className="bg-white border border-slate-200 rounded-lg p-6 sm:p-8 shadow-sm space-y-5">
+            <div key={cs.id} className="bg-white border border-[#E2DED4] rounded-2xl p-6 sm:p-8 shadow-sm space-y-5">
               
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E2DED4] pb-4">
                 <div>
-                  <span className="text-xs text-amber-700 font-bold uppercase tracking-wider">{cs.sector}</span>
-                  <h2 className="text-2xl font-bold text-slate-900 mt-1">{cs.title}</h2>
+                  <span className="text-xs text-[#C2410C] font-bold uppercase tracking-wider">{cs.sector}</span>
+                  <h2 className="text-2xl font-extrabold text-[#0F2942] mt-1">{cs.title}</h2>
                 </div>
-                <div className="text-xs text-slate-700 bg-slate-50 px-3 py-1.5 rounded-md border border-slate-200 shrink-0 font-medium">
+                <div className="text-xs text-[#0F2942] bg-[#F5F2EB] px-3 py-1.5 rounded-xl border border-[#E2DED4] shrink-0 font-bold">
                   📍 {cs.location}
                 </div>
               </div>
@@ -105,12 +105,12 @@ export default function ProjectsPage() {
                 {cs.summary}
               </p>
 
-              <div className="bg-slate-50 rounded-md p-5 border border-slate-200 space-y-3">
-                <h3 className="text-xs font-bold text-blue-900 uppercase tracking-wider">Deployment Highlights:</h3>
-                <ul className="space-y-2 text-xs text-slate-700">
+              <div className="bg-[#F9F8F5] rounded-xl p-5 border border-[#E2DED4] space-y-3">
+                <h3 className="text-xs font-bold text-[#0F2942] uppercase tracking-wider">Deployment Highlights:</h3>
+                <ul className="space-y-2 text-xs text-slate-700 font-medium">
                   {cs.highlights.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-amber-700 font-bold">✓</span>
+                      <span className="text-[#C2410C] font-bold">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -121,7 +121,7 @@ export default function ProjectsPage() {
                 <span className="text-slate-500 font-mono italic">{cs.clientNotice}</span>
                 <Link
                   href="/request-a-quote"
-                  className="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-md transition-colors inline-block text-center"
+                  className="px-5 py-2.5 bg-[#0F2942] hover:bg-[#C2410C] text-white font-bold rounded-xl transition-colors inline-block text-center shadow-sm"
                 >
                   Request Similar Project Package →
                 </Link>
