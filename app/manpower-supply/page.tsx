@@ -1,5 +1,5 @@
-import CategoryCard from '@/components/CategoryCard';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import CategoryHubWithSidebar from '@/components/CategoryHubWithSidebar';
 import { getJobTitles } from '@/lib/data';
 import { generateServiceSchema } from '@/lib/seo';
 
@@ -20,7 +20,7 @@ export default function ManpowerSupplyHubPage() {
   );
 
   return (
-    <div className="py-10 bg-slate-950 text-white min-h-screen">
+    <div className="py-10 bg-slate-50 text-slate-900 min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -35,34 +35,36 @@ export default function ManpowerSupplyHubPage() {
           ]}
         />
 
-        <div className="my-8 border-b border-slate-800 pb-8">
-          <span className="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded border border-amber-500/20">
-            Certified Industrial Workforce Supply
+        <div className="my-6 border-b border-slate-200 pb-6">
+          <span className="text-amber-700 font-bold text-xs uppercase tracking-wider bg-amber-50 px-3 py-1 rounded border border-amber-200">
+            Workforce Supply Hub
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white mt-3">
-            Skilled Manpower Supply Services in Saudi Arabia
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+            Certified Manpower Supply Services in Saudi Arabia
           </h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+          <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
             GulfFast directly supplies SAG-licensed, Saudi Aramco approved, and TUV certified technical personnel for short-term refinery turnarounds and long-term EPC construction projects across Saudi Arabia.
           </p>
         </div>
 
-        {/* Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
-          {jobTitles.map((trade) => (
-            <CategoryCard key={trade.id} category={trade} basePath="/manpower-supply" />
-          ))}
-        </div>
+        {/* Category Hub with Sidebar Filter */}
+        <CategoryHubWithSidebar
+          title="Certified Manpower Trades"
+          subtitle="Filter 6G welders, riggers, operators, safety officers, and technical personnel."
+          badgeText="Aramco & TUV Certified"
+          categories={jobTitles}
+          basePath="/manpower-supply"
+        />
 
         {/* Callout */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-8 text-center my-12 space-y-3">
-          <h2 className="text-2xl font-bold text-white">Require On-Site WQT Coupon Testing or Rapid Shutdown Mobilization?</h2>
-          <p className="text-slate-400 text-xs max-w-2xl mx-auto">
+        <div className="bg-white border border-slate-200 rounded-lg p-8 text-center my-10 space-y-3 shadow-sm">
+          <h2 className="text-xl font-bold text-slate-900">Require On-Site WQT Coupon Testing or Rapid Shutdown Mobilization?</h2>
+          <p className="text-slate-600 text-xs max-w-2xl mx-auto">
             We provide complete manpower logistics including Iqamas, Aramco gate passes, camp housing, site transport, and medical insurance.
           </p>
           <a
             href="tel:+966568676710"
-            className="inline-block px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs rounded-lg transition-colors mt-2"
+            className="inline-block px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-md transition-colors mt-2"
           >
             Call Manpower Desk: +966 56 867 6710
           </a>

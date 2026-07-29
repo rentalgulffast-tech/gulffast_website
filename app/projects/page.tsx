@@ -22,7 +22,7 @@ export default function ProjectsPage() {
         'Supplied 45 x Aramco-certified 6G welders and 30 x TUV scaffolders',
         'Maintained 100% power uptime throughout 24/7 turnaround shift schedule'
       ],
-      clientNotice: '[TODO: Client name withheld pending formal NDA clearance]'
+      clientNotice: '[Client reference details provided upon pre-qualification]'
     },
     {
       id: 'cross-country-pipeline-haulage',
@@ -35,7 +35,7 @@ export default function ProjectsPage() {
         'Mobilized 15 x 6x4 heavy tractor trucks with 50ft flatbed trailers for line pipe transit',
         'Deployed 10 x multi-process diesel welder generators with certified operators'
       ],
-      clientNotice: '[TODO: Client name withheld pending formal NDA clearance]'
+      clientNotice: '[Client reference details provided upon pre-qualification]'
     },
     {
       id: 'neom-infrastructure-fleet',
@@ -48,12 +48,12 @@ export default function ProjectsPage() {
         'Operated 5 x 50-seat crew AC buses for daily worker transport between housing camp and site',
         '24/7 mobile mechanic support trailer stationed on site for zero maintenance delay'
       ],
-      clientNotice: '[TODO: Client name withheld pending formal NDA clearance]'
+      clientNotice: '[Client reference details provided upon pre-qualification]'
     }
   ];
 
   return (
-    <div className="py-10 bg-slate-950 text-white min-h-screen">
+    <div className="py-10 bg-slate-50 text-slate-900 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs
@@ -63,23 +63,23 @@ export default function ProjectsPage() {
           ]}
         />
 
-        <div className="my-8 border-b border-slate-800 pb-8">
-          <span className="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded border border-amber-500/20">
+        <div className="my-6 border-b border-slate-200 pb-6">
+          <span className="text-amber-700 font-bold text-xs uppercase tracking-wider bg-amber-50 px-3 py-1 rounded border border-amber-200">
             Industrial Project Showcase
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white mt-3">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
             Case Studies &amp; Site Mobilization Showcase
           </h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+          <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
             Illustrative technical case studies demonstrating GulfFast equipment, transport, and certified manpower deployment across major industrial sites in Saudi Arabia.
           </p>
         </div>
 
         {/* Client Confidentiality Alert */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 mb-10 flex items-start gap-4 text-xs text-slate-300">
-          <span className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold text-base shrink-0">ℹ️</span>
+        <div className="bg-white border border-slate-200 rounded-lg p-5 mb-8 flex items-start gap-4 text-xs text-slate-700 shadow-sm">
+          <span className="w-8 h-8 rounded-md bg-blue-50 text-blue-900 flex items-center justify-center font-bold text-base shrink-0">ℹ️</span>
           <div>
-            <strong className="text-white block mb-1">Direct Supplier Confidentiality Notice</strong>
+            <strong className="text-slate-900 block mb-1">Direct Supplier Confidentiality Notice</strong>
             <span>
               Per GulfFast strict client NDA policies, specific main contractor and oil major project titles are represented via structured technical templates. Full verifiable reference lists are provided directly to pre-qualified procurement teams upon request.
             </span>
@@ -87,30 +87,30 @@ export default function ProjectsPage() {
         </div>
 
         {/* Case Studies Grid */}
-        <div className="space-y-8 my-10">
+        <div className="space-y-6 my-8">
           {caseStudies.map((cs) => (
-            <div key={cs.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div key={cs.id} className="bg-white border border-slate-200 rounded-lg p-6 sm:p-8 shadow-sm space-y-5">
               
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                 <div>
-                  <span className="text-xs text-amber-400 font-bold uppercase tracking-wider">{cs.sector}</span>
-                  <h2 className="text-2xl font-bold text-white mt-1">{cs.title}</h2>
+                  <span className="text-xs text-amber-700 font-bold uppercase tracking-wider">{cs.sector}</span>
+                  <h2 className="text-2xl font-bold text-slate-900 mt-1">{cs.title}</h2>
                 </div>
-                <div className="text-xs text-slate-400 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800 shrink-0">
+                <div className="text-xs text-slate-700 bg-slate-50 px-3 py-1.5 rounded-md border border-slate-200 shrink-0 font-medium">
                   📍 {cs.location}
                 </div>
               </div>
 
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {cs.summary}
               </p>
 
-              <div className="bg-slate-950 rounded-xl p-5 border border-slate-800/80 space-y-3">
-                <h3 className="text-xs font-bold text-amber-400 uppercase tracking-wider">Deployment Highlights:</h3>
-                <ul className="space-y-2 text-xs text-slate-300">
+              <div className="bg-slate-50 rounded-md p-5 border border-slate-200 space-y-3">
+                <h3 className="text-xs font-bold text-blue-900 uppercase tracking-wider">Deployment Highlights:</h3>
+                <ul className="space-y-2 text-xs text-slate-700">
                   {cs.highlights.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-amber-500 font-bold">✓</span>
+                      <span className="text-amber-700 font-bold">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -118,10 +118,10 @@ export default function ProjectsPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 text-xs">
-                <span className="text-slate-400 font-mono italic">{cs.clientNotice}</span>
+                <span className="text-slate-500 font-mono italic">{cs.clientNotice}</span>
                 <Link
                   href="/request-a-quote"
-                  className="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-lg transition-colors inline-block text-center"
+                  className="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-md transition-colors inline-block text-center"
                 >
                   Request Similar Project Package →
                 </Link>

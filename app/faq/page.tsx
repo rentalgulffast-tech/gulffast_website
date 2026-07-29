@@ -42,7 +42,7 @@ export default function FaqPage() {
   ];
 
   return (
-    <div className="py-10 bg-slate-950 text-white min-h-screen">
+    <div className="py-10 bg-slate-50 text-slate-900 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs
@@ -52,14 +52,14 @@ export default function FaqPage() {
           ]}
         />
 
-        <div className="my-8 border-b border-slate-800 pb-8">
-          <span className="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded border border-amber-500/20">
+        <div className="my-6 border-b border-slate-200 pb-6">
+          <span className="text-amber-700 font-bold text-xs uppercase tracking-wider bg-amber-50 px-3 py-1 rounded border border-amber-200">
             Sitewide Information &amp; Policy Guidance
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white mt-3">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
             Frequently Asked Questions
           </h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mt-3 leading-relaxed">
+          <p className="text-slate-600 text-sm max-w-2xl mt-2 leading-relaxed">
             Find answers to common questions about GulfFast equipment rental terms, Aramco gate pass eligibility, manpower certifications, mobilization lead times, and payment terms in Saudi Arabia.
           </p>
         </div>
@@ -68,21 +68,21 @@ export default function FaqPage() {
         <FaqAccordion faqs={sitewideFaqs} title="General Service &amp; Operations FAQ" />
 
         {/* Direct Contact Callout */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-8 text-center my-12 space-y-4">
-          <h2 className="text-xl font-bold text-white">Have a Specific Project Requirement Not Covered Here?</h2>
-          <p className="text-slate-400 text-xs max-w-xl mx-auto">
+        <div className="bg-white border border-slate-200 rounded-lg p-8 text-center my-10 space-y-4 shadow-sm">
+          <h2 className="text-xl font-bold text-slate-900">Have a Specific Project Requirement Not Covered Here?</h2>
+          <p className="text-slate-600 text-xs max-w-xl mx-auto">
             Speak directly with our technical sales engineers at our Al Khobar headquarters.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <a
               href="tel:+966568676710"
-              className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-lg transition-colors"
+              className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-md transition-colors"
             >
               Call +966 56 867 6710
             </a>
             <a
               href="mailto:sales@gulffast.co"
-              className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold text-xs rounded-lg transition-colors border border-slate-700"
+              className="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-blue-900 font-bold text-xs rounded-md transition-colors border border-slate-300"
             >
               Email sales@gulffast.co
             </a>

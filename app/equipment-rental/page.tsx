@@ -1,6 +1,5 @@
-import Metadata from 'next';
-import CategoryCard from '@/components/CategoryCard';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import CategoryHubWithSidebar from '@/components/CategoryHubWithSidebar';
 import { getEquipmentCategories } from '@/lib/data';
 import { generateServiceSchema } from '@/lib/seo';
 
@@ -21,7 +20,7 @@ export default function EquipmentRentalHubPage() {
   );
 
   return (
-    <div className="py-10 bg-slate-950 text-white min-h-screen">
+    <div className="py-10 bg-slate-50 text-slate-900 min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -36,34 +35,36 @@ export default function EquipmentRentalHubPage() {
           ]}
         />
 
-        <div className="my-8 border-b border-slate-800 pb-8">
-          <span className="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded border border-amber-500/20">
-            Industrial Equipment Fleet
+        <div className="my-6 border-b border-slate-200 pb-6">
+          <span className="text-amber-700 font-bold text-xs uppercase tracking-wider bg-amber-50 px-3 py-1 rounded border border-amber-200">
+            Industrial Fleet Hub
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white mt-3">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
             Heavy Equipment Rental Services in Saudi Arabia
           </h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+          <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
             GulfFast owns and operates a comprehensive machinery fleet engineered for harsh Middle Eastern climates and certified to Saudi Aramco, SABIC, and SEC safety specifications. Operating from our Al Khobar operations yard with 24/7 technical mobilization.
           </p>
         </div>
 
-        {/* Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
-          {categories.map((category) => (
-            <CategoryCard key={category.id} category={category} basePath="/equipment-rental" />
-          ))}
-        </div>
+        {/* Interactive Hub with Sidebar Filter */}
+        <CategoryHubWithSidebar
+          title="Heavy Equipment Rental Categories"
+          subtitle="Filter by city coverage, target industry, or search equipment specs."
+          badgeText="Aramco Compliant"
+          categories={categories}
+          basePath="/equipment-rental"
+        />
 
         {/* Informational Callout */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-8 text-center my-12 space-y-3">
-          <h2 className="text-2xl font-bold text-white">Need Customized Machinery Specifications or Long-Term Fleet Leasing?</h2>
-          <p className="text-slate-400 text-xs max-w-2xl mx-auto">
+        <div className="bg-white border border-slate-200 rounded-lg p-8 text-center my-10 space-y-3 shadow-sm">
+          <h2 className="text-xl font-bold text-slate-900">Need Customized Machinery Specifications or Long-Term Fleet Leasing?</h2>
+          <p className="text-slate-600 text-xs max-w-2xl mx-auto">
             All equipment includes options for bare-rental or operated &amp; maintained (O&amp;M) leases with Aramco-certified operators and mobile maintenance technicians.
           </p>
           <a
             href="tel:+966568676710"
-            className="inline-block px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs rounded-lg transition-colors mt-2"
+            className="inline-block px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-md transition-colors mt-2"
           >
             Call Direct Equipment Desk: +966 56 867 6710
           </a>
