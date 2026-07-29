@@ -11,22 +11,22 @@ export default function HomePage() {
   const manpowerCategories = getJobTitles();
 
   return (
-    <div className="bg-[#F5F2EB] text-[#1E293B] min-h-screen">
+    <div className="bg-[#F0EBE3] text-[#2B2620] min-h-screen">
       
       {/* Hero Section */}
-      <section className="bg-white border-b border-[#E2DED4] py-10 sm:py-14">
+      <section className="bg-[#FAF6EF] border-b border-[#E2DED4] py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C2410C] text-xs font-bold">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C0714A] text-xs font-bold">
                 <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                 Direct Heavy Equipment &amp; Technical Workforce Owner • Est. 1999
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0F2942] leading-tight tracking-tight">
-                Saudi Arabia Industrial <span className="text-[#C2410C]">Fleet &amp; Manpower</span> Catalog
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] leading-tight tracking-tight">
+                Saudi Arabia Industrial <span className="text-[#C0714A]">Fleet &amp; Manpower</span> Catalog
               </h1>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
@@ -36,13 +36,13 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   href="/request-a-quote"
-                  className="px-6 py-3 rounded-xl bg-[#0F2942] hover:bg-[#C2410C] text-white font-bold text-sm shadow-sm transition-all"
+                  className="px-6 py-3 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-sm shadow-sm transition-all"
                 >
                   Request Fast Quote →
                 </Link>
                 <a
                   href="tel:+966568676710"
-                  className="px-6 py-3 rounded-xl bg-[#F5F2EB] hover:bg-[#E2DED4] text-[#0F2942] font-bold text-sm border border-[#E2DED4] transition-all flex items-center gap-2"
+                  className="px-6 py-3 rounded-xl bg-[#F0EBE3] hover:bg-[#E2DED4] text-[#0F172A] font-bold text-sm border border-[#E2DED4] transition-all flex items-center gap-2"
                 >
                   <span>📞</span> +966 56 867 6710
                 </a>
@@ -93,27 +93,27 @@ export default function HomePage() {
       </div>
 
       {/* Corporate Call to Action Section */}
-      <section className="bg-[#0F2942] text-white py-14 border-t border-[#1E3A8A]">
+      <section className="bg-[#FAF6EF] text-[#2B2620] py-14 border-t border-[#E2DED4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <span className="bg-[#FFF7ED] text-[#C2410C] text-xs font-bold px-3 py-1 rounded-full border border-[#FFEDD5] uppercase tracking-wider">
+          <span className="bg-[#FFF7ED] text-[#C0714A] text-xs font-bold px-3 py-1 rounded-full border border-[#FFEDD5] uppercase tracking-wider">
             Al Khobar Head Office Operations Desk
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A]">
             Need Immediate Mobilization for Your Site?
           </h2>
-          <p className="text-slate-300 font-normal text-sm max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 font-normal text-sm max-w-2xl mx-auto leading-relaxed">
             Speak directly with our technical sales engineers in Al Khobar for daily, monthly, or annual lease contracts.
           </p>
           <div className="pt-3 flex flex-wrap justify-center gap-4">
             <Link
               href="/request-a-quote"
-              className="px-7 py-3 rounded-xl bg-[#C2410C] hover:bg-amber-600 text-white font-bold text-sm transition-all shadow-md"
+              className="px-7 py-3 rounded-xl bg-[#C0714A] hover:bg-amber-700 text-white font-bold text-sm transition-all shadow-md"
             >
               Submit Quote Request →
             </Link>
             <Link
               href="/contact"
-              className="px-7 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all"
+              className="px-7 py-3 rounded-xl bg-white hover:bg-[#F0EBE3] text-[#0F172A] font-bold text-sm border border-[#E2DED4] transition-all shadow-xs"
             >
               View Head Office Contact Info
             </Link>

@@ -20,7 +20,7 @@ export default function ManpowerSupplyHubPage() {
   );
 
   return (
-    <div className="py-10 bg-[#F5F2EB] text-[#1E293B] min-h-screen">
+    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -36,37 +36,37 @@ export default function ManpowerSupplyHubPage() {
         />
 
         <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <span className="text-[#C2410C] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
-            Workforce Supply Hub
+          <span className="text-[#C0714A] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+            Certified Trade Workforce Hub
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F2942] mt-2">
-            Certified Manpower Supply Services in Saudi Arabia
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mt-2">
+            Aramco &amp; TUV Certified Manpower Supply in Saudi Arabia
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
-            GulfFast directly supplies SAG-licensed, Saudi Aramco approved, and TUV certified technical personnel for short-term refinery turnarounds and long-term EPC construction projects across Saudi Arabia.
+            GulfFast provides direct supply of certified 6G pipe welders, TUV riggers (Levels 1-3), Aramco heavy equipment operators, scaffolders, and NEBOSH safety officers with valid Iqamas and gate pass clearance.
           </p>
         </div>
 
-        {/* Category Hub with Sidebar Filter */}
+        {/* Interactive Hub with Sidebar Filter */}
         <CategoryHubWithSidebar
-          title="Certified Manpower Trades"
-          subtitle="Filter 6G welders, riggers, operators, safety officers, and technical personnel."
-          badgeText="Aramco & TUV Certified"
+          title="Certified Technical Manpower Trades"
+          subtitle="Filter certified trade workforce by KSA city, certification, and project scope."
+          badgeText="Aramco WQT & TUV Certified"
           categories={jobTitles}
           basePath="/manpower-supply"
         />
 
-        {/* Callout */}
+        {/* Informational Callout */}
         <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-3 shadow-sm">
-          <h2 className="text-xl font-extrabold text-[#0F2942]">Require On-Site WQT Coupon Testing or Rapid Shutdown Mobilization?</h2>
+          <h2 className="text-xl font-extrabold text-[#0F172A]">Need Turnkey Trade Crew Mobilization with Camp &amp; Transport?</h2>
           <p className="text-slate-600 text-xs max-w-2xl mx-auto leading-relaxed">
-            We provide complete manpower logistics including Iqamas, Aramco gate passes, camp housing, site transport, and medical insurance.
+            GulfFast handles full mobilization including Iqama verification, Aramco/SABIC gate passes, trade coupon testing, food, housing camps, and site transport.
           </p>
           <a
             href="tel:+966568676710"
-            className="inline-block px-6 py-2.5 bg-[#0F2942] hover:bg-[#C2410C] text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
+            className="inline-block px-6 py-2.5 bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
           >
-            Call Manpower Desk: +966 56 867 6710
+            Call Direct Workforce Desk: +966 56 867 6710
           </a>
         </div>
 

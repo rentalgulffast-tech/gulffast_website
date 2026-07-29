@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-slate-950 text-slate-100 antialiased font-sans selection:bg-amber-500 selection:text-slate-950 flex flex-col min-h-screen">
+      <body className="bg-[#F0EBE3] text-[#2B2620] antialiased font-sans selection:bg-[#C0714A] selection:text-white flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

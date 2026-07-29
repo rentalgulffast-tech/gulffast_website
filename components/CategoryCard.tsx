@@ -11,7 +11,7 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
     <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 card-hover-lift flex flex-col justify-between group shadow-sm">
       <div>
         <div className="flex items-center justify-between gap-2 mb-3">
-          <span className="text-[10px] font-bold uppercase tracking-wider bg-[#FFF7ED] text-[#C2410C] border border-[#FFEDD5] px-2.5 py-1 rounded-full">
+          <span className="text-[10px] font-bold uppercase tracking-wider bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] px-2.5 py-1 rounded-full">
             Direct Fleet Ready
           </span>
           <span className="text-[11px] text-slate-500 font-semibold">
@@ -19,7 +19,7 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
           </span>
         </div>
 
-        <h3 className="text-xl font-extrabold text-[#0F2942] group-hover:text-[#C2410C] transition-colors mb-2">
+        <h3 className="text-xl font-extrabold text-[#0F172A] group-hover:text-[#C0714A] transition-colors mb-2">
           {category.title}
         </h3>
 
@@ -33,7 +33,7 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
             {category.specs.slice(0, 2).map((spec, i) => (
               <div key={i} className="flex justify-between items-center text-slate-700">
                 <span className="text-slate-500 font-medium">{spec.name}:</span>
-                <span className="font-bold text-[#0F2942] truncate max-w-[60%]">{spec.value}</span>
+                <span className="font-bold text-[#0F172A] truncate max-w-[60%]">{spec.value}</span>
               </div>
             ))}
           </div>
@@ -43,7 +43,7 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
         {category.certifications && category.certifications.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mb-4">
             {category.certifications.slice(0, 3).map((cert, idx) => (
-              <span key={idx} className="bg-[#F5F2EB] text-[#0F2942] text-[10px] px-2.5 py-1 rounded-lg border border-[#E2DED4] font-semibold">
+              <span key={idx} className="bg-[#F0EBE3] text-[#0F172A] text-[10px] px-2.5 py-1 rounded-lg border border-[#E2DED4] font-semibold">
                 ✓ {cert}
               </span>
             ))}
@@ -57,7 +57,7 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
         </span>
         <Link
           href={`${basePath}/${category.slug}`}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0F2942] hover:bg-[#C2410C] text-white font-bold text-xs transition-colors shadow-sm"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs transition-colors shadow-sm"
         >
           View Specs &amp; Quote →
         </Link>

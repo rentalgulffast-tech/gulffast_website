@@ -20,7 +20,7 @@ export default function VehicleRentalHubPage() {
   );
 
   return (
-    <div className="py-10 bg-[#F5F2EB] text-[#1E293B] min-h-screen">
+    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -36,37 +36,37 @@ export default function VehicleRentalHubPage() {
         />
 
         <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <span className="text-[#C2410C] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
-            Transport Logistics Hub
+          <span className="text-[#C0714A] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+            Heavy Transport &amp; Fleet Logistics Hub
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F2942] mt-2">
-            Heavy Vehicle &amp; Transport Fleet in Saudi Arabia
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mt-2">
+            Vehicle Fleet Rental Services in Saudi Arabia
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
-            GulfFast operates a modern heavy logistics transport fleet fitted with IVMS GPS tracking, speed governors, and site access clearance for Saudi Aramco, SABIC, SEC, and major construction projects in KSA.
+            GulfFast operates heavy tractor trucks, flatbeds, lowbeds, fuel tankers, and site crew buses equipped with IVMS GPS tracking and certified professional drivers for Aramco and Kingdom-wide highway operations.
           </p>
         </div>
 
-        {/* Category Hub with Sidebar Filter */}
+        {/* Interactive Hub with Sidebar Filter */}
         <CategoryHubWithSidebar
-          title="Heavy Vehicle Categories"
-          subtitle="Filter heavy transport trucks, lowbeds, trailers, tankers, and crew buses."
-          badgeText="IVMS Equipped"
+          title="Vehicle Fleet Categories"
+          subtitle="Filter heavy transport trucks, flatbeds, lowbeds, and buses by location."
+          badgeText="MOT & IVMS Certified"
           categories={categories}
           basePath="/vehicle-rental"
         />
 
-        {/* Callout */}
+        {/* Informational Callout */}
         <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-3 shadow-sm">
-          <h2 className="text-xl font-extrabold text-[#0F2942]">Require Over-Dimensional Highway Heavy Haulage Permits?</h2>
+          <h2 className="text-xl font-extrabold text-[#0F172A]">Require Over-Dimensional Highway Heavy Haulage Permits?</h2>
           <p className="text-slate-600 text-xs max-w-2xl mx-auto leading-relaxed">
-            Our logistics desk handles Ministry of Transport overload permits, police escort planning, and site gate passes for heavy machinery transport.
+            Our Al Khobar transport dispatch desk manages route surveys, Ministry of Transport highway permits, and escort vehicles for heavy equipment mobilization.
           </p>
           <a
             href="tel:+966568676710"
-            className="inline-block px-6 py-2.5 bg-[#0F2942] hover:bg-[#C2410C] text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
+            className="inline-block px-6 py-2.5 bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
           >
-            Call Transport Desk: +966 56 867 6710
+            Call Direct Transport Desk: +966 56 867 6710
           </a>
         </div>
 

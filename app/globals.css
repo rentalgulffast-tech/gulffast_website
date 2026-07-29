@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F5F2EB;
-  --foreground: #1E293B;
+  --background: #F0EBE3;
+  --foreground: #2B2620;
+  --primary: #0F172A;
+  --accent: #C0714A;
+  --card-background: #FAF6EF;
+}
+
+@theme {
+  --color-background: #F0EBE3;
+  --color-foreground: #2B2620;
+  --color-primary: #0F172A;
+  --color-accent: #C0714A;
+  --color-card-background: #FAF6EF;
 }
 
 body {
@@ -38,7 +49,7 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #c2410c;
+  background-color: #C0714A;
   transition: width 0.2s ease-in-out;
 }
 .nav-link-hover:hover::after {
@@ -51,7 +62,7 @@ body {
 }
 .card-hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 24px -6px rgba(43, 38, 32, 0.1);
 }
 
 /* Custom warm scrollbar */

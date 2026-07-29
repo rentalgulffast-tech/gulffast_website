@@ -72,10 +72,10 @@ export default function DynamicCatalog({
       {/* Header & Main Catalog Control Bar */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#E2DED4]">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#C2410C] bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#C0714A] bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
             Live Inventory Catalog
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F2942] mt-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mt-2">
             Interactive Fleet &amp; Workforce Dispatch
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-1">
@@ -84,14 +84,14 @@ export default function DynamicCatalog({
         </div>
 
         {/* Tab Selector Buttons */}
-        <div className="bg-[#F5F2EB] p-1.5 rounded-2xl border border-[#E2DED4] flex items-center gap-1.5 self-start lg:self-auto">
+        <div className="bg-[#F0EBE3] p-1.5 rounded-2xl border border-[#E2DED4] flex items-center gap-1.5 self-start lg:self-auto">
           <button
             type="button"
             onClick={() => setActiveTab('equipment')}
             className={`px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 ${
               activeTab === 'equipment'
-                ? 'bg-[#0F2942] text-white shadow-md'
-                : 'text-slate-700 hover:text-[#0F2942] hover:bg-white/60'
+                ? 'bg-[#0F172A] text-white shadow-md'
+                : 'text-slate-700 hover:text-[#0F172A] hover:bg-white/60'
             }`}
           >
             <span>🏗️</span>
@@ -103,8 +103,8 @@ export default function DynamicCatalog({
             onClick={() => setActiveTab('vehicle')}
             className={`px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 ${
               activeTab === 'vehicle'
-                ? 'bg-[#0F2942] text-white shadow-md'
-                : 'text-slate-700 hover:text-[#0F2942] hover:bg-white/60'
+                ? 'bg-[#0F172A] text-white shadow-md'
+                : 'text-slate-700 hover:text-[#0F172A] hover:bg-white/60'
             }`}
           >
             <span>🚛</span>
@@ -116,8 +116,8 @@ export default function DynamicCatalog({
             onClick={() => setActiveTab('manpower')}
             className={`px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 ${
               activeTab === 'manpower'
-                ? 'bg-[#0F2942] text-white shadow-md'
-                : 'text-slate-700 hover:text-[#0F2942] hover:bg-white/60'
+                ? 'bg-[#0F172A] text-white shadow-md'
+                : 'text-slate-700 hover:text-[#0F172A] hover:bg-white/60'
             }`}
           >
             <span>👷</span>
@@ -140,7 +140,7 @@ export default function DynamicCatalog({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search generator, 60T crane, 6G welder..."
-              className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl bg-white border border-[#E2DED4] text-[#0F2942] font-medium focus:outline-none focus:ring-2 focus:ring-[#0F2942] shadow-sm"
+              className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl bg-white border border-[#E2DED4] text-[#0F172A] font-medium focus:outline-none focus:ring-2 focus:ring-[#0F172A] shadow-sm"
             />
             <svg className="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -156,7 +156,7 @@ export default function DynamicCatalog({
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white border border-[#E2DED4] text-[#0F2942] font-bold focus:outline-none focus:ring-2 focus:ring-[#0F2942] shadow-sm"
+            className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white border border-[#E2DED4] text-[#0F172A] font-bold focus:outline-none focus:ring-2 focus:ring-[#0F172A] shadow-sm"
           >
             {allCities.map((city) => (
               <option key={city} value={city}>
@@ -171,13 +171,13 @@ export default function DynamicCatalog({
           {(searchQuery || selectedCity !== 'All') ? (
             <button
               onClick={handleResetFilters}
-              className="w-full py-2.5 bg-[#FFF7ED] hover:bg-[#FFEDD5] border border-[#FFEDD5] text-[#C2410C] font-bold text-xs rounded-xl transition-colors mt-5 sm:mt-0"
+              className="w-full py-2.5 bg-[#FFF7ED] hover:bg-[#FFEDD5] border border-[#FFEDD5] text-[#C0714A] font-bold text-xs rounded-xl transition-colors mt-5 sm:mt-0"
             >
               Reset Filters
             </button>
           ) : (
             <div className="text-right text-xs font-semibold text-slate-500 pt-5 sm:pt-0">
-              Showing <span className="font-bold text-[#0F2942]">{filteredItems.length}</span> items
+              Showing <span className="font-bold text-[#0F172A]">{filteredItems.length}</span> items
             </div>
           )}
         </div>
@@ -189,12 +189,12 @@ export default function DynamicCatalog({
         <div className="flex flex-wrap items-center gap-2 mb-6 text-xs">
           <span className="text-slate-500 font-medium">Active Filters:</span>
           {selectedCity !== 'All' && (
-            <span className="bg-[#FFF7ED] text-[#C2410C] border border-[#FFEDD5] px-3 py-1 rounded-full font-bold">
+            <span className="bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] px-3 py-1 rounded-full font-bold">
               City: {selectedCity}
             </span>
           )}
           {searchQuery && (
-            <span className="bg-[#FFF7ED] text-[#C2410C] border border-[#FFEDD5] px-3 py-1 rounded-full font-bold">
+            <span className="bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] px-3 py-1 rounded-full font-bold">
               Query: &quot;{searchQuery}&quot;
             </span>
           )}
@@ -204,16 +204,16 @@ export default function DynamicCatalog({
       {/* Animated Card Grid */}
       {filteredItems.length === 0 ? (
         <div className="bg-[#F9F8F5] border border-[#E2DED4] rounded-2xl p-12 text-center my-6">
-          <div className="w-12 h-12 rounded-full bg-[#F5F2EB] text-[#C2410C] flex items-center justify-center text-xl font-bold mx-auto mb-3">
+          <div className="w-12 h-12 rounded-full bg-[#F0EBE3] text-[#C0714A] flex items-center justify-center text-xl font-bold mx-auto mb-3">
             🔍
           </div>
-          <h4 className="text-lg font-bold text-[#0F2942] mb-1">No Matching Items Found</h4>
+          <h4 className="text-lg font-bold text-[#0F172A] mb-1">No Matching Items Found</h4>
           <p className="text-slate-600 text-xs mb-4 max-w-md mx-auto">
             No items in {activeDataset.label} match your filter parameters. Try clearing your search term or choosing another city.
           </p>
           <button
             onClick={handleResetFilters}
-            className="px-5 py-2.5 bg-[#0F2942] text-white font-bold text-xs rounded-xl hover:bg-[#C2410C] transition-colors shadow-sm"
+            className="px-5 py-2.5 bg-[#0F172A] text-white font-bold text-xs rounded-xl hover:bg-[#C0714A] transition-colors shadow-sm"
           >
             Clear Filters
           </button>

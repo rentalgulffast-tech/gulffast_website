@@ -54,7 +54,7 @@ export default async function TradePage({ params }: PageProps) {
   );
 
   return (
-    <div className="py-10 bg-[#F5F2EB] text-[#1E293B] min-h-screen">
+    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -71,11 +71,11 @@ export default async function TradePage({ params }: PageProps) {
         />
 
         <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C2410C] text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C0714A] text-xs font-bold uppercase tracking-wider mb-3">
             <span>Verified KSA Certified Manpower Supply</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F2942] tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
             {trade.h1}
           </h1>
         </div>
@@ -97,13 +97,13 @@ export default async function TradePage({ params }: PageProps) {
             {/* Certifications List */}
             {trade.certifications && (
               <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-                <h2 className="text-xl font-extrabold text-[#0F2942] mb-4 border-l-4 border-[#C2410C] pl-3">
+                <h2 className="text-xl font-extrabold text-[#0F172A] mb-4 border-l-4 border-[#C0714A] pl-3">
                   Mandatory Qualifications &amp; Site Certifications
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
                   {trade.certifications.map((cert, idx) => (
                     <div key={idx} className="bg-[#F9F8F5] p-3 rounded-xl border border-[#E2DED4] flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#0F2942]"></span>
+                      <span className="w-2 h-2 rounded-full bg-[#0F172A]"></span>
                       <span className="font-semibold">{cert}</span>
                     </div>
                   ))}
@@ -114,7 +114,7 @@ export default async function TradePage({ params }: PageProps) {
             {/* Trade Experience Level */}
             {trade.experienceLevels && (
               <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-                <h2 className="text-xl font-extrabold text-[#0F2942] mb-2 border-l-4 border-[#C2410C] pl-3">
+                <h2 className="text-xl font-extrabold text-[#0F172A] mb-2 border-l-4 border-[#C0714A] pl-3">
                   Experience &amp; Industry Standards
                 </h2>
                 <p className="text-xs text-slate-700 font-medium">
@@ -125,7 +125,7 @@ export default async function TradePage({ params }: PageProps) {
 
             {/* City Coverage Badges */}
             <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-              <h2 className="text-xl font-extrabold text-[#0F2942] mb-3 border-l-4 border-[#C2410C] pl-3">
+              <h2 className="text-xl font-extrabold text-[#0F172A] mb-3 border-l-4 border-[#C0714A] pl-3">
                 Workforce Deployment Cities
               </h2>
               <p className="text-xs text-slate-600 mb-4">
@@ -133,7 +133,7 @@ export default async function TradePage({ params }: PageProps) {
               </p>
               <div className="flex flex-wrap gap-2">
                 {trade.cityCoverage.map((city) => (
-                  <span key={city} className="bg-[#F5F2EB] border border-[#E2DED4] text-[#0F2942] font-bold px-3 py-1.5 rounded-xl text-xs">
+                  <span key={city} className="bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] font-bold px-3 py-1.5 rounded-xl text-xs">
                     📍 {city}
                   </span>
                 ))}
@@ -146,7 +146,7 @@ export default async function TradePage({ params }: PageProps) {
             {/* Related Blog Posts */}
             {relatedBlogPosts.length > 0 && (
               <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 space-y-4 shadow-sm">
-                <h3 className="text-lg font-bold text-[#0F2942] border-l-4 border-[#C2410C] pl-3">
+                <h3 className="text-lg font-bold text-[#0F172A] border-l-4 border-[#C0714A] pl-3">
                   Related Manpower &amp; Compliance Insights
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -155,10 +155,10 @@ export default async function TradePage({ params }: PageProps) {
                       <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
-                        className="bg-[#F9F8F5] p-4 rounded-xl border border-[#E2DED4] hover:border-[#0F2942] transition-colors block group"
+                        className="bg-[#F9F8F5] p-4 rounded-xl border border-[#E2DED4] hover:border-[#0F172A] transition-colors block group"
                       >
-                        <span className="text-[10px] text-[#C2410C] font-bold uppercase">{post.category}</span>
-                        <h4 className="text-xs font-bold text-[#0F2942] group-hover:text-[#C2410C] transition-colors mt-1 line-clamp-2">
+                        <span className="text-[10px] text-[#C0714A] font-bold uppercase">{post.category}</span>
+                        <h4 className="text-xs font-bold text-[#0F172A] group-hover:text-[#C0714A] transition-colors mt-1 line-clamp-2">
                           {post.title}
                         </h4>
                         <span className="text-[11px] text-slate-500 mt-2 block">Read Guide →</span>
@@ -172,13 +172,13 @@ export default async function TradePage({ params }: PageProps) {
             {/* Related Categories Cross-Linking */}
             {relatedTrades.length > 0 && (
               <div className="pt-4 border-t border-[#E2DED4]">
-                <h3 className="text-base font-bold text-[#0F2942] mb-3">Related Certified Manpower Trades</h3>
+                <h3 className="text-base font-bold text-[#0F172A] mb-3">Related Certified Manpower Trades</h3>
                 <div className="flex flex-wrap gap-2">
                   {relatedTrades.map((relTrade) => (
                     <Link
                       key={relTrade.slug}
                       href={`/manpower-supply/${relTrade.slug}`}
-                      className="bg-white hover:bg-[#F5F2EB] border border-[#E2DED4] text-slate-700 hover:text-[#0F2942] px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
+                      className="bg-white hover:bg-[#F0EBE3] border border-[#E2DED4] text-slate-700 hover:text-[#0F172A] px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
                     >
                       {relTrade.title} →
                     </Link>

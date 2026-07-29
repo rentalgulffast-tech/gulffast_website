@@ -103,19 +103,19 @@ export default function ServiceAreaMap() {
     <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 sm:p-8 shadow-sm">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E2DED4] mb-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#C2410C] bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#C0714A] bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
             Kingdom-Wide Fleet Dispatch
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F2942] mt-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mt-2">
             Saudi Arabia Interactive Service Area Map
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-1">
             Hover or tap any operational hub to view GulfFast machinery capacity, logistics routes, and gate pass readiness.
           </p>
         </div>
-        <div className="flex items-center gap-3 bg-[#F5F2EB] px-4 py-2 rounded-xl text-xs shrink-0 border border-[#E2DED4]">
-          <span className="w-3 h-3 rounded-full bg-[#C2410C] animate-pulse"></span>
-          <span className="font-bold text-[#0F2942]">Al Khobar Operational HQ</span>
+        <div className="flex items-center gap-3 bg-[#F0EBE3] px-4 py-2 rounded-xl text-xs shrink-0 border border-[#E2DED4]">
+          <span className="w-3 h-3 rounded-full bg-[#C0714A] animate-pulse"></span>
+          <span className="font-bold text-[#0F172A]">Al Khobar Operational HQ</span>
         </div>
       </div>
 
@@ -136,7 +136,7 @@ export default function ServiceAreaMap() {
             {/* Arabian Gulf Water Highlight */}
             <path
               d="M 370,80 Q 420,120 440,170"
-              stroke="#0F2942"
+              stroke="#0F172A"
               strokeWidth="3"
               strokeLinecap="round"
               opacity="0.3"
@@ -144,7 +144,7 @@ export default function ServiceAreaMap() {
             {/* Red Sea Water Highlight */}
             <path
               d="M 100,140 Q 130,240 180,330"
-              stroke="#C2410C"
+              stroke="#C0714A"
               strokeWidth="3"
               strokeLinecap="round"
               opacity="0.3"
@@ -169,14 +169,14 @@ export default function ServiceAreaMap() {
                 <span className="relative flex items-center justify-center">
                   {/* Outer Pulsing Ring for Active */}
                   {isActive && (
-                    <span className="absolute w-8 h-8 rounded-full bg-[#C2410C]/20 animate-ping"></span>
+                    <span className="absolute w-8 h-8 rounded-full bg-[#C0714A]/20 animate-ping"></span>
                   )}
                   {/* Pin Dot */}
                   <span
                     className={`w-5 h-5 rounded-full flex items-center justify-center border-2 shadow-md transition-transform duration-200 ${
                       isActive
-                        ? 'bg-[#C2410C] border-white scale-125'
-                        : 'bg-[#0F2942] border-white group-hover:scale-110'
+                        ? 'bg-[#C0714A] border-white scale-125'
+                        : 'bg-[#0F172A] border-white group-hover:scale-110'
                     }`}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -187,8 +187,8 @@ export default function ServiceAreaMap() {
                 <span
                   className={`mt-1 inline-block px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap shadow-sm transition-colors ${
                     isActive
-                      ? 'bg-[#C2410C] text-white'
-                      : 'bg-white text-[#0F2942] border border-[#E2DED4]'
+                      ? 'bg-[#C0714A] text-white'
+                      : 'bg-white text-[#0F172A] border border-[#E2DED4]'
                   }`}
                 >
                   {hub.name.split(' ')[0]}
@@ -199,33 +199,33 @@ export default function ServiceAreaMap() {
         </div>
 
         {/* Selected Hub Details Card */}
-        <div className="lg:col-span-5 bg-[#F5F2EB] border border-[#E2DED4] rounded-xl p-6 space-y-4">
+        <div className="lg:col-span-5 bg-[#F0EBE3] border border-[#E2DED4] rounded-xl p-6 space-y-4">
           <div className="flex items-center justify-between border-b border-[#E2DED4] pb-3">
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#C2410C]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#C0714A]">
                 {activeHub.region}
               </span>
-              <h3 className="text-xl font-extrabold text-[#0F2942]">{activeHub.name}</h3>
+              <h3 className="text-xl font-extrabold text-[#0F172A]">{activeHub.name}</h3>
             </div>
-            <span className="w-8 h-8 rounded-lg bg-white border border-[#E2DED4] flex items-center justify-center text-sm font-bold text-[#0F2942]">
+            <span className="w-8 h-8 rounded-lg bg-white border border-[#E2DED4] flex items-center justify-center text-sm font-bold text-[#0F172A]">
               📍
             </span>
           </div>
 
           <div className="space-y-3 text-xs">
             <div>
-              <span className="font-bold text-[#0F2942] block mb-0.5">Hub Role &amp; Operations:</span>
+              <span className="font-bold text-[#0F172A] block mb-0.5">Hub Role &amp; Operations:</span>
               <p className="text-slate-600 leading-relaxed">{activeHub.role}</p>
             </div>
 
             <div className="bg-white p-3 rounded-lg border border-[#E2DED4] space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-slate-500 font-semibold">Mobilization Fleet:</span>
-                <span className="font-bold text-[#0F2942]">{activeHub.equipmentUnits}</span>
+                <span className="font-bold text-[#0F172A]">{activeHub.equipmentUnits}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-slate-500 font-semibold">Site Compliance:</span>
-                <span className="font-bold text-[#C2410C]">{activeHub.gatePassStatus}</span>
+                <span className="font-bold text-[#C0714A]">{activeHub.gatePassStatus}</span>
               </div>
             </div>
 

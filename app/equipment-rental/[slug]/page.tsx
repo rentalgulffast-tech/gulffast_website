@@ -54,7 +54,7 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
   );
 
   return (
-    <div className="py-10 bg-[#F5F2EB] text-[#1E293B] min-h-screen">
+    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -73,11 +73,11 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
 
         {/* Header Block with Exact Keyword H1 */}
         <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C2410C] text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C0714A] text-xs font-bold uppercase tracking-wider mb-3">
             <span>Verified KSA Direct Equipment Supply</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F2942] tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
             {category.h1}
           </h1>
         </div>
@@ -99,14 +99,14 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
 
             {/* Technical Specifications Matrix */}
             <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-              <h2 className="text-xl font-extrabold text-[#0F2942] mb-4 border-l-4 border-[#C2410C] pl-3">
+              <h2 className="text-xl font-extrabold text-[#0F172A] mb-4 border-l-4 border-[#C0714A] pl-3">
                 Technical Specifications &amp; Fleet Capability
               </h2>
               <div className="divide-y divide-[#E2DED4]">
                 {category.specs.map((spec, i) => (
                   <div key={i} className="py-3 flex flex-col sm:flex-row justify-between sm:items-center text-xs gap-1">
                     <span className="font-semibold text-slate-600">{spec.name}:</span>
-                    <span className="font-bold text-[#0F2942] sm:text-right">{spec.value}</span>
+                    <span className="font-bold text-[#0F172A] sm:text-right">{spec.value}</span>
                   </div>
                 ))}
               </div>
@@ -115,13 +115,13 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
             {/* Applications List */}
             {category.applications && (
               <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-                <h2 className="text-xl font-extrabold text-[#0F2942] mb-4 border-l-4 border-[#C2410C] pl-3">
+                <h2 className="text-xl font-extrabold text-[#0F172A] mb-4 border-l-4 border-[#C0714A] pl-3">
                   Typical Project Applications in KSA
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
                   {category.applications.map((app, idx) => (
                     <li key={idx} className="flex items-start gap-2 bg-[#F9F8F5] p-3 rounded-xl border border-[#E2DED4]">
-                      <span className="text-[#C2410C] font-bold">✓</span>
+                      <span className="text-[#C0714A] font-bold">✓</span>
                       <span>{app}</span>
                     </li>
                   ))}
@@ -131,7 +131,7 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
 
             {/* City Coverage Badges */}
             <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-              <h2 className="text-xl font-extrabold text-[#0F2942] mb-3 border-l-4 border-[#C2410C] pl-3">
+              <h2 className="text-xl font-extrabold text-[#0F172A] mb-3 border-l-4 border-[#C0714A] pl-3">
                 Cities &amp; Regional Coverage
               </h2>
               <p className="text-xs text-slate-600 mb-4">
@@ -139,7 +139,7 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
               </p>
               <div className="flex flex-wrap gap-2">
                 {category.cityCoverage.map((city) => (
-                  <span key={city} className="bg-[#F5F2EB] border border-[#E2DED4] text-[#0F2942] font-bold px-3 py-1.5 rounded-xl text-xs">
+                  <span key={city} className="bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] font-bold px-3 py-1.5 rounded-xl text-xs">
                     📍 {city}
                   </span>
                 ))}
@@ -152,7 +152,7 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
             {/* Related Blog Posts */}
             {relatedBlogPosts.length > 0 && (
               <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 space-y-4 shadow-sm">
-                <h3 className="text-lg font-bold text-[#0F2942] border-l-4 border-[#C2410C] pl-3">
+                <h3 className="text-lg font-bold text-[#0F172A] border-l-4 border-[#C0714A] pl-3">
                   Related Compliance Insights &amp; Articles
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -161,10 +161,10 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
                       <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
-                        className="bg-[#F9F8F5] p-4 rounded-xl border border-[#E2DED4] hover:border-[#0F2942] transition-colors block group"
+                        className="bg-[#F9F8F5] p-4 rounded-xl border border-[#E2DED4] hover:border-[#0F172A] transition-colors block group"
                       >
-                        <span className="text-[10px] text-[#C2410C] font-bold uppercase">{post.category}</span>
-                        <h4 className="text-xs font-bold text-[#0F2942] group-hover:text-[#C2410C] transition-colors mt-1 line-clamp-2">
+                        <span className="text-[10px] text-[#C0714A] font-bold uppercase">{post.category}</span>
+                        <h4 className="text-xs font-bold text-[#0F172A] group-hover:text-[#C0714A] transition-colors mt-1 line-clamp-2">
                           {post.title}
                         </h4>
                         <span className="text-[11px] text-slate-500 mt-2 block">Read Guide →</span>
@@ -178,13 +178,13 @@ export default async function EquipmentCategoryPage({ params }: PageProps) {
             {/* Related Categories Cross-Linking */}
             {relatedCategories.length > 0 && (
               <div className="pt-4 border-t border-[#E2DED4]">
-                <h3 className="text-base font-bold text-[#0F2942] mb-3">Related Equipment Categories</h3>
+                <h3 className="text-base font-bold text-[#0F172A] mb-3">Related Equipment Categories</h3>
                 <div className="flex flex-wrap gap-2">
                   {relatedCategories.map((relCat) => (
                     <Link
                       key={relCat.slug}
                       href={`/equipment-rental/${relCat.slug}`}
-                      className="bg-white hover:bg-[#F5F2EB] border border-[#E2DED4] text-slate-700 hover:text-[#0F2942] px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
+                      className="bg-white hover:bg-[#F0EBE3] border border-[#E2DED4] text-slate-700 hover:text-[#0F172A] px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
                     >
                       {relCat.title} →
                     </Link>

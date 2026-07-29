@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const otherPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
-    <div className="py-10 bg-slate-950 text-white min-h-screen">
+    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs
@@ -50,20 +50,20 @@ export default async function BlogPostPage({ params }: PageProps) {
           ]}
         />
 
-        <div className="my-8 border-b border-slate-800 pb-8">
+        <div className="my-8 border-b border-[#E2DED4] pb-8">
           <div className="flex items-center gap-3 text-xs mb-3">
-            <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-1 rounded font-bold uppercase">
+            <span className="bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] px-2.5 py-1 rounded-full font-bold uppercase">
               {post.category}
             </span>
-            <span className="text-slate-400">• {post.readTime}</span>
-            <span className="text-slate-400">• {post.date}</span>
+            <span className="text-slate-500">• {post.readTime}</span>
+            <span className="text-slate-500">• {post.date}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
             {post.title}
           </h1>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed font-medium">
+          <p className="text-slate-600 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed font-medium">
             {post.excerpt}
           </p>
         </div>
@@ -73,12 +73,12 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Main Article Content */}
           <div className="lg:col-span-7 space-y-6">
             
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
-              <div className="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 sm:p-8 shadow-sm">
+              <div className="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
                 {post.content.split('\n\n').map((block, idx) => {
                   if (block.startsWith('### ')) {
                     return (
-                      <h3 key={idx} className="text-xl font-bold text-amber-400 pt-4 pb-1 border-b border-slate-800">
+                      <h3 key={idx} className="text-xl font-bold text-[#0F172A] pt-4 pb-1 border-b border-[#E2DED4]">
                         {block.replace('### ', '')}
                       </h3>
                     );
@@ -88,8 +88,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                     return (
                       <ul key={idx} className="space-y-2 py-2">
                         {items.map((it, i) => (
-                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm bg-slate-950 p-3 rounded-lg border border-slate-800">
-                            <span className="text-amber-500 font-bold">✓</span>
+                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm bg-[#F9F8F5] p-3 rounded-xl border border-[#E2DED4]">
+                            <span className="text-[#C0714A] font-bold">✓</span>
                             <span>{it.replace(/^[0-9]+\.\s+|^-\s+/, '')}</span>
                           </li>
                         ))}
@@ -101,15 +101,15 @@ export default async function BlogPostPage({ params }: PageProps) {
               </div>
 
               {/* Author footer */}
-              <div className="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <div className="mt-8 pt-6 border-t border-[#E2DED4] flex items-center justify-between text-xs text-slate-500">
                 <span>Published by: <strong>{post.author}</strong></span>
                 <span>GulfFast Al Khobar Operations</span>
               </div>
             </div>
 
             {/* Other Insights */}
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
-              <h3 className="text-base font-bold text-white border-l-4 border-amber-500 pl-3">
+            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 space-y-4 shadow-sm">
+              <h3 className="text-base font-bold text-[#0F172A] border-l-4 border-[#C0714A] pl-3">
                 Other Technical Articles
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -117,13 +117,13 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <Link
                     key={op.slug}
                     href={`/blog/${op.slug}`}
-                    className="bg-slate-950 p-4 rounded-lg border border-slate-800 hover:border-amber-500/50 transition-colors block group"
+                    className="bg-[#F9F8F5] p-4 rounded-xl border border-[#E2DED4] hover:border-[#C0714A]/50 transition-colors block group"
                   >
-                    <span className="text-[10px] text-amber-400 font-bold uppercase">{op.category}</span>
-                    <h4 className="text-xs font-bold text-white group-hover:text-amber-400 transition-colors mt-1 line-clamp-2">
+                    <span className="text-[10px] text-[#C0714A] font-bold uppercase">{op.category}</span>
+                    <h4 className="text-xs font-bold text-[#0F172A] group-hover:text-[#C0714A] transition-colors mt-1 line-clamp-2">
                       {op.title}
                     </h4>
-                    <span className="text-[11px] text-slate-400 mt-2 block">Read Article →</span>
+                    <span className="text-[11px] text-slate-500 mt-2 block">Read Article →</span>
                   </Link>
                 ))}
               </div>

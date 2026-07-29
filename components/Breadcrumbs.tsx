@@ -28,13 +28,13 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                 <span className="text-slate-400">/</span>
               )}
               {isLast ? (
-                <span className="font-bold text-[#0F2942] truncate max-w-[200px] sm:max-w-none" aria-current="page">
+                <span className="font-bold text-[#0F172A] truncate max-w-[200px] sm:max-w-none" aria-current="page">
                   {item.name}
                 </span>
               ) : (
                 <Link
                   href={item.url}
-                  className="hover:text-[#C2410C] font-semibold transition-colors text-slate-700"
+                  className="hover:text-[#C0714A] font-semibold transition-colors text-slate-700"
                 >
                   {item.name}
                 </Link>
