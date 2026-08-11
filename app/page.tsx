@@ -3,12 +3,12 @@ import DynamicCatalog from '@/components/DynamicCatalog';
 import ServiceAreaMap from '@/components/ServiceAreaMap';
 import TrustBar from '@/components/TrustBar';
 import QuoteForm from '@/components/QuoteForm';
-import { getEquipmentCategories, getVehicleCategories, getJobTitles } from '@/lib/data';
+import { getEquipmentCategories } from '@/lib/equipment';
+import { getManpowerCategories } from '@/lib/manpower';
 
 export default function HomePage() {
   const equipmentCategories = getEquipmentCategories();
-  const vehicleCategories = getVehicleCategories();
-  const manpowerCategories = getJobTitles();
+  const manpowerCategories = getManpowerCategories();
 
   return (
     <div className="bg-[#F0EBE3] text-[#2B2620] min-h-screen">
@@ -77,7 +77,6 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <DynamicCatalog
           equipmentCategories={equipmentCategories}
-          vehicleCategories={vehicleCategories}
           manpowerCategories={manpowerCategories}
         />
 

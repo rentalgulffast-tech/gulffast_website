@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 interface QuoteFormProps {
   defaultCategory?: string;
-  serviceType?: 'equipment' | 'vehicle' | 'manpower' | 'general';
+  serviceType?: 'equipment' | 'manpower' | 'general';
 }
 
 export default function QuoteForm({ defaultCategory = '', serviceType = 'general' }: QuoteFormProps) {
@@ -130,7 +130,6 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
             className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] font-bold"
           >
             <option value="equipment">Equipment Rental Division</option>
-            <option value="vehicle">Vehicle Rental Division</option>
             <option value="manpower">Manpower Supply Division</option>
           </select>
         </div>

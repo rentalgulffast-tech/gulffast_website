@@ -5,14 +5,14 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'GulfFast Rentals & Manpower | Equipment, Vehicle & Manpower Supply Saudi Arabia',
+    default: 'GulfFast Rentals & Manpower | Equipment & Manpower Supply Saudi Arabia',
     template: '%s | GulfFast Rentals & Manpower KSA'
   },
-  description: 'Direct supplier of certified heavy equipment rental, vehicle rental, and Aramco/TUV certified manpower supply in Saudi Arabia. Operating from Al Khobar since 1999.',
+  description: 'Direct supplier of certified heavy equipment rental and Aramco/TUV certified manpower supply in Saudi Arabia. Operating from Al Khobar since 1999.',
   keywords: [
     'Heavy Equipment Rental Saudi Arabia',
     'Manpower Supply Saudi Arabia',
-    'Vehicle Rental KSA',
+    'Truck Rental KSA',
     'Aramco Certified Welders Al Khobar',
     'Mobile Crane Rental Jubail',
     'Diesel Generator Rental Dammam',
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://gulffast-rentals.com',
     title: 'GulfFast Rentals & Manpower | Equipment & Manpower Supply Saudi Arabia',
-    description: 'Direct supplier of certified heavy equipment rental, vehicle fleet rental, and Aramco/TUV certified manpower supply across Saudi Arabia.',
+    description: 'Direct supplier of certified heavy equipment rental and Aramco/TUV certified manpower supply across Saudi Arabia.',
     siteName: 'GulfFast Rentals & Manpower'
   },
   twitter: {
     card: 'summary_large_image',
     title: 'GulfFast Rentals & Manpower Saudi Arabia',
-    description: 'Direct supplier of heavy equipment rental, vehicle rental, and certified manpower supply in Saudi Arabia.'
+    description: 'Direct supplier of heavy equipment rental and certified manpower supply in Saudi Arabia.'
   },
   robots: {
     index: true,

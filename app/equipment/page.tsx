@@ -1,22 +1,24 @@
+import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import CategoryHubWithSidebar from '@/components/CategoryHubWithSidebar';
-import { getEquipmentCategories } from '@/lib/data';
+import CategoryCard from '@/components/CategoryCard';
+import { getEquipmentCategories, getEquipmentTier1Categories } from '@/lib/equipment';
 import { generateServiceSchema } from '@/lib/seo';
 
 export const metadata = {
   title: 'Heavy Equipment Rental Services in Saudi Arabia | GulfFast',
-  description: 'Certified heavy equipment rental across Saudi Arabia. Rent excavators, bulldozers, generators, mobile cranes, compressors, welders, tower lights, and pumps from Al Khobar.',
+  description: 'Certified heavy equipment rental across Saudi Arabia. Rent excavators, bulldozers, generators, mobile cranes, compressors, welders, tower lights, trucks, buses, and pumps from Al Khobar.',
   alternates: {
-    canonical: '/equipment-rental'
+    canonical: '/equipment'
   }
 };
 
-export default function EquipmentRentalHubPage() {
-  const categories = getEquipmentCategories();
+export default function EquipmentHubPage() {
+  const allCategories = getEquipmentCategories();
+  const featuredCategories = getEquipmentTier1Categories();
   const serviceSchema = generateServiceSchema(
     'Industrial Equipment Rental Services in Saudi Arabia',
-    'Certified heavy construction machinery, power generators, mobile cranes, and compressed air equipment rental in Saudi Arabia.',
-    '/equipment-rental'
+    'Certified heavy construction machinery, power generators, mobile cranes, transport trucks, and compressed air equipment rental in Saudi Arabia.',
+    '/equipment'
   );
 
   return (
@@ -27,11 +29,11 @@ export default function EquipmentRentalHubPage() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <Breadcrumbs
           items={[
             { name: 'Home', url: '/' },
-            { name: 'Equipment Rental Hub', url: '/equipment-rental' }
+            { name: 'Equipment', url: '/equipment' }
           ]}
         />
 
@@ -47,14 +49,43 @@ export default function EquipmentRentalHubPage() {
           </p>
         </div>
 
-        {/* Interactive Hub with Sidebar Filter */}
-        <CategoryHubWithSidebar
-          title="Heavy Equipment Rental Categories"
-          subtitle="Filter by city coverage, target industry, or search equipment specs."
-          badgeText="Aramco Compliant"
-          categories={categories}
-          basePath="/equipment-rental"
-        />
+        {/* Featured Tier 1 categories */}
+        <section className="my-10">
+          <h2 className="text-xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
+            Featured Equipment Categories
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredCategories.map((category) => (
+              <CategoryCard
+                key={category.slug}
+                name={category.name}
+                slug={category.slug}
+                tier={category.tier}
+                basePath="/equipment"
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Full A-Z category list */}
+        <section className="my-10">
+          <h2 className="text-xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
+            All Equipment Categories A–Z
+          </h2>
+          <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-xs">
+              {allCategories.map((category) => (
+                <Link
+                  key={category.slug}
+                  href={`/equipment/${category.slug}`}
+                  className="text-slate-700 hover:text-[#C0714A] font-semibold transition-colors py-1"
+                >
+                  {category.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Informational Callout */}
         <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-3 shadow-sm">

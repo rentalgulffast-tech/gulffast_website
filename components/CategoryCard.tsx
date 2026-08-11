@@ -1,53 +1,31 @@
 import Link from 'next/link';
-import { CategoryItem } from '@/lib/data';
 
 interface CategoryCardProps {
-  category: CategoryItem;
-  basePath: string; // e.g. '/equipment-rental', '/vehicle-rental', '/manpower-supply'
+  name: string;
+  slug: string;
+  tier: 1 | 2;
+  basePath: string; // '/equipment' or '/manpower'
+  meta?: string; // e.g. "10 units in our own fleet" or "19 certified job titles"
 }
 
-export default function CategoryCard({ category, basePath }: CategoryCardProps) {
+export default function CategoryCard({ name, slug, tier, basePath, meta }: CategoryCardProps) {
   return (
     <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 card-hover-lift flex flex-col justify-between group shadow-sm">
       <div>
         <div className="flex items-center justify-between gap-2 mb-3">
           <span className="text-[10px] font-bold uppercase tracking-wider bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] px-2.5 py-1 rounded-full">
-            Direct Fleet Ready
-          </span>
-          <span className="text-[11px] text-slate-500 font-semibold">
-            📍 {category.cityCoverage.length} KSA Cities
+            {tier === 1 ? 'Featured' : 'Direct Fleet Ready'}
           </span>
         </div>
 
         <h3 className="text-xl font-extrabold text-[#0F172A] group-hover:text-[#C0714A] transition-colors mb-2">
-          {category.title}
+          {name}
         </h3>
 
-        <p className="text-slate-600 text-xs leading-relaxed line-clamp-3 mb-4 font-normal">
-          {category.shortSummary}
-        </p>
-
-        {/* Specs highlights */}
-        {category.specs && category.specs.length > 0 && (
-          <div className="bg-[#F9F8F5] rounded-xl p-3 border border-[#E2DED4] space-y-1.5 mb-4 text-[11px]">
-            {category.specs.slice(0, 2).map((spec, i) => (
-              <div key={i} className="flex justify-between items-center text-slate-700">
-                <span className="text-slate-500 font-medium">{spec.name}:</span>
-                <span className="font-bold text-[#0F172A] truncate max-w-[60%]">{spec.value}</span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Certifications highlights for manpower */}
-        {category.certifications && category.certifications.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-4">
-            {category.certifications.slice(0, 3).map((cert, idx) => (
-              <span key={idx} className="bg-[#F0EBE3] text-[#0F172A] text-[10px] px-2.5 py-1 rounded-lg border border-[#E2DED4] font-semibold">
-                ✓ {cert}
-              </span>
-            ))}
-          </div>
+        {meta && (
+          <p className="text-slate-600 text-xs leading-relaxed mb-4 font-normal">
+            {meta}
+          </p>
         )}
       </div>
 
@@ -56,10 +34,10 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
           <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Aramco / SABIC Ready
         </span>
         <Link
-          href={`${basePath}/${category.slug}`}
+          href={`${basePath}/${slug}`}
           className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs transition-colors shadow-sm"
         >
-          View Specs &amp; Quote →
+          View &amp; Quote →
         </Link>
       </div>
     </div>

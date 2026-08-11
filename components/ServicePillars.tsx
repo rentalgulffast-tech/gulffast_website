@@ -7,18 +7,18 @@ export default function ServicePillars() {
         
         <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="text-[#C0714A] font-bold text-xs uppercase tracking-widest bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
-            Our 3 Core Industrial Pillars
+            Our 2 Core Industrial Pillars
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mt-2">
-            Direct Equipment, Transport &amp; Manpower Solutions
+            Direct Equipment &amp; Manpower Solutions
           </h2>
           <p className="text-slate-600 text-sm mt-2 leading-relaxed font-normal">
             Direct supplier operations engineered for oil refineries, chemical plants, mega-infrastructure, and heavy civil construction in Saudi Arabia.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
           {/* Pillar 1: Equipment Rental */}
           <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 card-hover-lift flex flex-col justify-between group shadow-sm">
             <div>
@@ -31,7 +31,7 @@ export default function ServicePillars() {
                 Equipment Rental
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
-                Third-Party Inspected heavy machinery including excavators, dozers, generators (20-1500 kVA), mobile cranes up to 500T, air compressors, and welding racks.
+                Third-Party Inspected heavy machinery including excavators, dozers, generators (20-1500 kVA), mobile cranes up to 500T, air compressors, welding racks, plus heavy transport trucks, trailers, and crew buses.
               </p>
               <ul className="space-y-2 text-xs text-slate-700 mb-6 border-t border-[#E2DED4] pt-4 font-medium">
                 <li className="flex items-center gap-2">
@@ -44,56 +44,23 @@ export default function ServicePillars() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C0714A]"></span>
+                  IVMS GPS-Tracked Transport Fleet &amp; SAG Licensed Drivers
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C0714A]"></span>
                   24/7 Field Maintenance Technicians
                 </li>
               </ul>
             </div>
             <Link
-              href="/equipment-rental"
+              href="/equipment"
               className="inline-flex items-center gap-1.5 text-[#C0714A] font-bold text-xs uppercase tracking-wider hover:underline"
             >
               Explore Equipment Hub →
             </Link>
           </div>
 
-          {/* Pillar 2: Vehicle Rental */}
-          <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 card-hover-lift flex flex-col justify-between group shadow-sm">
-            <div>
-              <div className="w-12 h-12 rounded-xl bg-[#FFF7ED] border border-[#FFEDD5] flex items-center justify-center text-[#C0714A] mb-6">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-extrabold text-[#0F172A] mb-3 group-hover:text-[#C0714A] transition-colors">
-                Vehicle Rental
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
-                Heavy transport tractor trucks (6x4), 40ft/50ft flatbeds, 100T lowbeds, diesel/water tankers, 50-seat crew AC buses, and 4x4 double cabin pickups.
-              </p>
-              <ul className="space-y-2 text-xs text-slate-700 mb-6 border-t border-[#E2DED4] pt-4 font-medium">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C0714A]"></span>
-                  IVMS GPS Telemetry &amp; Speed Governors
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C0714A]"></span>
-                  SAG Licensed Professional Drivers
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C0714A]"></span>
-                  Over-Dimensional Load Highway Permits
-                </li>
-              </ul>
-            </div>
-            <Link
-              href="/vehicle-rental"
-              className="inline-flex items-center gap-1.5 text-[#C0714A] font-bold text-xs uppercase tracking-wider hover:underline"
-            >
-              Explore Vehicle Hub →
-            </Link>
-          </div>
-
-          {/* Pillar 3: Manpower Supply */}
+          {/* Pillar 2: Manpower Supply */}
           <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 card-hover-lift flex flex-col justify-between group shadow-sm">
             <div>
               <div className="w-12 h-12 rounded-xl bg-[#FFF7ED] border border-[#FFEDD5] flex items-center justify-center text-[#C0714A] mb-6">
@@ -123,7 +90,7 @@ export default function ServicePillars() {
               </ul>
             </div>
             <Link
-              href="/manpower-supply"
+              href="/manpower"
               className="inline-flex items-center gap-1.5 text-[#C0714A] font-bold text-xs uppercase tracking-wider hover:underline"
             >
               Explore Manpower Hub →

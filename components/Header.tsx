@@ -10,12 +10,12 @@ export default function Header() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Home / Catalog', href: '/' },
-    { name: 'Equipment Rental', href: '/equipment-rental' },
-    { name: 'Vehicle Rental', href: '/vehicle-rental' },
-    { name: 'Manpower Supply', href: '/manpower-supply' },
+    { name: 'Equipment', href: '/equipment' },
+    { name: 'Manpower', href: '/manpower' },
     { name: 'Industries', href: '/industries' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];

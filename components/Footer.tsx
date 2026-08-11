@@ -94,38 +94,33 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-xs text-slate-600">
               <li>
-                <Link href="/equipment-rental/heavy-equipment" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/excavators" className="hover:text-[#0F172A] transition-colors">
                   Heavy Construction Equipment
                 </Link>
               </li>
               <li>
-                <Link href="/equipment-rental/generators-power" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/generators" className="hover:text-[#0F172A] transition-colors">
                   Diesel Power Generators
                 </Link>
               </li>
               <li>
-                <Link href="/equipment-rental/lifting-cranes" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/cranes" className="hover:text-[#0F172A] transition-colors">
                   Mobile Cranes &amp; Lifting
                 </Link>
               </li>
               <li>
-                <Link href="/equipment-rental/air-compressors" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/air-compressors" className="hover:text-[#0F172A] transition-colors">
                   Air Compressors
                 </Link>
               </li>
               <li>
-                <Link href="/equipment-rental/welding-machines" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/welding-sets" className="hover:text-[#0F172A] transition-colors">
                   Multi-Process Welders
                 </Link>
               </li>
               <li>
-                <Link href="/equipment-rental/tower-lights" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/light-towers" className="hover:text-[#0F172A] transition-colors">
                   Mobile Lighting Towers
-                </Link>
-              </li>
-              <li>
-                <Link href="/equipment-rental/pumps-dewatering" className="hover:text-[#0F172A] transition-colors">
-                  Dewatering Pumps
                 </Link>
               </li>
             </ul>
@@ -134,41 +129,41 @@ export default function Footer() {
           {/* Column 3: Vehicles & Manpower */}
           <div className="space-y-3">
             <h3 className="text-[#0F172A] font-bold text-sm tracking-wider uppercase border-l-2 border-[#C0714A] pl-2">
-              Vehicles &amp; Manpower
+              Transport &amp; Manpower
             </h3>
             <ul className="space-y-2 text-xs text-slate-600">
               <li>
-                <Link href="/vehicle-rental/heavy-transport-trucks" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/trucks" className="hover:text-[#0F172A] transition-colors">
                   Heavy Tractor Trucks
                 </Link>
               </li>
               <li>
-                <Link href="/vehicle-rental/flatbed-trailers" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/equipment/flatbed-trailers" className="hover:text-[#0F172A] transition-colors">
                   Flatbed Trailers
                 </Link>
               </li>
               <li>
-                <Link href="/vehicle-rental/lowbed-trailers" className="hover:text-[#0F172A] transition-colors">
-                  Lowbed Trailers
+                <Link href="/equipment/buses" className="hover:text-[#0F172A] transition-colors">
+                  Buses &amp; Crew Transport
                 </Link>
               </li>
               <li>
-                <Link href="/manpower-supply/welders-6g-tig-arc" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/manpower/welding-and-fabrication" className="hover:text-[#0F172A] transition-colors">
                   Certified 6G Welders
                 </Link>
               </li>
               <li>
-                <Link href="/manpower-supply/riggers-tuv-certified" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/manpower/rigging-and-scaffolding" className="hover:text-[#0F172A] transition-colors">
                   TUV Riggers (Level 1-3)
                 </Link>
               </li>
               <li>
-                <Link href="/manpower-supply/heavy-equipment-operators" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/manpower/heavy-equipment-operators" className="hover:text-[#0F172A] transition-colors">
                   Aramco Operators
                 </Link>
               </li>
               <li>
-                <Link href="/manpower-supply/safety-officers-nebosh" className="hover:text-[#0F172A] transition-colors">
+                <Link href="/manpower/safety-and-hse" className="hover:text-[#0F172A] transition-colors">
                   NEBOSH Safety Officers
                 </Link>
               </li>
@@ -212,6 +207,10 @@ export default function Footer() {
             <span>Al Khobar Headquarters, Saudi Arabia</span>
             <span>•</span>
             <Link href="/faq" className="hover:text-[#0F172A] transition-colors">Safety &amp; Compliance</Link>
+            <span>•</span>
+            <Link href="/legal/privacy-policy" className="hover:text-[#0F172A] transition-colors">Privacy Policy</Link>
+            <span>•</span>
+            <Link href="/legal/terms-and-conditions" className="hover:text-[#0F172A] transition-colors">Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>

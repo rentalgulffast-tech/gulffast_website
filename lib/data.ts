@@ -1,24 +1,3 @@
-import equipmentCategoriesData from '../data/equipment-categories.json';
-import vehicleCategoriesData from '../data/vehicle-categories.json';
-import jobTitlesData from '../data/job-titles.json';
-
-export interface CategoryItem {
-  id: string;
-  slug: string;
-  title: string;
-  h1: string;
-  shortSummary: string;
-  description: string;
-  specs: Array<{ name: string; value: string }>;
-  applications?: string[];
-  certifications?: string[];
-  experienceLevels?: string;
-  cityCoverage: string[];
-  faq: Array<{ question: string; answer: string }>;
-  relatedSlugs: string[];
-  blogPostSlugs: string[];
-}
-
 export interface BlogPost {
   slug: string;
   title: string;
@@ -28,30 +7,6 @@ export interface BlogPost {
   category: string;
   author: string;
   content: string;
-}
-
-export function getEquipmentCategories(): CategoryItem[] {
-  return equipmentCategoriesData as CategoryItem[];
-}
-
-export function getEquipmentCategoryBySlug(slug: string): CategoryItem | undefined {
-  return (equipmentCategoriesData as CategoryItem[]).find((item) => item.slug === slug);
-}
-
-export function getVehicleCategories(): CategoryItem[] {
-  return vehicleCategoriesData as CategoryItem[];
-}
-
-export function getVehicleCategoryBySlug(slug: string): CategoryItem | undefined {
-  return (vehicleCategoriesData as CategoryItem[]).find((item) => item.slug === slug);
-}
-
-export function getJobTitles(): CategoryItem[] {
-  return jobTitlesData as CategoryItem[];
-}
-
-export function getJobTitleBySlug(slug: string): CategoryItem | undefined {
-  return (jobTitlesData as CategoryItem[]).find((item) => item.slug === slug);
 }
 
 // Blog Posts Data
@@ -187,6 +142,104 @@ Earthmoving conditions in Saudi Arabia range from loose desert sand in the Rub' 
 
 ### Desert Bucket & Track Modifications
 For abrasive desert rock, excavators must be equipped with heavy-duty rock buckets (HDR), tungsten carbide tooth tips, bottom wear strips, and heavy track guide guards to prevent track derailment in soft sand.
+`
+  },
+  {
+    slug: 'crane-rental-cost-saudi-arabia',
+    title: 'How Much Does Crane Rental Cost in Saudi Arabia?',
+    excerpt: 'A guide to the factors that drive mobile crane rental pricing in Saudi Arabia, from load capacity and lift duration to Aramco site certification requirements.',
+    date: '2026-08-01',
+    readTime: '4 min read',
+    category: 'Equipment Selection',
+    author: 'GulfFast Fleet Operations',
+    content: `
+Crane rental pricing in Saudi Arabia varies based on load capacity, lift duration, site location, and whether the crane is supplied bare or with a certified operator. This guide will cover the key cost drivers in detail.
+
+Full pricing breakdown coming soon. Contact our Al Khobar equipment desk directly for a same-day quote on mobile crane rental.
+`
+  },
+  {
+    slug: 'hire-certified-riggers-al-khobar',
+    title: 'How to Hire Certified Riggers in Al Khobar',
+    excerpt: 'What to check before hiring riggers for lifting operations in Al Khobar, including TUV and Aramco Level 1-3 certification requirements.',
+    date: '2026-07-20',
+    readTime: '4 min read',
+    category: 'Manpower Supply',
+    author: 'GulfFast HR & Compliance',
+    content: `
+Hiring certified riggers in Al Khobar requires verifying TUV or Aramco Level 1, 2, or 3 rigger certification, valid Iqama status, and site-specific safety induction records before mobilization.
+
+Full hiring checklist coming soon. Contact our Al Khobar workforce desk directly to discuss certified rigger availability.
+`
+  },
+  {
+    slug: 'equipment-rental-vs-buying-ksa',
+    title: 'Equipment Rental vs. Buying: What\'s Right for Your Project in KSA?',
+    excerpt: 'Comparing the cost, flexibility, and maintenance trade-offs between renting and buying heavy equipment for projects in Saudi Arabia.',
+    date: '2026-07-08',
+    readTime: '5 min read',
+    category: 'Equipment Selection',
+    author: 'GulfFast Fleet Operations',
+    content: `
+Deciding between renting and buying heavy equipment depends on project duration, utilization rate, maintenance overhead, and capital availability. This guide will walk through the decision factors relevant to KSA project sites.
+
+Full comparison coming soon. Contact our Al Khobar equipment desk to discuss bare-rental versus long-term lease options.
+`
+  },
+  {
+    slug: 'source-aramco-approved-welders-saudi-arabia',
+    title: 'How to Source Aramco-Approved Welders in Saudi Arabia',
+    excerpt: 'What Aramco-approved welder certification actually requires, from WQT records to radiographic test reports, and how to verify it before mobilization.',
+    date: '2026-06-25',
+    readTime: '4 min read',
+    category: 'Manpower Supply',
+    author: 'GulfFast HR & Compliance',
+    content: `
+Sourcing Aramco-approved welders requires verifying Welder Qualification Test (WQT) records under ASME Section IX, along with radiographic test (RT) reports matching the welder's certified pipe wall thickness and metallurgy range.
+
+Full sourcing guide coming soon. Contact our Al Khobar workforce desk directly to discuss certified welder availability.
+`
+  },
+  {
+    slug: 'generator-rental-guide-construction-sites-saudi-arabia',
+    title: 'Generator Rental Guide for Construction Sites in Saudi Arabia',
+    excerpt: 'How to size and select a diesel generator for a Saudi Arabia construction site, accounting for ambient temperature de-rating and fuel logistics.',
+    date: '2026-06-10',
+    readTime: '5 min read',
+    category: 'Power Engineering',
+    author: 'GulfFast Power Systems Team',
+    content: `
+Selecting the right generator for a construction site in Saudi Arabia means accounting for ambient temperature de-rating, load profile, and fuel tank autonomy for continuous multi-shift operation.
+
+Full sizing guide coming soon. Contact our Al Khobar equipment desk directly to discuss generator availability and site power planning.
+`
+  },
+  {
+    slug: 'documents-needed-rent-heavy-equipment-saudi-arabia',
+    title: 'What Documents Are Needed to Rent Heavy Equipment in Saudi Arabia?',
+    excerpt: 'The commercial registration, VAT, and site access documentation typically required to rent heavy equipment from a direct supplier in Saudi Arabia.',
+    date: '2026-05-28',
+    readTime: '3 min read',
+    category: 'Equipment Safety',
+    author: 'GulfFast Technical Safety Team',
+    content: `
+Renting heavy equipment in Saudi Arabia typically requires your company's Commercial Registration (CR), VAT certificate, and, for Aramco or SABIC sites, gate pass sponsorship documentation.
+
+Full documentation checklist coming soon. Contact our Al Khobar equipment desk directly to confirm requirements for your project site.
+`
+  },
+  {
+    slug: 'manpower-supply-vs-manpower-agencies',
+    title: 'Manpower Supply vs. Manpower Agencies: What\'s the Difference?',
+    excerpt: 'Why GulfFast operates as a direct manpower supplier rather than a staffing agency, and what that means for Iqama sponsorship and site accountability.',
+    date: '2026-05-15',
+    readTime: '4 min read',
+    category: 'Manpower Supply',
+    author: 'GulfFast HR & Compliance',
+    content: `
+A manpower agency places workers employed by a third party, while a direct manpower supplier like GulfFast directly recruits, sponsors, and employs its workforce, giving clients a single accountable party for site conduct and compliance.
+
+Full comparison coming soon. Contact our Al Khobar workforce desk directly to discuss your project's manpower requirements.
 `
   }
 ];

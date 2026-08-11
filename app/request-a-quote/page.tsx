@@ -3,7 +3,7 @@ import QuoteForm from '@/components/QuoteForm';
 
 export const metadata = {
   title: 'Request a Quote | Heavy Equipment, Fleet & Manpower | GulfFast KSA',
-  description: 'Submit a quote request for heavy equipment rental, vehicle transport fleets, and certified manpower supply in Saudi Arabia. Fast response within 2 hours.',
+  description: 'Submit a quote request for heavy equipment rental and certified manpower supply in Saudi Arabia. Fast response within 2 hours.',
   alternates: {
     canonical: '/request-a-quote'
   }
