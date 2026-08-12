@@ -1,9 +1,16 @@
 import { notFound } from 'next/navigation';
-import { getManpowerLandingPages, getManpowerLandingPageBySlug } from '@/lib/manpower';
+import Link from 'next/link';
+import {
+  getManpowerLandingPages,
+  getManpowerLandingPageBySlug,
+  getRelatedManpowerCategories,
+  getManpowerCategoryFaqs
+} from '@/lib/manpower';
 import { cities } from '@/lib/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CategoryHero from '@/components/CategoryHero';
 import JobTitleGrid from '@/components/JobTitleGrid';
+import FaqAccordion from '@/components/FaqAccordion';
 import QuoteForm from '@/components/QuoteForm';
 import { generateServiceSchema } from '@/lib/seo';
 
@@ -45,6 +52,8 @@ export default async function ManpowerCityPage({ params }: PageProps) {
   }
 
   const { category, keyword } = landingPage;
+  const relatedCategories = getRelatedManpowerCategories(category, 4);
+  const categoryFaqs = getManpowerCategoryFaqs(category);
 
   const serviceSchema = generateServiceSchema(
     `${keyword} in ${city.name}`,
@@ -74,12 +83,48 @@ export default async function ManpowerCityPage({ params }: PageProps) {
           badgeText={`Verified ${city.name} Certified Manpower Supply`}
           h1={`${keyword} in ${city.name}`}
           intro={`GulfFast mobilizes ${keyword.toLowerCase()} crews to job sites in and around ${city.name} from our Al Khobar operations hub, with Aramco and TUV certification.`}
+          ctaLabel="Request Manpower"
+          ctaHref="/request-a-quote?need=manpower"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 my-10">
 
           <div className="lg:col-span-7 space-y-8">
+            {/* Local coverage confirmation */}
+            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
+              <h2 className="text-xl font-extrabold text-[#0F172A] mb-2 border-l-4 border-[#C0714A] pl-3">
+                Local Coverage Confirmation
+              </h2>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                {`GulfFast serves ${category.name.toLowerCase()} manpower supply in ${city.name} and surrounding areas, mobilized directly from our Al Khobar operations hub.`}
+              </p>
+            </div>
+
             <JobTitleGrid jobTitles={category.jobTitles} />
+
+            {/* Related categories */}
+            <div className="pt-2">
+              <h3 className="text-base font-bold text-[#0F172A] mb-3">Related Manpower Categories</h3>
+              <div className="flex flex-wrap gap-2">
+                {relatedCategories.map((relCat) => (
+                  <Link
+                    key={relCat.slug}
+                    href={`/manpower/${relCat.slug}`}
+                    className="bg-white hover:bg-[#F0EBE3] border border-[#E2DED4] text-slate-700 hover:text-[#0F172A] px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
+                  >
+                    {relCat.name} →
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* City-flavored FAQ snippet */}
+            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
+              <FaqAccordion faqs={categoryFaqs} title={`FAQ — ${keyword} in ${city.name}`} injectSchema={false} />
+              <Link href="/faq" className="inline-block text-xs font-bold text-[#C0714A] hover:underline">
+                View Full FAQ →
+              </Link>
+            </div>
           </div>
 
           <div className="lg:col-span-5">

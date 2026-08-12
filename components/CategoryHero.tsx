@@ -33,7 +33,7 @@ export default function CategoryHero({
         href={ctaHref}
         className="inline-flex items-center gap-1.5 mt-4 px-6 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs sm:text-sm transition-colors shadow-sm"
       >
-        {ctaLabel} →
+        {`${ctaLabel} →`}
       </Link>
     </div>
   );

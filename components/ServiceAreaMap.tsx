@@ -1,100 +1,28 @@
 'use client';
 
 import { useState } from 'react';
+import { cities, City } from '@/lib/cities';
 
-interface CityHub {
-  id: string;
-  name: string;
+interface CityHub extends City {
   region: string;
   role: string;
-  equipmentUnits: string;
-  gatePassStatus: string;
   coords: { x: number; y: number }; // SVG percentage coordinates
 }
 
-const CITY_HUBS: CityHub[] = [
-  {
-    id: 'khobar',
-    name: 'Al Khobar (Headquarters)',
-    region: 'Eastern Province',
-    role: 'Main Corporate HQ & Primary Operations Dispatch Yard',
-    equipmentUnits: '450+ Active Fleet Units',
-    gatePassStatus: 'Aramco & SABIC Vendor Approved',
-    coords: { x: 74, y: 38 }
-  },
-  {
-    id: 'jubail',
-    name: 'Jubail Industrial City',
-    region: 'Eastern Province',
-    role: 'Petrochemical Shutdown & Refinery Equipment Hub',
-    equipmentUnits: '250+ Generators & Welding Racks',
-    gatePassStatus: 'Sadara & Marafiq Green-Tag Certified',
-    coords: { x: 73, y: 32 }
-  },
-  {
-    id: 'dammam',
-    name: 'Dammam Port & Logistics',
-    region: 'Eastern Province',
-    role: 'Heavy Machinery Transport & Maintenance Depot',
-    equipmentUnits: '120+ Heavy Trucks & Lowbeds',
-    gatePassStatus: 'MOT Highway Permit Clearance',
-    coords: { x: 72, y: 40 }
-  },
-  {
-    id: 'riyadh',
-    name: 'Riyadh Central Hub',
-    region: 'Central Province',
-    role: 'Commercial Construction & Infrastructure Equipment Yard',
-    equipmentUnits: '180+ Earthmoving Machinery',
-    gatePassStatus: 'Riyadh Metro & DGDA Compliant',
-    coords: { x: 55, y: 48 }
-  },
-  {
-    id: 'neom',
-    name: 'NEOM & Tabuk Region',
-    region: 'Northwestern KSA',
-    role: 'Giga-Project Mobilization Base & Off-Grid Power Support',
-    equipmentUnits: '150+ Heavy Dozers & Crew Buses',
-    gatePassStatus: 'NEOM Logistics Pass Registered',
-    coords: { x: 20, y: 22 }
-  },
-  {
-    id: 'yanbu',
-    name: 'Yanbu Industrial City',
-    region: 'Western Province',
-    role: 'Red Sea Petrochemical & Refinery Support Hub',
-    equipmentUnits: '90+ High-Pressure Compressors',
-    gatePassStatus: 'Royal Commission Approved',
-    coords: { x: 28, y: 48 }
-  },
-  {
-    id: 'jeddah',
-    name: 'Jeddah Operations Hub',
-    region: 'Western Province',
-    role: 'Commercial Transport & Workforce Dispatch',
-    equipmentUnits: '110+ Transport Buses & Cranes',
-    gatePassStatus: 'Jeddah Port Clearance',
-    coords: { x: 30, y: 58 }
-  },
-  {
-    id: 'turaif',
-    name: 'Wa\'ad Al Shamal (Turaif)',
-    region: 'Northern Borders',
-    role: 'Mining & Phosphate Heavy Equipment Support',
-    equipmentUnits: '60+ Heavy Excavators',
-    gatePassStatus: 'Ma\'aden Project Compliant',
-    coords: { x: 32, y: 12 }
-  },
-  {
-    id: 'jizan',
-    name: 'Jizan Economic City',
-    region: 'Southern Province',
-    role: 'Refinery & Marine Construction Fleet Base',
-    equipmentUnits: '75+ Power Generators & Welders',
-    gatePassStatus: 'Jizan Refinery Approved',
-    coords: { x: 42, y: 82 }
-  }
-];
+const CITY_META: Record<string, { region: string; role: string; coords: { x: number; y: number } }> = {
+  'al-khobar': { region: 'Eastern Province', role: 'Headquarters & primary operations dispatch hub', coords: { x: 74, y: 38 } },
+  'dammam': { region: 'Eastern Province', role: 'Heavy machinery transport & port logistics coverage', coords: { x: 72, y: 40 } },
+  'dhahran': { region: 'Eastern Province', role: 'Aramco camp-adjacent equipment & manpower dispatch', coords: { x: 73, y: 39 } },
+  'jubail': { region: 'Eastern Province', role: 'Petrochemical & industrial city equipment coverage', coords: { x: 73, y: 32 } },
+  'riyadh': { region: 'Central Province', role: 'Commercial construction & infrastructure coverage', coords: { x: 55, y: 48 } },
+  'jeddah': { region: 'Western Province', role: 'Commercial transport & workforce dispatch', coords: { x: 30, y: 58 } },
+  'yanbu': { region: 'Western Province', role: 'Red Sea industrial city equipment coverage', coords: { x: 28, y: 48 } }
+};
+
+const CITY_HUBS: CityHub[] = cities.map((city) => ({
+  ...city,
+  ...CITY_META[city.slug]
+}));
 
 export default function ServiceAreaMap() {
   const [activeHub, setActiveHub] = useState<CityHub>(CITY_HUBS[0]);
@@ -107,10 +35,10 @@ export default function ServiceAreaMap() {
             Kingdom-Wide Fleet Dispatch
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mt-2">
-            Saudi Arabia Interactive Service Area Map
+            Where We Work
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-1">
-            Hover or tap any operational hub to view GulfFast machinery capacity, logistics routes, and gate pass readiness.
+            {`GulfFast dispatches equipment and manpower directly to ${CITY_HUBS.length} cities across Saudi Arabia. Hover or tap a city to see its coverage focus.`}
           </p>
         </div>
         <div className="flex items-center gap-3 bg-[#F0EBE3] px-4 py-2 rounded-xl text-xs shrink-0 border border-[#E2DED4]">
@@ -122,10 +50,9 @@ export default function ServiceAreaMap() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* SVG Interactive Map Container */}
         <div className="lg:col-span-7 relative bg-[#F9F8F5] rounded-xl border border-[#E2DED4] p-4 sm:p-8 min-h-[340px] flex items-center justify-center overflow-hidden">
-          
+
           {/* Stylized KSA Map Outline SVG */}
           <svg className="w-full h-auto max-h-[320px] text-[#E2DED4]" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Stylized Saudi Peninsula Shape */}
             <path
               d="M 120,40 L 220,30 L 320,60 L 400,120 L 420,180 L 380,220 L 320,240 L 280,320 L 220,360 L 170,300 L 130,220 L 110,160 L 120,40 Z"
               fill="#EFECE6"
@@ -133,7 +60,6 @@ export default function ServiceAreaMap() {
               strokeWidth="2"
               strokeDasharray="4 4"
             />
-            {/* Arabian Gulf Water Highlight */}
             <path
               d="M 370,80 Q 420,120 440,170"
               stroke="#0F172A"
@@ -141,7 +67,6 @@ export default function ServiceAreaMap() {
               strokeLinecap="round"
               opacity="0.3"
             />
-            {/* Red Sea Water Highlight */}
             <path
               d="M 100,140 Q 130,240 180,330"
               stroke="#C0714A"
@@ -149,7 +74,6 @@ export default function ServiceAreaMap() {
               strokeLinecap="round"
               opacity="0.3"
             />
-            {/* Regional Grid Lines */}
             <line x1="50" y1="100" x2="450" y2="100" stroke="#E2DED4" strokeWidth="1" />
             <line x1="50" y1="200" x2="450" y2="200" stroke="#E2DED4" strokeWidth="1" />
             <line x1="50" y1="300" x2="450" y2="300" stroke="#E2DED4" strokeWidth="1" />
@@ -157,21 +81,19 @@ export default function ServiceAreaMap() {
 
           {/* Interactive City Nodes overlay */}
           {CITY_HUBS.map((hub) => {
-            const isActive = activeHub.id === hub.id;
+            const isActive = activeHub.slug === hub.slug;
             return (
               <button
-                key={hub.id}
+                key={hub.slug}
                 onClick={() => setActiveHub(hub)}
                 onMouseEnter={() => setActiveHub(hub)}
                 style={{ left: `${hub.coords.x}%`, top: `${hub.coords.y}%` }}
-                className={`absolute transform -translate-x-1/2 -translate-y-1/2 group transition-all duration-200 focus:outline-none`}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 group transition-all duration-200 focus:outline-none"
               >
                 <span className="relative flex items-center justify-center">
-                  {/* Outer Pulsing Ring for Active */}
                   {isActive && (
                     <span className="absolute w-8 h-8 rounded-full bg-[#C0714A]/20 animate-ping"></span>
                   )}
-                  {/* Pin Dot */}
                   <span
                     className={`w-5 h-5 rounded-full flex items-center justify-center border-2 shadow-md transition-transform duration-200 ${
                       isActive
@@ -183,7 +105,6 @@ export default function ServiceAreaMap() {
                   </span>
                 </span>
 
-                {/* City Label Badge */}
                 <span
                   className={`mt-1 inline-block px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap shadow-sm transition-colors ${
                     isActive
@@ -191,7 +112,7 @@ export default function ServiceAreaMap() {
                       : 'bg-white text-[#0F172A] border border-[#E2DED4]'
                   }`}
                 >
-                  {hub.name.split(' ')[0]}
+                  {hub.name}
                 </span>
               </button>
             );
@@ -214,23 +135,12 @@ export default function ServiceAreaMap() {
 
           <div className="space-y-3 text-xs">
             <div>
-              <span className="font-bold text-[#0F172A] block mb-0.5">Hub Role &amp; Operations:</span>
+              <span className="font-bold text-[#0F172A] block mb-0.5">Coverage Focus:</span>
               <p className="text-slate-600 leading-relaxed">{activeHub.role}</p>
             </div>
 
-            <div className="bg-white p-3 rounded-lg border border-[#E2DED4] space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-slate-500 font-semibold">Mobilization Fleet:</span>
-                <span className="font-bold text-[#0F172A]">{activeHub.equipmentUnits}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-slate-500 font-semibold">Site Compliance:</span>
-                <span className="font-bold text-[#C0714A]">{activeHub.gatePassStatus}</span>
-              </div>
-            </div>
-
             <p className="text-[11px] text-slate-500 italic">
-              * GulfFast maintains dedicated transport trailers operating daily routes from Al Khobar HQ to all major KSA industrial zones.
+              {`* GulfFast dispatches equipment and manpower from our Al Khobar operations hub to job sites in and around ${activeHub.name} and surrounding areas.`}
             </p>
           </div>
         </div>

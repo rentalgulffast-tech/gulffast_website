@@ -1,5 +1,7 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Link from 'next/link';
+import WhyChooseUsChecklist from '@/components/WhyChooseUsChecklist';
+import CertificationsBadges from '@/components/CertificationsBadges';
 
 export const metadata = {
   title: 'About GulfFast | Direct Industrial Equipment & Manpower Supplier KSA',
@@ -85,6 +87,22 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Why Choose GulfFast */}
+        <div className="my-8">
+          <h2 className="text-xl font-extrabold text-[#0F172A] mb-4 border-l-4 border-[#C0714A] pl-3">
+            Why Choose GulfFast
+          </h2>
+          <WhyChooseUsChecklist />
+        </div>
+
+        {/* Certifications & Compliance */}
+        <div className="my-8">
+          <h2 className="text-xl font-extrabold text-[#0F172A] mb-4 border-l-4 border-[#C0714A] pl-3">
+            Certifications &amp; Compliance
+          </h2>
+          <CertificationsBadges />
+        </div>
+
         {/* Direct Contact Callout */}
         <div className="bg-[#FAF6EF] text-[#2B2620] border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-4 shadow-sm">
           <h2 className="text-2xl font-extrabold text-[#0F172A]">Ready to Mobilize Fleet or Technical Crews?</h2>
@@ -96,7 +114,7 @@ export default function AboutPage() {
               href="/request-a-quote"
               className="px-6 py-2.5 bg-[#C0714A] hover:bg-amber-700 text-white font-bold text-xs rounded-xl transition-colors"
             >
-              Request Quote →
+              Request a Quote →
             </Link>
             <Link
               href="/contact"

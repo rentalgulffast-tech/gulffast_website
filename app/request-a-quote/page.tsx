@@ -2,18 +2,25 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import QuoteForm from '@/components/QuoteForm';
 
 export const metadata = {
-  title: 'Request a Quote | Heavy Equipment, Fleet & Manpower | GulfFast KSA',
+  title: 'Request a Quote | Heavy Equipment & Manpower | GulfFast KSA',
   description: 'Submit a quote request for heavy equipment rental and certified manpower supply in Saudi Arabia. Fast response within 2 hours.',
   alternates: {
     canonical: '/request-a-quote'
   }
 };
 
-export default function RequestQuotePage() {
+interface PageProps {
+  searchParams: Promise<{ need?: string }>;
+}
+
+export default async function RequestQuotePage({ searchParams }: PageProps) {
+  const { need } = await searchParams;
+  const initialNeed = need === 'equipment' || need === 'manpower' || need === 'both' ? need : undefined;
+
   return (
     <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <Breadcrumbs
           items={[
             { name: 'Home', url: '/' },
@@ -34,7 +41,7 @@ export default function RequestQuotePage() {
         </div>
 
         <div className="my-8">
-          <QuoteForm serviceType="general" />
+          <QuoteForm serviceType="general" initialNeed={initialNeed} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 text-xs text-slate-600">

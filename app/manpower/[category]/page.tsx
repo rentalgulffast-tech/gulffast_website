@@ -1,5 +1,10 @@
 import { notFound } from 'next/navigation';
-import { getManpowerCategories, getManpowerCategoryBySlug, getManpowerLandingPages } from '@/lib/manpower';
+import {
+  getManpowerCategories,
+  getManpowerCategoryBySlug,
+  getManpowerLandingPages,
+  categoryHasCertification
+} from '@/lib/manpower';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CategoryHero from '@/components/CategoryHero';
 import JobTitleGrid from '@/components/JobTitleGrid';
@@ -44,6 +49,7 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
   const keywordFamilies = getManpowerLandingPages().filter(
     (page) => page.category.slug === category.slug
   );
+  const cert = categoryHasCertification(category);
 
   const serviceSchema = generateServiceSchema(
     `${category.name} Supply in Saudi Arabia`,
@@ -72,11 +78,30 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
           badgeText="Verified KSA Certified Manpower Supply"
           h1={`${category.name} Supply in Saudi Arabia`}
           intro={`GulfFast supplies ${category.name.toLowerCase()} crews across Saudi Arabia, direct from our Al Khobar operations hub, with Aramco and TUV certification and Iqama-verified mobilization.`}
+          ctaLabel="Request Manpower"
+          ctaHref="/request-a-quote?need=manpower"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 my-10">
 
           <div className="lg:col-span-7 space-y-8">
+            {(cert.aramco || cert.tuv) && (
+              <div className="flex flex-wrap gap-2">
+                {cert.aramco && (
+                  <span className="inline-flex items-center gap-1.5 bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] text-xs font-bold px-3 py-1.5 rounded-xl">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Includes Aramco-Approved Job Titles
+                  </span>
+                )}
+                {cert.tuv && (
+                  <span className="inline-flex items-center gap-1.5 bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] text-xs font-bold px-3 py-1.5 rounded-xl">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Includes TUV-Certified Job Titles
+                  </span>
+                )}
+              </div>
+            )}
+
             <JobTitleGrid jobTitles={category.jobTitles} />
 
             {keywordFamilies.length > 0 ? (
@@ -94,7 +119,7 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
                   Nationwide Coverage
                 </h2>
                 <p className="text-xs text-slate-600">
-                  {category.name} crews are available nationwide across Saudi Arabia through our direct supply network.
+                  {`${category.name} crews are available nationwide across Saudi Arabia through our direct supply network.`}
                 </p>
               </div>
             )}

@@ -11,10 +11,10 @@ export default function CityServiceGrid({ cities, basePath, label }: CityService
   return (
     <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
       <h2 className="text-xl font-extrabold text-[#0F172A] mb-3 border-l-4 border-[#C0714A] pl-3">
-        {label} by City
+        {`${label} by City`}
       </h2>
       <p className="text-xs text-slate-600 mb-4">
-        GulfFast dispatches {label.toLowerCase()} from our Al Khobar operations hub to job sites across Saudi Arabia:
+        {`GulfFast dispatches ${label.toLowerCase()} from our Al Khobar operations hub to job sites across Saudi Arabia:`}
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {cities.map((city) => (
