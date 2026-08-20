@@ -84,16 +84,18 @@ export default function Header() {
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="relative w-48 h-12">
-            <Image
-              src="/logo.svg"
-              alt="GulfFast Rentals & Manpower Logo"
-              fill
-              priority
-              className="object-contain object-left"
-            />
-          </div>
+        <Link href="/" className="flex items-center gap-2.5" aria-label="GulfFast — home">
+          <Image
+            src="/logo-mark.png"
+            alt=""
+            width={721}
+            height={681}
+            priority
+            className="h-10 w-auto"
+          />
+          <span className="text-[#253F78] font-extrabold tracking-[0.02em] text-xl leading-none">
+            GULFFAST
+          </span>
         </Link>
 
         {/* Desktop Navigation Links */}

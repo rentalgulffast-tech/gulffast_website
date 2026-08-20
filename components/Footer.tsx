@@ -27,15 +27,17 @@ export default function Footer() {
 
           {/* Column 1: Brand & Corporate Info (consistent contact block) */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
-              <div className="relative w-52 h-14 bg-white p-2 rounded-xl border border-[#E2DED4]">
-                <Image
-                  src="/logo.svg"
-                  alt="GulfFast Rentals & Manpower Logo"
-                  fill
-                  className="object-contain object-left"
-                />
-              </div>
+            <Link href="/" className="inline-flex items-center gap-2.5" aria-label="GulfFast — home">
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                width={721}
+                height={681}
+                className="h-12 w-auto"
+              />
+              <span className="text-[#253F78] font-extrabold tracking-[0.02em] text-2xl leading-none">
+                GULFFAST
+              </span>
             </Link>
 
             <p className="text-slate-600 text-xs leading-relaxed max-w-md">
