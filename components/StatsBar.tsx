@@ -11,12 +11,12 @@ export default function StatsBar() {
   ];
 
   return (
-    <section className="bg-white border border-[#E2DED4] rounded-2xl p-6 sm:p-8 shadow-sm text-[#2B2620]">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-[#E2DED4]">
+    <section className="bg-white border border-[#D7E6F5] rounded-2xl p-6 sm:p-8 shadow-sm text-[#12233B]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-[#D7E6F5]">
         {items.map((item) => (
           <div key={item.label} className="pt-4 md:pt-0">
-            <div className="text-3xl sm:text-4xl font-black text-[#0F172A] font-mono">{item.value}</div>
-            <p className="text-xs uppercase tracking-wider font-bold text-[#C0714A] mt-1">{item.label}</p>
+            <div className="text-3xl sm:text-4xl font-black text-[#12233B] font-mono">{item.value}</div>
+            <p className="text-xs uppercase tracking-wider font-bold text-[#2B6CB0] mt-1">{item.label}</p>
             <p className="text-[11px] text-slate-600 mt-0.5 font-medium">{item.sub}</p>
           </div>
         ))}

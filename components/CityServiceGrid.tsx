@@ -9,8 +9,8 @@ interface CityServiceGridProps {
 
 export default function CityServiceGrid({ cities, basePath, label }: CityServiceGridProps) {
   return (
-    <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-      <h2 className="text-xl font-extrabold text-[#0F172A] mb-3 border-l-4 border-[#C0714A] pl-3">
+    <div className="bg-white border border-[#D7E6F5] rounded-2xl p-6 shadow-sm">
+      <h2 className="text-xl font-extrabold text-[#12233B] mb-3 border-l-4 border-[#2B6CB0] pl-3">
         {`${label} by City`}
       </h2>
       <p className="text-xs text-slate-600 mb-4">
@@ -21,7 +21,7 @@ export default function CityServiceGrid({ cities, basePath, label }: CityService
           <Link
             key={city.slug}
             href={`${basePath}/${city.slug}`}
-            className="bg-[#F0EBE3] hover:bg-[#E2DED4] border border-[#E2DED4] text-[#0F172A] font-bold px-3 py-2 rounded-xl text-xs text-center transition-colors"
+            className="bg-[#EAF4FC] hover:bg-[#D7E6F5] border border-[#D7E6F5] text-[#12233B] font-bold px-3 py-2 rounded-xl text-xs text-center transition-colors"
           >
             📍 {city.name}
           </Link>

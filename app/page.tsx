@@ -16,35 +16,35 @@ export default function HomePage() {
   const featuredFaqs = getFeaturedFaqs(4);
 
   return (
-    <div className="bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="bg-white text-[#12233B] min-h-screen">
 
       {/* 2. Hero — segmented dual CTA */}
-      <section className="bg-[#FAF6EF] border-b border-[#E2DED4] py-10 sm:py-14">
+      <section className="bg-[#FFFFFF] border-b border-[#D7E6F5] py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C0714A] text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF4FC] border border-[#D7E6F5] text-[#2B6CB0] text-xs font-bold">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
               Direct Heavy Equipment &amp; Technical Workforce Owner • Est. 1999
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] leading-tight tracking-tight">
-              Saudi Arabia Industrial <span className="text-[#C0714A]">Equipment &amp; Manpower</span> Supply
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#12233B] leading-tight tracking-tight">
+              Saudi Arabia Industrial <span className="text-[#2B6CB0]">Equipment &amp; Manpower</span> Supply
             </h1>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
-              Arabian Gulf Fast Contracting Co. (GulfFast) provides Aramco &amp; SABIC compliant heavy machinery rentals and certified trade crews directly from our Al Khobar operations hub.
+              Arabian Gulf Fast Contracting Co. (GulfFast) provides heavy machinery rentals and certified trade crews directly from our Al Khobar operations hub.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <Link
                 href="/request-a-quote?need=equipment"
-                className="px-6 py-3 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-sm shadow-sm transition-all"
+                className="px-6 py-3 rounded-xl bg-[#2B6CB0] hover:bg-[#1D6FB8] text-white font-bold text-sm shadow-sm transition-all"
               >
                 Request a Quote →
               </Link>
               <Link
                 href="/request-a-quote?need=manpower"
-                className="px-6 py-3 rounded-xl bg-white hover:bg-[#F0EBE3] text-[#0F172A] font-bold text-sm border border-[#E2DED4] shadow-sm transition-all"
+                className="px-6 py-3 rounded-xl bg-white hover:bg-[#EAF4FC] text-[#12233B] font-bold text-sm border border-[#D7E6F5] shadow-sm transition-all"
               >
                 Request Manpower →
               </Link>
@@ -64,10 +64,10 @@ export default function HomePage() {
         {/* 5. Featured Equipment categories */}
         <section>
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] border-l-4 border-[#C0714A] pl-3">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#12233B] border-l-4 border-[#2B6CB0] pl-3">
               Featured Equipment Categories
             </h2>
-            <Link href="/equipment" className="text-xs font-bold text-[#C0714A] hover:underline shrink-0">
+            <Link href="/equipment" className="text-xs font-bold text-[#2B6CB0] hover:underline shrink-0">
               View All 85 Categories →
             </Link>
           </div>
@@ -92,10 +92,10 @@ export default function HomePage() {
         {/* 6. Featured Manpower categories */}
         <section>
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] border-l-4 border-[#C0714A] pl-3">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#12233B] border-l-4 border-[#2B6CB0] pl-3">
               Featured Manpower Categories
             </h2>
-            <Link href="/manpower" className="text-xs font-bold text-[#C0714A] hover:underline shrink-0">
+            <Link href="/manpower" className="text-xs font-bold text-[#2B6CB0] hover:underline shrink-0">
               View All 22 Categories →
             </Link>
           </div>
@@ -104,18 +104,18 @@ export default function HomePage() {
               <Link
                 key={category.slug}
                 href={`/manpower/${category.slug}`}
-                className="bg-white border border-[#E2DED4] rounded-2xl p-6 hover:border-[#0F172A] transition-colors shadow-sm block group"
+                className="bg-white border border-[#D7E6F5] rounded-2xl p-6 hover:border-[#2B6CB0] transition-colors shadow-sm block group"
               >
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] px-2.5 py-1 rounded-full">
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-[#EAF4FC] text-[#2B6CB0] border border-[#D7E6F5] px-2.5 py-1 rounded-full">
                   Featured
                 </span>
-                <h3 className="text-xl font-extrabold text-[#0F172A] group-hover:text-[#C0714A] transition-colors mt-3 mb-2">
+                <h3 className="text-xl font-extrabold text-[#12233B] group-hover:text-[#2B6CB0] transition-colors mt-3 mb-2">
                   {category.name}
                 </h3>
                 <ul className="text-xs text-slate-600 space-y-1">
                   {category.jobTitles.slice(0, 4).map((title) => (
                     <li key={title} className="flex items-start gap-1.5">
-                      <span className="text-[#C0714A] font-bold">✓</span>
+                      <span className="text-[#2B6CB0] font-bold">✓</span>
                       <span>{title}</span>
                     </li>
                   ))}
@@ -127,7 +127,7 @@ export default function HomePage() {
 
         {/* 7. Why Choose GulfFast */}
         <section>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#12233B] mb-5 border-l-4 border-[#2B6CB0] pl-3">
             Why Choose GulfFast
           </h2>
           <WhyChooseUsChecklist />
@@ -135,7 +135,7 @@ export default function HomePage() {
 
         {/* 8. Industries We Serve */}
         <section>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#12233B] mb-5 border-l-4 border-[#2B6CB0] pl-3">
             Industries We Serve
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -143,9 +143,9 @@ export default function HomePage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="bg-white border border-[#E2DED4] rounded-2xl p-5 hover:border-[#0F172A] transition-colors shadow-sm block group"
+                className="bg-white border border-[#D7E6F5] rounded-2xl p-5 hover:border-[#2B6CB0] transition-colors shadow-sm block group"
               >
-                <h3 className="font-bold text-[#0F172A] text-sm group-hover:text-[#C0714A] transition-colors mb-1">
+                <h3 className="font-bold text-[#12233B] text-sm group-hover:text-[#2B6CB0] transition-colors mb-1">
                   {industry.name}
                 </h3>
                 <p className="text-xs text-slate-500">{industry.tagline}</p>
@@ -156,7 +156,7 @@ export default function HomePage() {
 
         {/* 9. Certifications & Compliance */}
         <section>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#12233B] mb-5 border-l-4 border-[#2B6CB0] pl-3">
             Certifications &amp; Compliance
           </h2>
           <CertificationsBadges />
@@ -164,14 +164,14 @@ export default function HomePage() {
 
         {/* 10. Named projects / case studies */}
         <section>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#12233B] mb-5 border-l-4 border-[#2B6CB0] pl-3">
             Project Case Studies
           </h2>
-          <div className="bg-white border border-[#E2DED4] rounded-2xl p-10 text-center shadow-sm">
+          <div className="bg-white border border-[#D7E6F5] rounded-2xl p-10 text-center shadow-sm">
             <p className="text-slate-600 text-sm">
               Named project case studies coming soon.
             </p>
-            <Link href="/projects" className="inline-block mt-3 text-xs font-bold text-[#C0714A] hover:underline">
+            <Link href="/projects" className="inline-block mt-3 text-xs font-bold text-[#2B6CB0] hover:underline">
               View Project Showcase →
             </Link>
           </div>
@@ -182,17 +182,17 @@ export default function HomePage() {
         {/* 12. FAQ teaser */}
         <section>
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] border-l-4 border-[#C0714A] pl-3">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#12233B] border-l-4 border-[#2B6CB0] pl-3">
               Frequently Asked Questions
             </h2>
-            <Link href="/faq" className="text-xs font-bold text-[#C0714A] hover:underline shrink-0">
+            <Link href="/faq" className="text-xs font-bold text-[#2B6CB0] hover:underline shrink-0">
               View Full FAQ →
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {featuredFaqs.map((faq) => (
-              <div key={faq.question} className="bg-white border border-[#E2DED4] rounded-2xl p-5 shadow-sm">
-                <h3 className="font-bold text-[#0F172A] text-sm mb-1.5">{faq.question}</h3>
+              <div key={faq.question} className="bg-white border border-[#D7E6F5] rounded-2xl p-5 shadow-sm">
+                <h3 className="font-bold text-[#12233B] text-sm mb-1.5">{faq.question}</h3>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">{faq.answer}</p>
               </div>
             ))}
@@ -202,12 +202,12 @@ export default function HomePage() {
       </div>
 
       {/* 13. Final CTA band */}
-      <section className="bg-[#FAF6EF] text-[#2B2620] py-14 border-t border-[#E2DED4]">
+      <section className="bg-[#FFFFFF] text-[#12233B] py-14 border-t border-[#D7E6F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <span className="bg-[#FFF7ED] text-[#C0714A] text-xs font-bold px-3 py-1 rounded-full border border-[#FFEDD5] uppercase tracking-wider">
+          <span className="bg-[#EAF4FC] text-[#2B6CB0] text-xs font-bold px-3 py-1 rounded-full border border-[#D7E6F5] uppercase tracking-wider">
             Al Khobar Head Office Operations Desk
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A]">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#12233B]">
             Need Immediate Mobilization for Your Site?
           </h2>
           <p className="text-slate-600 font-normal text-sm max-w-2xl mx-auto leading-relaxed">
@@ -216,13 +216,13 @@ export default function HomePage() {
           <div className="pt-3 flex flex-wrap justify-center gap-4">
             <Link
               href="/request-a-quote?need=equipment"
-              className="px-7 py-3 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-sm transition-all shadow-md"
+              className="px-7 py-3 rounded-xl bg-[#2B6CB0] hover:bg-[#1D6FB8] text-white font-bold text-sm transition-all shadow-md"
             >
               Request a Quote →
             </Link>
             <Link
               href="/request-a-quote?need=manpower"
-              className="px-7 py-3 rounded-xl bg-white hover:bg-[#F0EBE3] text-[#0F172A] font-bold text-sm border border-[#E2DED4] transition-all shadow-xs"
+              className="px-7 py-3 rounded-xl bg-white hover:bg-[#EAF4FC] text-[#12233B] font-bold text-sm border border-[#D7E6F5] transition-all shadow-xs"
             >
               Request Manpower →
             </Link>
@@ -231,17 +231,17 @@ export default function HomePage() {
             {/* No real GulfFast WhatsApp number configured yet — falls back to phone/email only. See lib/site-stats.ts */}
             {WHATSAPP_NUMBER && (
               <>
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-[#C0714A] transition-colors">
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-[#2B6CB0] transition-colors">
                   <span className="w-2 h-2 rounded-full bg-emerald-500"></span> WhatsApp Us
                 </a>
                 <span className="text-slate-300">|</span>
               </>
             )}
-            <a href="tel:+966568676710" className="hover:text-[#C0714A] transition-colors">
+            <a href="tel:+966568676710" className="hover:text-[#2B6CB0] transition-colors">
               📞 +966 56 867 6710
             </a>
             <span className="text-slate-300">|</span>
-            <a href="mailto:sales@gulffast.co" className="hover:text-[#C0714A] transition-colors">
+            <a href="mailto:sales@gulffast.co" className="hover:text-[#2B6CB0] transition-colors">
               ✉️ sales@gulffast.co
             </a>
           </div>

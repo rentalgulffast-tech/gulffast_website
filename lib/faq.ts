@@ -39,7 +39,7 @@ export const faqTopics: FaqTopic[] = [
       },
       {
         question: 'Is rented equipment inspected before it reaches site?',
-        answer: 'Yes. Equipment carries Third-Party Inspection (TPI) documentation and is checked ahead of mobilization to meet standard site safety requirements, including for Aramco and SABIC gate access.'
+        answer: 'Equipment is checked ahead of mobilization to meet standard site safety requirements. Confirm specific inspection documentation (e.g. TPI certificates) needed for your site with our sales desk when requesting a quote.'
       },
       {
         question: 'Can I get a quote for multiple equipment categories in one request?',
@@ -123,7 +123,7 @@ export const faqTopics: FaqTopic[] = [
     faqs: [
       {
         question: 'Is GulfFast approved to work on Saudi Aramco and SABIC sites?',
-        answer: 'Yes. GulfFast holds Aramco and SABIC vendor gate pass approval, and our equipment and Aramco-designated manpower categories are prepared to meet the relevant site safety instructions.'
+        answer: 'GulfFast\'s workforce includes individually Aramco-approved and TUV-certified trades in specific categories (rigging, scaffolding, QA/QC, and equipment operators), and our equipment is prepared to meet standard site safety requirements. A company-wide Aramco or SABIC vendor approval status is not something we state as fact here — confirm current standing directly with our sales desk if that is a requirement for your site.'
       },
       {
         question: 'What certifications back your rigger and scaffolder trades specifically?',
@@ -137,7 +137,7 @@ export const faqTopics: FaqTopic[] = [
       },
       {
         question: 'Who is responsible for equipment safety compliance on site — GulfFast or the client?',
-        answer: 'GulfFast is responsible for delivering equipment in safe, TPI-compliant condition; the client is responsible for site-specific safety induction and ensuring equipment is operated within agreed terms, as set out in the rental agreement.'
+        answer: 'GulfFast is responsible for delivering equipment in safe working condition; the client is responsible for site-specific safety induction and ensuring equipment is operated within agreed terms, as set out in the rental agreement.'
       },
       {
         question: 'What Commercial Registration and business documentation does GulfFast hold?',

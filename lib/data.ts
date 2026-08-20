@@ -13,72 +13,76 @@ export interface BlogPost {
 const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'aramco-heavy-equipment-compliance',
-    title: 'Saudi Aramco Heavy Equipment Compliance & TPI Inspection Guide',
-    excerpt: 'Key technical requirements, safety standards (GI 6.012), and Third-Party Inspection (TPI) prerequisites for heavy machinery entering Aramco gas plants and oilfields.',
+    title: 'Heavy Equipment Site Compliance & Inspection Guide for KSA Industrial Sites',
+    excerpt: 'Key technical requirements and Third-Party Inspection (TPI) concepts contractors should verify before mobilizing heavy machinery onto restricted industrial sites in Saudi Arabia.',
     date: '2026-06-15',
     readTime: '6 min read',
     category: 'Equipment Safety',
     author: 'GulfFast Technical Safety Team',
     content: `
-Operating heavy construction equipment within Saudi Aramco facilities and gas plant developments requires strict adherence to safety protocol. Equipment mobilization delays often occur when contractors fail to verify Third-Party Inspection (TPI) stickers or skip daily operator pre-checklists.
+Operating heavy construction equipment within restricted industrial sites and gas plant developments in Saudi Arabia requires strict adherence to site safety protocol. Equipment mobilization delays often occur when contractors fail to verify Third-Party Inspection (TPI) documentation or skip daily operator pre-checklists before arriving at the gate.
 
-### Essential Aramco Inspection Prerequisites
-Every piece of heavy earthmoving equipment—including excavators, wheel loaders, dozers, and motor graders—must comply with **Saudi Aramco General Instruction GI 6.012** (Earthmoving Machinery Safety). Key checklist items include:
+### Common Site Inspection Prerequisites
+Every piece of heavy earthmoving equipment—including excavators, wheel loaders, dozers, and motor graders—typically needs to demonstrate the following before gate clearance on a major industrial site. Exact requirements vary by site operator, so always confirm the current checklist with your site safety department:
 
-1. **Spark Arrestors & Exhaust Shielding**: Certified spark arrestor exhaust traps are mandatory for all diesel engines operating inside hydrocarbon processing zones.
+1. **Spark Arrestors & Exhaust Shielding**: Certified spark arrestor exhaust traps are commonly mandatory for diesel engines operating inside hydrocarbon processing zones.
 2. **Emergency Cutoff & Battery Master Switches**: Clearly labeled external emergency fuel cutoff pull cords and battery isolators.
-3. **Automatic Reverse Alarm & Beacon Strobe**: High-decibel backup alarm (minimum 95 dBA) and 360-degree yellow amber strobe light on the cab roof.
-4. **Third-Party Inspection (TPI) Sticker**: Issued by an accredited Aramco-approved inspection agency, stating valid expiration date and serial number match.
-5. **Operator Certification**: Operative must hold a SAG Heavy Driver License alongside a valid Aramco Operator Validation Card.
+3. **Automatic Reverse Alarm & Beacon Strobe**: High-decibel backup alarm and a strobe light on the cab roof.
+4. **Third-Party Inspection (TPI) Documentation**: Issued by an accredited inspection agency, stating a valid expiration date and serial number match to the specific unit.
+5. **Operator Certification**: Operators typically need a valid heavy driver license and site-specific operator induction card.
 
 ### Streamlining Mobilization with GulfFast
-At GulfFast, every machine in our Al Khobar and Jubail equipment yards undergoes weekly TPI audit checks. We deliver ready-to-work machinery complete with gate pass paperwork, eliminating site access friction for main contractors.
+GulfFast prepares equipment leaving our Al Khobar and Jubail yards to meet these common site checklist items before dispatch, and supports contractors with the paperwork needed for gate clearance. Confirm your specific site's current TPI and inspection requirements with our sales desk when requesting a quote — requirements do vary by site operator and change over time.
 `
   },
   {
     slug: 'manpower-supply-compliance-tuv-aramco',
-    title: 'Manpower Supply Compliance in Saudi Arabia: TUV & Third-Party Certifications',
-    excerpt: 'How contractor manpower supply complies with Saudi Labor Law, Aramco WQT, and TUV skill certifications for welders, scaffolders, and riggers.',
+    title: 'Manpower Supply Compliance in Saudi Arabia: Trade Certification Standards',
+    excerpt: 'How contractor manpower supply relates to Saudi Labor Law and third-party skill certifications (WQT, TUV) for welders, scaffolders, and riggers.',
     date: '2026-05-20',
     readTime: '7 min read',
     category: 'Manpower Supply',
     author: 'GulfFast HR & Compliance',
     content: `
-Deploying skilled industrial manpower across Saudi Arabia's oil, gas, and infrastructure sectors demands strict compliance with Saudi Labor Regulations, Ministry of Human Resources guidelines, and client-specific site credentials.
+Deploying skilled industrial manpower across Saudi Arabia's oil, gas, and infrastructure sectors demands compliance with Saudi Labor Regulations, Ministry of Human Resources guidelines, and client-specific site credentials.
 
 ### Certified Trades Certification Standards
-For high-risk trades—such as 6G pipe welders, scaffolders, and crane riggers—verbal experience is insufficient. Contractors must verify formal Third-Party Inspection (TPI) credentials:
+For high-risk trades—such as pipe welders, scaffolders, and crane riggers—verbal experience is generally not sufficient on a major industrial site. Site operators typically expect formal, verifiable credentials:
 
-- **6G / TIG Welders**: Must hold Welder Qualification Test (WQT) records qualified under ASME Section IX for specific pipe wall thickness and metallurgy (P1 to P91). Radiographic test (RT) reports must accompany the card.
-- **Scaffolders**: Qualified under **Saudi Aramco GI 8.001**. Scaffold Erectors, Supervisors, and Inspectors require designated cards for green-tagging erect access structures.
-- **Riggers**: Level 1 (Supervisor), Level 2, and Level 3 riggers holding TUV / Aramco cards verifying competence in crane load chart calculation, sling angles, and tandem lifting.
+- **6G / TIG Welders**: Commonly expected to hold Welder Qualification Test (WQT) records qualified under ASME Section IX for the specific pipe wall thickness and metallurgy range (P-number) of the work. Radiographic test (RT) reports often accompany the qualification card.
+- **Scaffolders**: Scaffold Erectors, Supervisors, and Inspectors typically require a designated certification card for erecting and green-tagging access structures on major sites.
+- **Riggers**: Level 1 (Supervisor), Level 2, and Level 3 riggers holding TUV or similarly accredited cards, verifying competence in crane load chart calculation, sling angles, and tandem lifting.
+
+GulfFast's own Rigging & Scaffolding manpower category includes individually Aramco-approved and TUV-certified job titles specifically — check the category page for which exact titles carry which certification, since not every title in every category does.
 
 ### The Direct Supplier Advantage
-Unlike recruitment agencies or brokerage middle-men, GulfFast maintains direct employment Iqamas and housing facilities in Al Khobar. This guarantees full Saudization compliance, mobilization readiness, and client safety compliance.
+Unlike recruitment agencies, GulfFast directly recruits, sponsors, and employs its workforce through our own outreach, referrals, and job postings — not through a staffing agency placing third-party-employed workers. That gives clients one accountable party for Iqama sponsorship, mobilization readiness, and site conduct.
 `
   },
   {
     slug: 'crane-safety-lifting-standards-ksa',
-    title: 'Mobile Crane Safety & Critical Lift Planning (Aramco GI 7.027)',
-    excerpt: 'Understanding critical lift plan criteria, tandem lifts, ground load calculations, and rigger responsibilities under Saudi Aramco lifting standards.',
+    title: 'Mobile Crane Safety & Critical Lift Planning in Saudi Arabia',
+    excerpt: 'Understanding critical lift plan criteria, tandem lifts, ground load calculations, and rigger responsibilities for heavy lifts on Saudi industrial sites.',
     date: '2026-04-10',
     readTime: '5 min read',
     category: 'Lifting Safety',
     author: 'GulfFast Heavy Lifting Operations',
     content: `
-Heavy lifts exceeding 40 tons or executed within operating petrochemical plants are classified as Critical Lifts in Saudi Arabia. Under **Saudi Aramco General Instruction GI 7.027**, a critical lift plan must be prepared, reviewed, and signed before outriggers are set.
+Heavy lifts exceeding 40 tons, or lifts executed within operating petrochemical plants, are commonly classified as Critical Lifts on Saudi industrial sites. A critical lift plan is typically required to be prepared, reviewed, and signed off before outriggers are set — confirm your specific site operator's exact lift-planning procedure, since thresholds and sign-off requirements vary by site.
 
-### When is a Lift Classified as Critical?
-A lift plan is designated critical under any of the following parameters:
-- The load exceeds 85% of the crane's rated capacity at specified radius.
+### When Is a Lift Typically Classified as Critical?
+A lift plan is commonly designated critical under parameters such as:
+- The load exceeds 85% of the crane's rated capacity at the specified radius.
 - The lift involves two or more cranes in a tandem lift arrangement.
 - The lift takes place over operating hydrocarbon pipelines, live electrical lines, or occupied structures.
 - The lift involves personnel hoisting or blind pick-and-carry maneuvers.
 
-### Key Elements of an Approved Critical Lift Plan
-1. **Ground Bearing Capacity & Outrigger Matting**: Verification that outrigger pad pressure does not exceed soil bearing limits, utilizing heavy hardwood or steel crane mats.
-2. **Rigging Tackle Certification**: All shackles, wire rope slings, spreader bars, and synthetic web slings must possess valid TPI load test certificates and color-code tags.
-3. **Certified Rigger Level 1 Sign-Off**: The lift plan drawing must be checked, stamped, and signed by a certified Master Rigger Level 1.
+### Key Elements of a Critical Lift Plan
+1. **Ground Bearing Capacity & Outrigger Matting**: Verifying outrigger pad pressure does not exceed soil bearing limits, typically using heavy hardwood or steel crane mats.
+2. **Rigging Tackle Certification**: Shackles, wire rope slings, spreader bars, and synthetic web slings should carry valid load test certificates and color-coded tags.
+3. **Certified Rigger Sign-Off**: The lift plan drawing is typically checked, stamped, and signed by a certified senior rigger before work proceeds.
+
+GulfFast's Cranes category and Rigging & Scaffolding manpower category are available together for lift jobs requiring both machine and certified rigging crew — ask our sales desk about combined equipment-and-crew packages when requesting a quote.
 `
   },
   {
@@ -90,38 +94,40 @@ A lift plan is designated critical under any of the following parameters:
     category: 'Power Engineering',
     author: 'GulfFast Power Systems Team',
     content: `
-Selecting a diesel generator for construction camps or plant turnarounds in Saudi Arabia requires factoring in extreme ambient heat. Standard generator ratings are specified at ISO conditions (25°C ambient, sea level). In Saudi Arabia summer temperatures frequently exceed 50°C.
+Selecting a diesel generator for construction camps or plant turnarounds in Saudi Arabia requires factoring in extreme ambient heat. Standard generator ratings are specified at ISO conditions (25°C ambient, sea level), while Saudi Arabia summer temperatures frequently exceed 45–50°C.
 
 ### Generator Power De-Rating Calculations
 When ambient temperatures rise above 40°C, diesel engines experience reduced air intake density, resulting in thermal de-rating of electrical output:
-- **Temperature De-Rating**: Typically 1% to 2% power reduction for every 5°C rise above 40°C.
-- **Altitude De-Rating**: Approximately 3% power loss per 300 meters above sea level (relevant for Tabuk and Abha mountain sites).
-- **Soundproof Acoustic Canopy Venting**: Heavy-duty tropical cooling radiators with enlarged fan blades are required to prevent high-water-temperature shutdowns.
+- **Temperature De-Rating**: Typically a small percentage of power reduction for every few degrees above 40°C — check the specific manufacturer's de-rating curve for the model you're sizing.
+- **Altitude De-Rating**: A further power loss applies at elevation (relevant for higher-altitude sites in the Kingdom).
+- **Cooling System Sizing**: Heavy-duty radiators and adequate acoustic canopy ventilation are important to prevent high-water-temperature shutdowns during continuous summer operation.
 
-### Turnkey Fuel & Power Support
-GulfFast supplies Cummins, Perkins, and Caterpillar generators equipped with tropical radiators, external bunded fuel tanks, automatic fuel transfer systems, and 24/7 on-site maintenance technicians.
+### Sizing for the Job, Not Just the Nameplate
+Oversizing a generator for light, intermittent loads causes wet-stacking and fuel inefficiency; undersizing for de-rated conditions risks nuisance trips during peak site load. A proper sizing exercise accounts for the real project load profile, ambient de-rating, and a reasonable safety margin — not just the equipment's cool-climate nameplate rating.
+
+GulfFast's Generators category is available across a range of output sizes; check the category page for current owned-fleet availability, and ask our sales desk for help matching a unit to your project's actual load profile.
 `
   },
   {
     slug: 'heavy-transport-compliance-aramco',
-    title: 'Heavy Vehicle Fleet Safety & IVMS Requirements in KSA',
+    title: 'Heavy Vehicle Fleet Safety & IVMS Practices in KSA',
     excerpt: 'Overview of In-Vehicle Monitoring Systems (IVMS), speed governors, driver safety training, and highway load limits for heavy transport in Saudi Arabia.',
     date: '2026-02-18',
     readTime: '4 min read',
     category: 'Fleet Logistics',
     author: 'GulfFast Logistics Management',
     content: `
-Transporting heavy equipment, pipe shipments, and fuel across Saudi Arabia requires strict adherence to Ministry of Transport (MOT) axle load regulations and client fleet safety standards.
+Transporting heavy equipment, pipe shipments, and fuel across Saudi Arabia requires adherence to Ministry of Transport (MOT) axle load regulations and client-specific fleet safety standards.
 
-### In-Vehicle Monitoring System (IVMS) Mandatory Features
-All heavy tractor trucks, flatbeds, and crew buses entering major oilfields must be equipped with approved IVMS GPS telemetry units monitoring:
+### In-Vehicle Monitoring System (IVMS) Common Features
+Heavy tractor trucks, flatbeds, and crew buses entering major industrial sites are commonly expected to carry IVMS GPS telemetry monitoring:
 - Harsh acceleration, harsh braking, and sudden cornering events.
-- Real-time speed governor enforcement (maximum 80 km/h for heavy trucks).
-- Driver fatigue alerts and continuous driving time limits (mandatory break after 4 hours).
-- Automatic SOS emergency panic buttons and satellite tracking.
+- Real-time speed governor enforcement.
+- Driver fatigue alerts and continuous driving time limits.
+- Emergency SOS panic buttons and satellite tracking.
 
-### GulfFast Transport Reliability
-Our fleet of Mercedes Actros and Volvo FH heavy trucks undergo routine brake, tire tread, and suspension checks in our Al Khobar workshop. All drivers hold valid SAG licenses, Aramco safety induction cards, and defensive driving qualifications.
+### GulfFast Transport Practices
+GulfFast's transport fleet undergoes routine brake, tire tread, and suspension checks ahead of dispatch from our Al Khobar operations hub. Drivers hold valid Saudi driving licenses and complete site-specific safety induction training before mobilization. Confirm your specific site's IVMS and driver-credential requirements with our logistics desk when booking transport.
 `
   },
   {
@@ -136,40 +142,57 @@ Our fleet of Mercedes Actros and Volvo FH heavy trucks undergo routine brake, ti
 Earthmoving conditions in Saudi Arabia range from loose desert sand in the Rub' al Khali to hard caprock and limestone in Riyadh and Jubail. Choosing the right excavator tonnage and attachment dramatically impacts daily productivity and fuel consumption.
 
 ### Tonnage & Bucket Selection Matrix
-- **20-Ton Excavators (CAT 320 / Komatsu PC200)**: Ideal for general utility trenching, pipe laying, site foundation backfilling, and urban civil construction.
-- **30-Ton Excavators (CAT 330 / Komatsu PC300)**: Preferred choice for heavy pipeline trenching, mass earthmoving, and rock breaking with hydraulic hammers (3.5 ton breakers).
-- **50-Ton Excavators (CAT 349 / Komatsu PC450)**: Heavy quarrying, deep rock excavation, mass aggregate loading, and heavy foundation digging.
+- **20-Ton Excavators**: Ideal for general utility trenching, pipe laying, site foundation backfilling, and urban civil construction.
+- **30-Ton Excavators**: Preferred choice for heavy pipeline trenching, mass earthmoving, and rock breaking with hydraulic hammers.
+- **50-Ton Excavators**: Heavy quarrying, deep rock excavation, mass aggregate loading, and heavy foundation digging.
 
 ### Desert Bucket & Track Modifications
-For abrasive desert rock, excavators must be equipped with heavy-duty rock buckets (HDR), tungsten carbide tooth tips, bottom wear strips, and heavy track guide guards to prevent track derailment in soft sand.
+For abrasive desert rock, excavators typically benefit from heavy-duty rock buckets (HDR), tungsten carbide tooth tips, bottom wear strips, and heavy track guide guards to prevent track derailment in soft sand.
+
+GulfFast's Excavators category is sourced through our partner network for tonnages beyond our own owned fleet — check the category page for current owned-fleet units and ask about tonnage availability for your project.
 `
   },
   {
     slug: 'crane-rental-cost-saudi-arabia',
     title: 'How Much Does Crane Rental Cost in Saudi Arabia?',
-    excerpt: 'A guide to the factors that drive mobile crane rental pricing in Saudi Arabia, from load capacity and lift duration to Aramco site certification requirements.',
+    excerpt: 'A guide to the factors that drive mobile crane rental pricing in Saudi Arabia, from load capacity and lift duration to site access requirements.',
     date: '2026-08-01',
-    readTime: '4 min read',
+    readTime: '5 min read',
     category: 'Equipment Selection',
     author: 'GulfFast Fleet Operations',
     content: `
-Crane rental pricing in Saudi Arabia varies based on load capacity, lift duration, site location, and whether the crane is supplied bare or with a certified operator. This guide will cover the key cost drivers in detail.
+Crane rental pricing in Saudi Arabia is driven by a handful of practical factors rather than a single flat rate. Understanding these upfront makes it easier to compare quotes and plan a project budget.
 
-Full pricing breakdown coming soon. Contact our Al Khobar equipment desk directly for a same-day quote on mobile crane rental.
+### The Main Cost Drivers
+- **Capacity & Boom Length**: A 25-ton city crane and a 100+ ton all-terrain crane sit in very different pricing tiers — capacity at the required radius, not just nominal tonnage, is what actually matters for the job.
+- **Bare Rental vs. Operated & Maintained**: Dry-hire (bare rental, your own operator) costs less per day than wet-hire (fully operated & maintained with a certified operator supplied), but wet-hire removes the burden of sourcing and certifying an operator yourself.
+- **Lift Duration & Contract Length**: Daily emergency dispatch carries a premium over a monthly or long-term project lease, where the effective daily rate drops significantly.
+- **Mobilization Distance**: Transport, rigging, and de-rigging a large crane to a remote site adds cost that's separate from the daily rental rate itself.
+- **Site Access Complexity**: Sites requiring a formal lift plan, ground bearing verification, or restricted-hours access can add planning and standby time to the job.
+
+### Getting an Accurate Quote
+Because these factors interact, the fastest way to get a real number is to specify your load, radius, site location, and whether you need an operator when requesting a quote. GulfFast's Cranes category covers a range of capacities, both from our own fleet and through our partner network — check the category page for current owned-fleet units.
 `
   },
   {
     slug: 'hire-certified-riggers-al-khobar',
     title: 'How to Hire Certified Riggers in Al Khobar',
-    excerpt: 'What to check before hiring riggers for lifting operations in Al Khobar, including TUV and Aramco Level 1-3 certification requirements.',
+    excerpt: 'What to check before hiring riggers for lifting operations in Al Khobar, including certification level and what it actually covers.',
     date: '2026-07-20',
-    readTime: '4 min read',
+    readTime: '5 min read',
     category: 'Manpower Supply',
     author: 'GulfFast HR & Compliance',
     content: `
-Hiring certified riggers in Al Khobar requires verifying TUV or Aramco Level 1, 2, or 3 rigger certification, valid Iqama status, and site-specific safety induction records before mobilization.
+Hiring a rigger for lifting operations in Al Khobar is not a one-size-fits-all decision — the certification level and specific competencies you need depend on the complexity of the lift.
 
-Full hiring checklist coming soon. Contact our Al Khobar workforce desk directly to discuss certified rigger availability.
+### What to Verify Before Hiring
+- **Certification Level**: Rigger certifications are typically issued in tiers (Level 1 supervisor through Level 3), each covering a different scope of independent responsibility on a lift.
+- **Issuing Body**: TUV and Aramco-approved rigger cards are the two credential types most commonly requested on major Eastern Province industrial sites. Ask to see the card, not just a claim of experience.
+- **Iqama & Mobilization Status**: Confirm the individual's Iqama is current and that they are available for the dates and site location you need, before you commit to a start date.
+- **Relevant Lift Experience**: A card confirms baseline competency; ask about experience with the specific lift type — tandem lifts, blind picks, or heavy pipe spool handling — relevant to your job.
+
+### Where GulfFast Fits In
+GulfFast's Rigging & Scaffolding manpower category includes individually Aramco-approved and TUV-certified rigger job titles specifically — the category page lists exactly which titles carry which certification, since not every rigger role in the category does. As a direct employer, we handle Iqama sponsorship and can mobilize riggers alongside GulfFast crane equipment for a combined package.
 `
   },
   {
@@ -177,27 +200,48 @@ Full hiring checklist coming soon. Contact our Al Khobar workforce desk directly
     title: 'Equipment Rental vs. Buying: What\'s Right for Your Project in KSA?',
     excerpt: 'Comparing the cost, flexibility, and maintenance trade-offs between renting and buying heavy equipment for projects in Saudi Arabia.',
     date: '2026-07-08',
-    readTime: '5 min read',
+    readTime: '6 min read',
     category: 'Equipment Selection',
     author: 'GulfFast Fleet Operations',
     content: `
-Deciding between renting and buying heavy equipment depends on project duration, utilization rate, maintenance overhead, and capital availability. This guide will walk through the decision factors relevant to KSA project sites.
+Deciding between renting and buying heavy equipment is ultimately a question of how long you'll use it, how intensively, and how much capital you want tied up in depreciating assets.
 
-Full comparison coming soon. Contact our Al Khobar equipment desk to discuss bare-rental versus long-term lease options.
+### When Renting Usually Wins
+- **Short or Fixed-Duration Projects**: If the equipment need ends when the project does, renting avoids being left with an asset to sell off afterward.
+- **Uncertain or Variable Workload**: Renting lets you scale fleet size up for peak phases and down when work slows, without carrying idle capital equipment.
+- **Avoiding Maintenance Overhead**: A rental (especially operated & maintained/wet-hire) shifts breakdown risk, servicing, and parts sourcing onto the supplier.
+- **Testing Before Committing**: Renting a specific model or tonnage before a large capital purchase reduces the risk of buying the wrong specification.
+
+### When Buying Can Make Sense
+- **Continuous, Long-Term Utilization**: Equipment in near-constant use across multiple projects over several years can be cheaper to own than to rent repeatedly, once utilization is high enough.
+- **Specialized or Hard-to-Source Equipment**: If a specific attachment or configuration is difficult to rent reliably in your area, ownership guarantees availability.
+
+### A Practical Middle Ground
+Many contractors run a hybrid model — owning core equipment used on nearly every project, and renting for peak demand or specialized short-term needs. GulfFast's own hybrid sourcing model works the same way: we deploy owned fleet first, and source through our partner network to fill gaps, so ask about bare-rental or operated & maintained options for either path.
 `
   },
   {
     slug: 'source-aramco-approved-welders-saudi-arabia',
     title: 'How to Source Aramco-Approved Welders in Saudi Arabia',
-    excerpt: 'What Aramco-approved welder certification actually requires, from WQT records to radiographic test reports, and how to verify it before mobilization.',
+    excerpt: 'What Aramco-approved welder qualification actually requires, from WQT records to radiographic test reports, and how to verify it before mobilization.',
     date: '2026-06-25',
-    readTime: '4 min read',
+    readTime: '5 min read',
     category: 'Manpower Supply',
     author: 'GulfFast HR & Compliance',
     content: `
-Sourcing Aramco-approved welders requires verifying Welder Qualification Test (WQT) records under ASME Section IX, along with radiographic test (RT) reports matching the welder's certified pipe wall thickness and metallurgy range.
+"Aramco-approved welder" is a specific, checkable qualification — not a general skill claim — and sourcing one correctly means verifying the paperwork, not just the resume.
 
-Full sourcing guide coming soon. Contact our Al Khobar workforce desk directly to discuss certified welder availability.
+### What the Qualification Actually Requires
+- **Welder Qualification Test (WQT) Record**: A formal test record under ASME Section IX, specific to a process (SMAW, GTAW, etc.), material group, and thickness range.
+- **P-Number & Metallurgy Range**: The WQT record specifies which base metal groups (P-numbers) the welder is qualified for — a card qualified for carbon steel does not cover stainless or exotic alloys.
+- **Radiographic Test (RT) Reports**: For high-risk pipe welding, RT reports on qualification coupons typically accompany the WQT card as supporting evidence of weld quality.
+- **Validity & Renewal**: Qualification records can lapse or require re-testing after a period of inactivity — check the issue date, not just that a card exists.
+
+### Verifying Before Mobilization
+Ask for the actual WQT record and RT reports, not a verbal claim of "6G certified." Cross-check the process, material group, and thickness range against your actual job scope before confirming mobilization.
+
+### Where GulfFast Fits In
+GulfFast's QA/QC & Inspection manpower category includes Aramco-approved welding QC and coating QC job titles specifically for overseeing weld quality on-site. Ask our workforce desk about current welder and welding QC availability for your project scope.
 `
   },
   {
@@ -209,9 +253,18 @@ Full sourcing guide coming soon. Contact our Al Khobar workforce desk directly t
     category: 'Power Engineering',
     author: 'GulfFast Power Systems Team',
     content: `
-Selecting the right generator for a construction site in Saudi Arabia means accounting for ambient temperature de-rating, load profile, and fuel tank autonomy for continuous multi-shift operation.
+Renting a generator for a construction site is a different exercise from renting one for a fixed installation — site power needs change as the project progresses, and mobility matters.
 
-Full sizing guide coming soon. Contact our Al Khobar equipment desk directly to discuss generator availability and site power planning.
+### Sizing for a Construction Phase, Not Just Today's Load
+Early-phase site power (office trailers, lighting, small tools) is a fraction of what's needed once concrete batching, welding, or crane operation starts. Undersizing early and renting a second unit later is often more practical than one oversized unit sitting underutilized for months.
+
+### Fuel Logistics Matter as Much as kVA Rating
+- **Tank Autonomy**: A larger integrated fuel tank means fewer refueling trips — relevant for remote sites with limited access.
+- **Fuel Transfer Systems**: Automatic transfer systems reduce the risk of a dry-tank shutdown during unattended overnight operation.
+- **Noise Restrictions**: Sites near occupied areas may require an acoustic canopy-enclosed unit to meet noise limits.
+
+### Rental Duration & Ambient De-Rating
+Saudi summer ambient temperatures reduce a generator's effective output versus its cool-climate nameplate rating — factor this into sizing, not just the load list. GulfFast's Generators category covers a range of output sizes from our own fleet and partner network; ask our equipment desk to help match a unit to your site's actual phase-by-phase load profile.
 `
   },
   {
@@ -219,13 +272,23 @@ Full sizing guide coming soon. Contact our Al Khobar equipment desk directly to 
     title: 'What Documents Are Needed to Rent Heavy Equipment in Saudi Arabia?',
     excerpt: 'The commercial registration, VAT, and site access documentation typically required to rent heavy equipment from a direct supplier in Saudi Arabia.',
     date: '2026-05-28',
-    readTime: '3 min read',
+    readTime: '4 min read',
     category: 'Equipment Safety',
     author: 'GulfFast Technical Safety Team',
     content: `
-Renting heavy equipment in Saudi Arabia typically requires your company's Commercial Registration (CR), VAT certificate, and, for Aramco or SABIC sites, gate pass sponsorship documentation.
+Renting heavy equipment as a business in Saudi Arabia typically involves a short, predictable set of documentation — having it ready before you request a quote speeds up mobilization.
 
-Full documentation checklist coming soon. Contact our Al Khobar equipment desk directly to confirm requirements for your project site.
+### Typical Documentation Requested
+- **Commercial Registration (CR)**: Confirms your company is a registered Saudi entity able to contract for services.
+- **VAT Certificate**: Required for correct invoicing under Saudi Arabia's VAT system.
+- **Authorized Signatory ID**: Identification for whoever will sign the rental agreement on behalf of your company.
+- **Site Work Order / LPO**: A purchase order or work order referencing the specific project site, useful for site access sponsorship.
+- **Gate Pass Sponsor Letter**: For restricted industrial sites, a letter from the main contractor or site operator sponsoring GulfFast equipment and personnel for gate access.
+
+### Why This Matters for Mobilization Speed
+Missing documentation is one of the most common causes of mobilization delay — not equipment availability. Having your CR, VAT certificate, and site sponsorship details ready when you submit a quote request lets our sales desk move straight to scheduling once terms are agreed.
+
+Exact documentation requirements can vary by site operator and contract type — confirm specifics with our sales desk for your particular project.
 `
   },
   {
@@ -237,9 +300,19 @@ Full documentation checklist coming soon. Contact our Al Khobar equipment desk d
     category: 'Manpower Supply',
     author: 'GulfFast HR & Compliance',
     content: `
-A manpower agency places workers employed by a third party, while a direct manpower supplier like GulfFast directly recruits, sponsors, and employs its workforce, giving clients a single accountable party for site conduct and compliance.
+"Manpower supply" and "manpower agency" get used interchangeably, but the underlying employment relationship is different — and it affects accountability on your site.
 
-Full comparison coming soon. Contact our Al Khobar workforce desk directly to discuss your project's manpower requirements.
+### The Core Difference
+A manpower agency typically places workers who remain employed by a third party (the agency, or sometimes another sponsor entity), acting as an intermediary between worker and client. A direct manpower supplier like GulfFast recruits, sponsors, and directly employs its own workforce — there is no third-party employer in the chain.
+
+### What That Means in Practice
+- **Iqama Sponsorship**: GulfFast sponsors its own workforce directly, rather than relying on a separate sponsor entity that may have its own priorities.
+- **Single Accountable Party**: If there's a performance, conduct, or compliance issue on site, there's one direct employer to hold accountable — not an agency layered between the worker and the contract.
+- **Recruitment Control**: Because GulfFast recruits directly through our own job postings, referrals, and outreach rather than sourcing from a general agency pool, we can vet trade certification and experience before mobilization rather than after.
+- **Pricing Structure**: Direct supply removes an intermediary margin layer that a multi-party agency placement typically carries.
+
+### Where the Hybrid Model Comes In
+GulfFast primarily deploys its own directly-employed workforce, and sources through our partner network only to fill gaps in trade or headcount — we remain the direct contracting party either way, not a pass-through broker.
 `
   }
 ];

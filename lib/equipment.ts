@@ -3,6 +3,7 @@ import { fleetReference, FleetItem } from '@/lib/fleet-reference';
 import { slugify } from '@/lib/slug';
 import { cities } from '@/lib/cities';
 import { FaqEntry } from '@/lib/faq';
+import { equipmentClusters } from '@/lib/equipment-clusters';
 
 export interface EquipmentLandingPage {
   keyword: string;
@@ -36,6 +37,20 @@ export function getEquipmentLandingPages(): EquipmentLandingPage[] {
 
 export function getEquipmentLandingPageBySlug(keywordSlug: string): EquipmentLandingPage | undefined {
   return getEquipmentLandingPages().find((page) => page.keywordSlug === keywordSlug);
+}
+
+export interface EquipmentClusterGroup {
+  name: string;
+  categories: EquipmentCategory[];
+}
+
+export function getEquipmentCategoriesByCluster(): EquipmentClusterGroup[] {
+  return equipmentClusters.map((cluster) => ({
+    name: cluster.name,
+    categories: cluster.categorySlugs
+      .map((slug) => equipmentCategories.find((c) => c.slug === slug))
+      .filter((c): c is EquipmentCategory => Boolean(c))
+  }));
 }
 
 export function getOwnedFleetForCategory(categoryName: string): FleetItem[] {

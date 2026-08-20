@@ -4,7 +4,8 @@ import {
   getManpowerLandingPages,
   getManpowerLandingPageBySlug,
   getRelatedManpowerCategories,
-  getManpowerCategoryFaqs
+  getManpowerCategoryFaqs,
+  categoryHasCertification
 } from '@/lib/manpower';
 import { cities } from '@/lib/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return {
     title: `${landingPage.keyword} in ${city.name} | GulfFast`,
-    description: `${landingPage.keyword} in ${city.name}, Saudi Arabia. Direct supply from GulfFast's Al Khobar operations hub, Aramco and TUV certified, Iqama-verified mobilization.`,
+    description: `${landingPage.keyword} in ${city.name}, Saudi Arabia. Direct supply from GulfFast's Al Khobar operations hub, Iqama-verified mobilization.`,
     alternates: {
       canonical: `/manpower/${landingPage.keywordSlug}/${city.slug}`
     }
@@ -54,6 +55,14 @@ export default async function ManpowerCityPage({ params }: PageProps) {
   const { category, keyword } = landingPage;
   const relatedCategories = getRelatedManpowerCategories(category, 4);
   const categoryFaqs = getManpowerCategoryFaqs(category);
+  const cert = categoryHasCertification(category);
+  const certPhrase = cert.aramco && cert.tuv
+    ? ', including Aramco-approved and TUV-certified job titles,'
+    : cert.aramco
+    ? ', including Aramco-approved job titles,'
+    : cert.tuv
+    ? ', including TUV-certified job titles,'
+    : '';
 
   const serviceSchema = generateServiceSchema(
     `${keyword} in ${city.name}`,
@@ -62,7 +71,7 @@ export default async function ManpowerCityPage({ params }: PageProps) {
   );
 
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="py-10 bg-white text-[#12233B] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -82,7 +91,7 @@ export default async function ManpowerCityPage({ params }: PageProps) {
         <CategoryHero
           badgeText={`Verified ${city.name} Certified Manpower Supply`}
           h1={`${keyword} in ${city.name}`}
-          intro={`GulfFast mobilizes ${keyword.toLowerCase()} crews to job sites in and around ${city.name} from our Al Khobar operations hub, with Aramco and TUV certification.`}
+          intro={`GulfFast mobilizes ${keyword.toLowerCase()} crews to job sites in and around ${city.name} from our Al Khobar operations hub${certPhrase}.`}
           ctaLabel="Request Manpower"
           ctaHref="/request-a-quote?need=manpower"
         />
@@ -91,8 +100,8 @@ export default async function ManpowerCityPage({ params }: PageProps) {
 
           <div className="lg:col-span-7 space-y-8">
             {/* Local coverage confirmation */}
-            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-              <h2 className="text-xl font-extrabold text-[#0F172A] mb-2 border-l-4 border-[#C0714A] pl-3">
+            <div className="bg-white border border-[#D7E6F5] rounded-2xl p-6 shadow-sm">
+              <h2 className="text-xl font-extrabold text-[#12233B] mb-2 border-l-4 border-[#2B6CB0] pl-3">
                 Local Coverage Confirmation
               </h2>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -104,13 +113,13 @@ export default async function ManpowerCityPage({ params }: PageProps) {
 
             {/* Related categories */}
             <div className="pt-2">
-              <h3 className="text-base font-bold text-[#0F172A] mb-3">Related Manpower Categories</h3>
+              <h3 className="text-base font-bold text-[#12233B] mb-3">Related Manpower Categories</h3>
               <div className="flex flex-wrap gap-2">
                 {relatedCategories.map((relCat) => (
                   <Link
                     key={relCat.slug}
                     href={`/manpower/${relCat.slug}`}
-                    className="bg-white hover:bg-[#F0EBE3] border border-[#E2DED4] text-slate-700 hover:text-[#0F172A] px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
+                    className="bg-white hover:bg-[#EAF4FC] border border-[#D7E6F5] text-slate-700 hover:text-[#2B6CB0] px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
                   >
                     {relCat.name} →
                   </Link>
@@ -119,9 +128,9 @@ export default async function ManpowerCityPage({ params }: PageProps) {
             </div>
 
             {/* City-flavored FAQ snippet */}
-            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
+            <div className="bg-white border border-[#D7E6F5] rounded-2xl p-6 shadow-sm">
               <FaqAccordion faqs={categoryFaqs} title={`FAQ — ${keyword} in ${city.name}`} injectSchema={false} />
-              <Link href="/faq" className="inline-block text-xs font-bold text-[#C0714A] hover:underline">
+              <Link href="/faq" className="inline-block text-xs font-bold text-[#2B6CB0] hover:underline">
                 View Full FAQ →
               </Link>
             </div>

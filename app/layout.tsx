@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     default: 'GulfFast Rentals & Manpower | Equipment & Manpower Supply Saudi Arabia',
     template: '%s | GulfFast Rentals & Manpower KSA'
   },
-  description: 'Direct supplier of certified heavy equipment rental and Aramco/TUV certified manpower supply in Saudi Arabia. Operating from Al Khobar since 1999.',
+  description: 'Direct supplier of certified heavy equipment rental and manpower supply in Saudi Arabia, including Aramco-approved and TUV-certified trades. Operating from Al Khobar since 1999.',
   keywords: [
     'Heavy Equipment Rental Saudi Arabia',
     'Manpower Supply Saudi Arabia',
     'Truck Rental KSA',
-    'Aramco Certified Welders Al Khobar',
+    'Aramco Approved Riggers Al Khobar',
     'Mobile Crane Rental Jubail',
     'Diesel Generator Rental Dammam',
     'GulfFast Rentals'
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://gulffast-rentals.com',
     title: 'GulfFast Rentals & Manpower | Equipment & Manpower Supply Saudi Arabia',
-    description: 'Direct supplier of certified heavy equipment rental and Aramco/TUV certified manpower supply across Saudi Arabia.',
+    description: 'Direct supplier of certified heavy equipment rental and manpower supply across Saudi Arabia, including Aramco-approved and TUV-certified trades.',
     siteName: 'GulfFast Rentals & Manpower'
   },
   twitter: {
@@ -51,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-[#F0EBE3] text-[#2B2620] antialiased font-sans selection:bg-[#C0714A] selection:text-white flex flex-col min-h-screen">
+      <body className="bg-white text-[#12233B] antialiased font-sans selection:bg-[#2B6CB0] selection:text-white flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

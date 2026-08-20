@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return {
     title: `${category.name} Supply in Saudi Arabia | GulfFast`,
-    description: `Direct-supply ${category.name.toLowerCase()} manpower across Saudi Arabia from GulfFast's Al Khobar operations hub. Aramco and TUV certified, direct mobilization.`,
+    description: `Direct-supply ${category.name.toLowerCase()} manpower across Saudi Arabia from GulfFast's Al Khobar operations hub.`,
     alternates: {
       canonical: `/manpower/${category.slug}`
     }
@@ -50,6 +50,13 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
     (page) => page.category.slug === category.slug
   );
   const cert = categoryHasCertification(category);
+  const certPhrase = cert.aramco && cert.tuv
+    ? ', including Aramco-approved and TUV-certified job titles,'
+    : cert.aramco
+    ? ', including Aramco-approved job titles,'
+    : cert.tuv
+    ? ', including TUV-certified job titles,'
+    : '';
 
   const serviceSchema = generateServiceSchema(
     `${category.name} Supply in Saudi Arabia`,
@@ -58,7 +65,7 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
   );
 
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="py-10 bg-white text-[#12233B] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -77,7 +84,7 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
         <CategoryHero
           badgeText="Verified KSA Certified Manpower Supply"
           h1={`${category.name} Supply in Saudi Arabia`}
-          intro={`GulfFast supplies ${category.name.toLowerCase()} crews across Saudi Arabia, direct from our Al Khobar operations hub, with Aramco and TUV certification and Iqama-verified mobilization.`}
+          intro={`GulfFast supplies ${category.name.toLowerCase()} crews across Saudi Arabia, direct from our Al Khobar operations hub${certPhrase} with Iqama-verified mobilization.`}
           ctaLabel="Request Manpower"
           ctaHref="/request-a-quote?need=manpower"
         />
@@ -88,13 +95,13 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
             {(cert.aramco || cert.tuv) && (
               <div className="flex flex-wrap gap-2">
                 {cert.aramco && (
-                  <span className="inline-flex items-center gap-1.5 bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] text-xs font-bold px-3 py-1.5 rounded-xl">
+                  <span className="inline-flex items-center gap-1.5 bg-[#EAF4FC] border border-[#D7E6F5] text-[#12233B] text-xs font-bold px-3 py-1.5 rounded-xl">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                     Includes Aramco-Approved Job Titles
                   </span>
                 )}
                 {cert.tuv && (
-                  <span className="inline-flex items-center gap-1.5 bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] text-xs font-bold px-3 py-1.5 rounded-xl">
+                  <span className="inline-flex items-center gap-1.5 bg-[#EAF4FC] border border-[#D7E6F5] text-[#12233B] text-xs font-bold px-3 py-1.5 rounded-xl">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                     Includes TUV-Certified Job Titles
                   </span>
@@ -114,8 +121,8 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
                 />
               ))
             ) : (
-              <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-                <h2 className="text-xl font-extrabold text-[#0F172A] mb-2 border-l-4 border-[#C0714A] pl-3">
+              <div className="bg-white border border-[#D7E6F5] rounded-2xl p-6 shadow-sm">
+                <h2 className="text-xl font-extrabold text-[#12233B] mb-2 border-l-4 border-[#2B6CB0] pl-3">
                   Nationwide Coverage
                 </h2>
                 <p className="text-xs text-slate-600">

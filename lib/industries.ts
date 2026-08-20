@@ -11,8 +11,8 @@ export const industries: Industry[] = [
     name: 'Oil & Gas',
     slug: 'oil-and-gas',
     tagline: 'Upstream fields, gas plants, and cross-country pipelines',
-    description: 'Upstream oilfields, gas processing plants, and cross-country pipelines demand stringent safety compliance. GulfFast provides Aramco-approved machinery, TPI inspected diesel generators, 6G alloy welders, and certified Rigger Level 1 supervisors qualified under Saudi Aramco GI 6.012, GI 7.027, and GI 8.001.',
-    highlights: ['Aramco WQT Welders', 'High-Pressure Compressors', 'TPI Inspected Generators', 'IVMS Heavy Trucks']
+    description: 'Upstream oilfields, gas processing plants, and cross-country pipelines demand stringent safety compliance. GulfFast provides heavy machinery, diesel generators, 6G alloy welders, and rigging supervisors prepared to meet site safety requirements.',
+    highlights: ['6G Alloy Welders', 'High-Pressure Compressors', 'High-Output Generators', 'Heavy Transport Trucks']
   },
   {
     name: 'Petrochemical',
@@ -32,7 +32,7 @@ export const industries: Industry[] = [
     name: 'Power & Utilities',
     slug: 'power-and-utilities',
     tagline: 'Sub-stations, generation plants, and grid infrastructure',
-    description: 'Sub-station erection, power generation plant construction, and grid infrastructure projects require specialized heavy lifting and precision technical trades. GulfFast delivers mobile cranes, TUV riggers, millwright fitters, and instrument and electrical technicians for SEC and independent power producer projects.',
+    description: 'Sub-station erection, power generation plant construction, and grid infrastructure projects require specialized heavy lifting and precision technical trades. GulfFast delivers mobile cranes, TUV riggers, millwright fitters, and instrument and electrical technicians for power utility and independent power producer projects.',
     highlights: ['Mobile Cranes to 500T', 'HV Cable Jointers', 'Instrument Technicians', 'Millwright Fitters']
   },
   {

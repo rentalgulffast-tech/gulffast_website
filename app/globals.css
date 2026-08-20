@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F0EBE3;
-  --foreground: #2B2620;
-  --primary: #0F172A;
-  --accent: #C0714A;
-  --card-background: #FAF6EF;
+  --background: #FFFFFF;
+  --foreground: #12233B;
+  --primary: #2B6CB0;
+  --accent: #2B6CB0;
+  --card-background: #EAF4FC;
+  --border: #D7E6F5;
 }
 
 @theme {
-  --color-background: #F0EBE3;
-  --color-foreground: #2B2620;
-  --color-primary: #0F172A;
-  --color-accent: #C0714A;
-  --color-card-background: #FAF6EF;
+  --color-background: #FFFFFF;
+  --color-foreground: #12233B;
+  --color-primary: #2B6CB0;
+  --color-accent: #2B6CB0;
+  --color-card-background: #EAF4FC;
+  --color-border: #D7E6F5;
 }
 
 body {
@@ -49,7 +51,7 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #C0714A;
+  background-color: #2B6CB0;
   transition: width 0.2s ease-in-out;
 }
 .nav-link-hover:hover::after {
@@ -62,20 +64,20 @@ body {
 }
 .card-hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px -6px rgba(43, 38, 32, 0.1);
+  box-shadow: 0 12px 24px -6px rgba(18, 35, 59, 0.1);
 }
 
-/* Custom warm scrollbar */
+/* Custom light-blue scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #e2ded4;
+  background: #EAF4FC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c5c0b2;
+  background: #A9C6E8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a39e90;
+  background: #7CA8D6;
 }
