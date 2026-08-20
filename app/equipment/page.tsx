@@ -1,7 +1,9 @@
-import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import CategoryCard from '@/components/CategoryCard';
+import EquipmentCard from '@/components/EquipmentCard';
+import EquipmentExplorer, { EquipmentListEntry } from '@/components/EquipmentExplorer';
 import { getEquipmentCategories, getEquipmentTier1Categories } from '@/lib/equipment';
+import { equipmentClusters, getClusterForCategory } from '@/lib/equipment-clusters';
+import { cities } from '@/lib/cities';
 import { generateServiceSchema } from '@/lib/seo';
 
 export const metadata = {
@@ -14,7 +16,36 @@ export const metadata = {
 
 export default function EquipmentHubPage() {
   const allCategories = getEquipmentCategories();
-  const featuredCategories = getEquipmentTier1Categories();
+  const tier1Categories = getEquipmentTier1Categories();
+  const totalOwnedUnits = allCategories.reduce((sum, category) => sum + category.ownedFleetCount, 0);
+
+  const entries: EquipmentListEntry[] = allCategories.map((category) => {
+    const cluster = getClusterForCategory(category);
+    const cityCount = category.landingKeywords.length > 0 ? cities.length : 0;
+
+    return {
+      item: {
+        name: category.name,
+        slug: category.slug,
+        tier: category.tier,
+        ownedCount: category.ownedFleetCount,
+        cityCount,
+        clusterName: cluster.name,
+        clusterSlug: cluster.slug
+      },
+      card: (
+        <EquipmentCard
+          name={category.name}
+          slug={category.slug}
+          cluster={cluster.name}
+          specSummary={category.specSummary}
+          cityCount={cityCount}
+          ownedCount={category.ownedFleetCount}
+        />
+      )
+    };
+  });
+
   const serviceSchema = generateServiceSchema(
     'Industrial Equipment Rental Services in Saudi Arabia',
     'Certified heavy construction machinery, power generators, mobile cranes, transport trucks, and compressed air equipment rental in Saudi Arabia.',
@@ -49,43 +80,12 @@ export default function EquipmentHubPage() {
           </p>
         </div>
 
-        {/* Featured Tier 1 categories */}
-        <section className="my-10">
-          <h2 className="text-xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
-            Featured Equipment Categories
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredCategories.map((category) => (
-              <CategoryCard
-                key={category.slug}
-                name={category.name}
-                slug={category.slug}
-                tier={category.tier}
-                basePath="/equipment"
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Full A-Z category list */}
-        <section className="my-10">
-          <h2 className="text-xl font-extrabold text-[#0F172A] mb-5 border-l-4 border-[#C0714A] pl-3">
-            All Equipment Categories A–Z
-          </h2>
-          <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-xs">
-              {allCategories.map((category) => (
-                <Link
-                  key={category.slug}
-                  href={`/equipment/${category.slug}`}
-                  className="text-slate-700 hover:text-[#C0714A] font-semibold transition-colors py-1"
-                >
-                  {category.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <EquipmentExplorer
+          entries={entries}
+          clusters={equipmentClusters}
+          tier1Count={tier1Categories.length}
+          totalOwnedUnits={totalOwnedUnits}
+        />
 
         {/* Informational Callout */}
         <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-3 shadow-sm">
