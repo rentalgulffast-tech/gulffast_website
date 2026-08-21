@@ -132,7 +132,7 @@ export default function HomePage() {
       </section>
 
       {/* Category marquee */}
-      <div className="overflow-hidden border-y border-border bg-card-background py-6" style={{ maskImage: 'linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)' }}>
+      <div className="overflow-hidden border-y border-border bg-card-background py-6" style={{ maskImage: 'linear-gradient(90deg, transparent, black 12%, black 88%, transparent)' }}>
         <div className="marquee-track flex w-max gap-16">
           {marqueeClusters.map((cluster, i) => (
             <span key={`${cluster.slug}-${i}`} className="font-display whitespace-nowrap text-lg font-semibold tracking-[0.02em] text-border">

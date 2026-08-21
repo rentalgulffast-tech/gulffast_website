@@ -38,9 +38,8 @@
 }
 
 /* Layered (not plain) so Tailwind utility classes — which Tailwind itself emits
-   inside @layer utilities — can still override these defaults. Unlayered CSS
-   always beats layered CSS regardless of selector specificity, so without this
-   @layer, a `text-white` on a heading would silently lose to the rule below. */
+   inside @layer utilities — can still override these defaults where they target
+   the same element. */
 @layer base {
   body {
     background-color: var(--background);
@@ -49,9 +48,12 @@
     overflow-x: hidden;
   }
 
+  /* No default `color` here on purpose: an explicit same-element rule beats an
+     inherited one regardless of layer, so a default color on h1-h3 silently
+     wins over a `text-white` on an ancestor — every heading on a dark
+     background would render navy-on-navy. Set colour per heading instead. */
   h1, h2, h3 {
     font-family: var(--font-display), system-ui, sans-serif;
-    color: var(--primary);
   }
 
   .font-display {
@@ -154,6 +156,15 @@ header.header-stuck {
   100% { transform: scale(1.75); opacity: 0; }
 }
 
+/* Service-area map: selected-city halo pulse */
+.city-halo-pulse {
+  animation: city-halo-pulse 2.2s ease-out infinite;
+}
+@keyframes city-halo-pulse {
+  0% { r: 13; opacity: 0.28; }
+  100% { r: 26; opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -167,6 +178,9 @@ header.header-stuck {
     animation: none;
   }
   .wa-pulse::before {
+    animation: none;
+  }
+  .city-halo-pulse {
     animation: none;
   }
   .card-hover-lift:hover {
