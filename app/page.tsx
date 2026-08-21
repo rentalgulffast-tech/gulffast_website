@@ -4,11 +4,17 @@ import Pill from '@/components/Pill';
 import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
 import EquipmentCard from '@/components/EquipmentCard';
+import ServiceAreaMap from '@/components/ServiceAreaMap';
+import WhyChooseUsChecklist from '@/components/WhyChooseUsChecklist';
+import CertificationsBadges from '@/components/CertificationsBadges';
 import { getEquipmentCategoryBySlug } from '@/lib/equipment';
 import { getManpowerTier1Categories } from '@/lib/manpower';
 import { getClusterForCategory, equipmentClusters } from '@/lib/equipment-clusters';
 import { cities } from '@/lib/cities';
 import { getSiteStats } from '@/lib/site-stats';
+import { industries } from '@/lib/industries';
+import { getAllFaqs, getFeaturedFaqs } from '@/lib/faq';
+import { getCertificationSignals } from '@/lib/certifications';
 
 const FEATURED_EQUIPMENT_SLUGS = ['excavators', 'cranes', 'forklifts'];
 const FEATURED_MANPOWER_SLUGS = ['welding-and-fabrication', 'rigging-and-scaffolding', 'electrical-and-instrumentation', 'heavy-equipment-operators'];
@@ -33,6 +39,9 @@ export default function HomePage() {
     });
 
   const marqueeClusters = [...equipmentClusters, ...equipmentClusters];
+  const featuredFaqs = getFeaturedFaqs(4);
+  const allFaqsCount = getAllFaqs().length;
+  const certificationSignals = getCertificationSignals();
 
   return (
     <div className="bg-background text-foreground">
@@ -204,6 +213,128 @@ export default function HomePage() {
               ))}
             </div>
             <Pill href="/manpower">View All {stats.manpowerCategoryCount} Manpower Categories</Pill>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Why Choose GulfFast */}
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mx-auto mb-14 max-w-[640px] text-center">
+            <span className="text-[11.5px] font-bold uppercase tracking-[0.18em] text-accent-ink">Why GulfFast</span>
+            <h2 className="my-3.5 text-3xl font-bold leading-[1.16] tracking-[-0.028em] text-primary sm:text-[40px]">
+              Why Choose GulfFast
+            </h2>
+          </Reveal>
+          <Reveal>
+            <WhyChooseUsChecklist />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="bg-card-background py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mx-auto mb-14 max-w-[640px] text-center">
+            <span className="text-[11.5px] font-bold uppercase tracking-[0.18em] text-accent-ink">Sectors We Serve</span>
+            <h2 className="my-3.5 text-3xl font-bold leading-[1.16] tracking-[-0.028em] text-primary sm:text-[40px]">
+              Industries We Serve
+            </h2>
+            <p className="text-[16.5px] text-muted">
+              GulfFast delivers direct equipment rental and certified manpower supply tailored to the technical standards of Saudi Arabia&apos;s primary economic sectors.
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+            {industries.map((industry, i) => (
+              <Reveal key={industry.slug} delay={Math.min(i, 3) as 0 | 1 | 2 | 3}>
+                <Link
+                  href={`/industries/${industry.slug}`}
+                  className="group block rounded-2xl bg-card-background p-6 shadow-[0_2px_10px_-4px_rgba(20,34,74,0.1)] card-hover-lift"
+                >
+                  <h3 className="mb-1 text-sm font-bold text-primary transition-colors group-hover:text-accent-strong">
+                    {industry.name}
+                  </h3>
+                  <p className="text-xs text-faint">{industry.tagline}</p>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Case Studies */}
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mx-auto mb-14 max-w-[640px] text-center">
+            <span className="text-[11.5px] font-bold uppercase tracking-[0.18em] text-accent-ink">Track Record</span>
+            <h2 className="my-3.5 text-3xl font-bold leading-[1.16] tracking-[-0.028em] text-primary sm:text-[40px]">
+              Project Case Studies
+            </h2>
+          </Reveal>
+          <Reveal className="rounded-2xl bg-card-background p-10 text-center shadow-[0_2px_10px_-4px_rgba(20,34,74,0.1)]">
+            <p className="text-sm text-muted">
+              Named project case studies coming soon.
+            </p>
+            <Link href="/projects" className="mt-3 inline-block text-xs font-bold text-accent-strong hover:underline">
+              View Project Showcase →
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Where We Work */}
+      <section className="bg-card-background py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <ServiceAreaMap />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Certifications & Compliance */}
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mx-auto mb-14 max-w-[640px] text-center">
+            <span className="text-[11.5px] font-bold uppercase tracking-[0.18em] text-accent-ink">Compliance</span>
+            <h2 className="my-3.5 text-3xl font-bold leading-[1.16] tracking-[-0.028em] text-primary sm:text-[40px]">
+              Certifications &amp; Compliance
+            </h2>
+            <p className="text-[16.5px] text-muted">
+              {`${certificationSignals.length} certification signals, verified directly from job titles in our workforce data.`}
+            </p>
+          </Reveal>
+          <Reveal>
+            <CertificationsBadges />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FAQ teaser */}
+      <section className="bg-card-background py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mx-auto mb-14 max-w-[640px] text-center">
+            <span className="text-[11.5px] font-bold uppercase tracking-[0.18em] text-accent-ink">Common Questions</span>
+            <h2 className="my-3.5 text-3xl font-bold leading-[1.16] tracking-[-0.028em] text-primary sm:text-[40px]">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-[16.5px] text-muted">
+              {`${allFaqsCount} real questions and answers on equipment terms, manpower supply, contracts & payment, and compliance & safety.`}
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-7 sm:grid-cols-2">
+            {featuredFaqs.map((faq, i) => (
+              <Reveal key={faq.question} delay={Math.min(i, 3) as 0 | 1 | 2 | 3}>
+                <div className="rounded-2xl bg-card-background p-6 shadow-[0_2px_10px_-4px_rgba(20,34,74,0.1)]">
+                  <h3 className="mb-1.5 text-sm font-bold text-primary">{faq.question}</h3>
+                  <p className="line-clamp-3 text-xs leading-relaxed text-muted">{faq.answer}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-10 text-center">
+            <Pill href="/faq" variant="ghost">
+              View Full FAQ
+            </Pill>
           </Reveal>
         </div>
       </section>
