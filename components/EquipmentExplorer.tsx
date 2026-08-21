@@ -87,21 +87,21 @@ export default function EquipmentExplorer({ entries, clusters, tier1Count, total
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search equipment…"
-          className="mb-6 w-full rounded-md border border-[#DED7CB] bg-white px-3 py-2.5 text-sm text-[#2B2620] placeholder:text-[#6B6257] focus:border-[#C0714A] focus:outline-none"
+          className="mb-6 w-full rounded-md border border-border bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none"
         />
 
-        <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-[#6B6257]">Categories</h3>
+        <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted">Categories</h3>
         <ul className="mb-6 text-sm">
           <li>
             <button
               type="button"
               onClick={() => setSelectedCluster(null)}
               className={`flex w-full items-center justify-between border-b border-transparent py-1.5 text-left ${
-                selectedCluster === null ? 'font-semibold text-[#2B2620]' : 'text-[#6B6257] hover:text-[#2B2620]'
+                selectedCluster === null ? 'font-semibold text-primary' : 'text-muted hover:text-primary'
               }`}
             >
               <span>All equipment</span>
-              <span className="text-xs text-[#6B6257]">{searchFiltered.length}</span>
+              <span className="text-xs text-muted">{searchFiltered.length}</span>
             </button>
           </li>
           {clusters.map((cluster) => (
@@ -110,17 +110,17 @@ export default function EquipmentExplorer({ entries, clusters, tier1Count, total
                 type="button"
                 onClick={() => setSelectedCluster(cluster.slug)}
                 className={`flex w-full items-center justify-between border-b border-transparent py-1.5 text-left ${
-                  selectedCluster === cluster.slug ? 'font-semibold text-[#2B2620]' : 'text-[#6B6257] hover:text-[#2B2620]'
+                  selectedCluster === cluster.slug ? 'font-semibold text-primary' : 'text-muted hover:text-primary'
                 }`}
               >
                 <span>{cluster.name}</span>
-                <span className="text-xs text-[#6B6257]">{clusterCounts.get(cluster.slug) ?? 0}</span>
+                <span className="text-xs text-muted">{clusterCounts.get(cluster.slug) ?? 0}</span>
               </button>
             </li>
           ))}
         </ul>
 
-        <label className="flex items-start gap-2.5 rounded-lg border border-[#DED7CB] bg-[#FAF6EF] p-3 text-[13px]">
+        <label className="flex items-start gap-2.5 rounded-lg border border-border bg-card-background p-3 text-[13px]">
           <input
             type="checkbox"
             checked={ownedOnly}
@@ -128,8 +128,8 @@ export default function EquipmentExplorer({ entries, clusters, tier1Count, total
             className="mt-0.5"
           />
           <span>
-            <span className="block font-bold text-[#2B2620]">GulfFast-owned only</span>
-            <span className="text-xs leading-relaxed text-[#6B6257]">
+            <span className="block font-bold text-foreground">GulfFast-owned only</span>
+            <span className="text-xs leading-relaxed text-muted">
               {`Show only the ${totalOwnedUnits} units we own and dispatch ourselves`}
             </span>
           </span>
@@ -138,7 +138,7 @@ export default function EquipmentExplorer({ entries, clusters, tier1Count, total
 
       <main>
         <div className="mb-4 flex items-baseline">
-          <div className="text-sm text-[#6B6257]">
+          <div className="text-sm text-muted">
             {`${tier1Count} primary categories · ${totalOwnedUnits} owned units`}
             {(search.trim() || ownedOnly || selectedCluster) &&
               ` · ${visibleEntries.length} shown${ownedOnly ? ` (${ownedShown} owned)` : ''}`}
@@ -146,17 +146,17 @@ export default function EquipmentExplorer({ entries, clusters, tier1Count, total
         </div>
 
         {groupedByCluster.length === 0 && (
-          <div className="rounded-2xl border border-[#DED7CB] bg-white p-8 text-center text-sm text-[#6B6257]">
+          <div className="rounded-2xl border border-border bg-white p-8 text-center text-sm text-muted">
             No equipment matches your search.
           </div>
         )}
 
         {groupedByCluster.map(({ cluster, entries: clusterEntries }) => (
           <section key={cluster.slug} className="mb-9">
-            <h2 className="mb-4 border-b border-[#DED7CB] pb-2 text-[13px] font-bold uppercase tracking-wider text-[#6B6257]">
+            <h2 className="mb-4 border-b border-border pb-2 text-[13px] font-bold uppercase tracking-wider text-muted">
               {cluster.name}
             </h2>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
               {clusterEntries.map(({ item, card }) => (
                 <div key={item.slug}>{card}</div>
               ))}

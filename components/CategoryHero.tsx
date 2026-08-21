@@ -16,12 +16,12 @@ export default function CategoryHero({
   ctaLabel = 'Request a Quote',
 }: CategoryHeroProps) {
   return (
-    <div className="my-6 border-b border-[#E2DED4] pb-6">
-      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF7ED] border border-[#FFEDD5] text-[#C0714A] text-xs font-bold uppercase tracking-wider mb-3">
+    <div className="my-6 border-b border-border pb-6">
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-strong/10 border border-accent-strong/20 text-accent-strong text-xs font-bold uppercase tracking-wider mb-3">
         <span>{badgeText}</span>
       </div>
 
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight leading-tight">
         {h1}
       </h1>
 
@@ -31,7 +31,7 @@ export default function CategoryHero({
 
       <Link
         href={ctaHref}
-        className="inline-flex items-center gap-1.5 mt-4 px-6 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs sm:text-sm transition-colors shadow-sm"
+        className="inline-flex items-center gap-1.5 mt-4 px-6 py-2.5 rounded-xl bg-primary hover:bg-accent-strong text-white font-bold text-xs sm:text-sm transition-colors shadow-sm"
       >
         {`${ctaLabel} →`}
       </Link>

@@ -58,7 +58,7 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
   );
 
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="py-10 bg-background text-foreground min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -88,13 +88,13 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
             {(cert.aramco || cert.tuv) && (
               <div className="flex flex-wrap gap-2">
                 {cert.aramco && (
-                  <span className="inline-flex items-center gap-1.5 bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] text-xs font-bold px-3 py-1.5 rounded-xl">
+                  <span className="inline-flex items-center gap-1.5 bg-background border border-border text-primary text-xs font-bold px-3 py-1.5 rounded-xl">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                     Includes Aramco-Approved Job Titles
                   </span>
                 )}
                 {cert.tuv && (
-                  <span className="inline-flex items-center gap-1.5 bg-[#F0EBE3] border border-[#E2DED4] text-[#0F172A] text-xs font-bold px-3 py-1.5 rounded-xl">
+                  <span className="inline-flex items-center gap-1.5 bg-background border border-border text-primary text-xs font-bold px-3 py-1.5 rounded-xl">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                     Includes TUV-Certified Job Titles
                   </span>
@@ -114,8 +114,8 @@ export default async function ManpowerCategoryPage({ params }: PageProps) {
                 />
               ))
             ) : (
-              <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 shadow-sm">
-                <h2 className="text-xl font-extrabold text-[#0F172A] mb-2 border-l-4 border-[#C0714A] pl-3">
+              <div className="bg-white border border-border rounded-2xl p-6 shadow-sm">
+                <h2 className="text-xl font-extrabold text-primary mb-2 border-l-4 border-accent pl-3">
                   Nationwide Coverage
                 </h2>
                 <p className="text-xs text-slate-600">

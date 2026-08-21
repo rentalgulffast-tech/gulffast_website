@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F0EBE3;
-  --foreground: #2B2620;
-  --primary: #0F172A;
-  --accent: #C0714A;
-  --card-background: #FAF6EF;
+  --background:        #F5F7FB;  /* page ground, tinted sections */
+  --card-background:   #FFFFFF;  /* cards, header, white sections */
+  --foreground:        #14203D;  /* body text */
+  --muted:              #667085;  /* secondary text */
+  --faint:              #98A2B3;  /* tertiary, meta */
+  --border:             #E7EBF2;  /* hairlines */
+  --tint:               #EEF2FA;  /* image wells, active states */
+  --primary:            #253F78;  /* BRAND NAVY — headings, nav, logo */
+  --primary-deep:       #182C57;  /* footer, utility bar, CTA band */
+  --accent:             #E8871A;  /* bright amber — NON-TEXT only */
+  --accent-strong:      #B45309;  /* buttons + links (4.8:1 on white) */
+  --accent-ink:         #96430A;  /* small amber text on white */
+
+  /* Brand-mandated colours outside the design-token system — not for reuse elsewhere. */
+  --whatsapp-green: #25D366;
+  --whatsapp-green-dark: #1EBE57;
 }
 
 @theme {
-  --color-background: #F0EBE3;
-  --color-foreground: #2B2620;
-  --color-primary: #0F172A;
-  --color-accent: #C0714A;
-  --color-card-background: #FAF6EF;
+  --color-background: var(--background);
+  --color-card-background: var(--card-background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-border: var(--border);
+  --color-tint: var(--tint);
+  --color-primary: var(--primary);
+  --color-primary-deep: var(--primary-deep);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-display: var(--font-poppins);
+  --font-body: var(--font-inter);
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  overflow-x: hidden;
+/* Layered (not plain) so Tailwind utility classes — which Tailwind itself emits
+   inside @layer utilities — can still override these defaults. Unlayered CSS
+   always beats layered CSS regardless of selector specificity, so without this
+   @layer, a `text-white` on a heading would silently lose to the rule below. */
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    color: var(--primary);
+  }
+
+  .font-display {
+    font-family: var(--font-display), system-ui, sans-serif;
+  }
 }
 
 @keyframes fadeInScale {
@@ -49,33 +85,106 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #C0714A;
-  transition: width 0.2s ease-in-out;
+  background-color: var(--accent);
+  transition: width 0.28s cubic-bezier(.22,.8,.3,1);
 }
-.nav-link-hover:hover::after {
+.nav-link-hover:hover::after,
+.nav-link-hover.on::after {
   width: 100%;
 }
 
 /* Card Hover Lift Effect */
 .card-hover-lift {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.34s cubic-bezier(.22,.8,.3,1), box-shadow 0.34s cubic-bezier(.22,.8,.3,1);
 }
 .card-hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -6px rgba(43, 38, 32, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 44px -18px rgba(20, 34, 74, 0.28);
 }
 
-/* Custom warm scrollbar */
+/* Reveal-on-scroll (see components/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(.22,.8,.3,1), transform 0.7s cubic-bezier(.22,.8,.3,1);
+}
+.reveal.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+
+/* Header shrink-on-scroll */
+header.header-stuck {
+  box-shadow: 0 6px 24px -12px rgba(20, 34, 74, 0.24);
+}
+
+/* Category marquee */
+.marquee-track {
+  animation: marquee-slide 26s linear infinite;
+}
+@keyframes marquee-slide {
+  to { transform: translateX(-50%); }
+}
+
+/* Floating stat chip bob */
+.float-chip {
+  animation: float-bob 4.2s ease-in-out infinite;
+}
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-11px); }
+}
+
+/* WhatsApp pulse */
+.wa-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--whatsapp-green);
+  opacity: 0.55;
+  animation: wa-pulse-ring 2.4s ease-out infinite;
+  z-index: -1;
+}
+@keyframes wa-pulse-ring {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(1.75); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  .float-chip {
+    animation: none;
+  }
+  .wa-pulse::before {
+    animation: none;
+  }
+  .card-hover-lift:hover {
+    transform: none;
+  }
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #e2ded4;
+  background: var(--border);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c5c0b2;
+  background: var(--faint);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a39e90;
+  background: var(--muted);
 }

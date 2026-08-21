@@ -53,7 +53,7 @@ export default function EquipmentHubPage() {
   );
 
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="py-10 bg-background text-foreground min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -68,11 +68,11 @@ export default function EquipmentHubPage() {
           ]}
         />
 
-        <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <span className="text-[#C0714A] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+        <div className="my-6 border-b border-border pb-6">
+          <span className="text-accent-strong font-bold text-xs uppercase tracking-wider bg-accent-strong/10 px-3 py-1 rounded-full border border-accent-strong/20">
             Industrial Fleet Hub
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mt-2">
             Heavy Equipment Rental Services in Saudi Arabia
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
@@ -88,14 +88,14 @@ export default function EquipmentHubPage() {
         />
 
         {/* Informational Callout */}
-        <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-3 shadow-sm">
-          <h2 className="text-xl font-extrabold text-[#0F172A]">Need Customized Machinery Specifications or Long-Term Fleet Leasing?</h2>
+        <div className="bg-white border border-border rounded-2xl p-8 text-center my-10 space-y-3 shadow-sm">
+          <h2 className="text-xl font-extrabold text-primary">Need Customized Machinery Specifications or Long-Term Fleet Leasing?</h2>
           <p className="text-slate-600 text-xs max-w-2xl mx-auto leading-relaxed">
             All equipment includes options for bare-rental or operated &amp; maintained (O&amp;M) leases with Aramco-certified operators and mobile maintenance technicians.
           </p>
           <a
             href="tel:+966568676710"
-            className="inline-block px-6 py-2.5 bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
+            className="inline-block px-6 py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
           >
             Call Direct Equipment Desk: +966 56 867 6710
           </a>

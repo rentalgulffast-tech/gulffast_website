@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const otherPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="py-10 bg-background text-foreground min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs
@@ -50,16 +50,16 @@ export default async function BlogPostPage({ params }: PageProps) {
           ]}
         />
 
-        <div className="my-8 border-b border-[#E2DED4] pb-8">
+        <div className="my-8 border-b border-border pb-8">
           <div className="flex items-center gap-3 text-xs mb-3">
-            <span className="bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] px-2.5 py-1 rounded-full font-bold uppercase">
+            <span className="bg-accent-strong/10 text-accent-strong border border-accent-strong/20 px-2.5 py-1 rounded-full font-bold uppercase">
               {post.category}
             </span>
             <span className="text-slate-500">• {post.readTime}</span>
             <span className="text-slate-500">• {post.date}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-primary tracking-tight leading-tight">
             {post.title}
           </h1>
 
@@ -73,12 +73,12 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Main Article Content */}
           <div className="lg:col-span-7 space-y-6">
             
-            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="bg-white border border-border rounded-2xl p-6 sm:p-8 shadow-sm">
               <div className="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
                 {post.content.split('\n\n').map((block, idx) => {
                   if (block.startsWith('### ')) {
                     return (
-                      <h3 key={idx} className="text-xl font-bold text-[#0F172A] pt-4 pb-1 border-b border-[#E2DED4]">
+                      <h3 key={idx} className="text-xl font-bold text-primary pt-4 pb-1 border-b border-border">
                         {block.replace('### ', '')}
                       </h3>
                     );
@@ -88,8 +88,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                     return (
                       <ul key={idx} className="space-y-2 py-2">
                         {items.map((it, i) => (
-                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm bg-[#F9F8F5] p-3 rounded-xl border border-[#E2DED4]">
-                            <span className="text-[#C0714A] font-bold">✓</span>
+                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm bg-tint p-3 rounded-xl border border-border">
+                            <span className="text-accent-strong font-bold">✓</span>
                             <span>{it.replace(/^[0-9]+\.\s+|^-\s+/, '')}</span>
                           </li>
                         ))}
@@ -101,15 +101,15 @@ export default async function BlogPostPage({ params }: PageProps) {
               </div>
 
               {/* Author footer */}
-              <div className="mt-8 pt-6 border-t border-[#E2DED4] flex items-center justify-between text-xs text-slate-500">
+              <div className="mt-8 pt-6 border-t border-border flex items-center justify-between text-xs text-slate-500">
                 <span>Published by: <strong>{post.author}</strong></span>
                 <span>GulfFast Al Khobar Operations</span>
               </div>
             </div>
 
             {/* Other Insights */}
-            <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 space-y-4 shadow-sm">
-              <h3 className="text-base font-bold text-[#0F172A] border-l-4 border-[#C0714A] pl-3">
+            <div className="bg-white border border-border rounded-2xl p-6 space-y-4 shadow-sm">
+              <h3 className="text-base font-bold text-primary border-l-4 border-accent pl-3">
                 Other Technical Articles
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -117,10 +117,10 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <Link
                     key={op.slug}
                     href={`/blog/${op.slug}`}
-                    className="bg-[#F9F8F5] p-4 rounded-xl border border-[#E2DED4] hover:border-[#C0714A]/50 transition-colors block group"
+                    className="bg-tint p-4 rounded-xl border border-border hover:border-accent/50 transition-colors block group"
                   >
-                    <span className="text-[10px] text-[#C0714A] font-bold uppercase">{op.category}</span>
-                    <h4 className="text-xs font-bold text-[#0F172A] group-hover:text-[#C0714A] transition-colors mt-1 line-clamp-2">
+                    <span className="text-[10px] text-accent-strong font-bold uppercase">{op.category}</span>
+                    <h4 className="text-xs font-bold text-primary group-hover:text-accent-strong transition-colors mt-1 line-clamp-2">
                       {op.title}
                     </h4>
                     <span className="text-[11px] text-slate-500 mt-2 block">Read Article →</span>

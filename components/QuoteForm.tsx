@@ -61,34 +61,34 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
 
   if (submitted) {
     return (
-      <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center text-[#2B2620] shadow-sm">
-        <div className="w-14 h-14 bg-[#FFF7ED] text-[#C0714A] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#FFEDD5]">
+      <div className="bg-white border border-border rounded-2xl p-8 text-center text-foreground shadow-sm">
+        <div className="w-14 h-14 bg-accent-strong/10 text-accent-strong rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-strong/20">
           <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-[#0F172A] mb-2">Quote Request Submitted!</h3>
+        <h3 className="text-2xl font-bold text-primary mb-2">Quote Request Submitted!</h3>
         <p className="text-slate-600 text-sm max-w-md mx-auto mb-6 leading-relaxed">
           Thank you, <strong>{fullName}</strong>. Our Al Khobar sales desk will review your requirement for <strong>{requestedItem}</strong> and send an official quote within 2 business hours.
         </p>
 
         {/* Numbered process graphic */}
         <div className="grid grid-cols-3 gap-2 text-center text-[11px] font-bold text-slate-600 mb-6">
-          <div className="bg-[#F9F8F5] border border-[#E2DED4] rounded-xl p-3">
-            <div className="w-6 h-6 rounded-full bg-[#0F172A] text-white flex items-center justify-center mx-auto mb-1.5 text-xs">1</div>
+          <div className="bg-tint border border-border rounded-xl p-3">
+            <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-1.5 text-xs">1</div>
             Inquiry Received
           </div>
-          <div className="bg-[#F9F8F5] border border-[#E2DED4] rounded-xl p-3">
-            <div className="w-6 h-6 rounded-full bg-[#F0EBE3] text-[#0F172A] border border-[#E2DED4] flex items-center justify-center mx-auto mb-1.5 text-xs">2</div>
+          <div className="bg-tint border border-border rounded-xl p-3">
+            <div className="w-6 h-6 rounded-full bg-background text-primary border border-border flex items-center justify-center mx-auto mb-1.5 text-xs">2</div>
             Quotation Sent
           </div>
-          <div className="bg-[#F9F8F5] border border-[#E2DED4] rounded-xl p-3">
-            <div className="w-6 h-6 rounded-full bg-[#F0EBE3] text-[#0F172A] border border-[#E2DED4] flex items-center justify-center mx-auto mb-1.5 text-xs">3</div>
+          <div className="bg-tint border border-border rounded-xl p-3">
+            <div className="w-6 h-6 rounded-full bg-background text-primary border border-border flex items-center justify-center mx-auto mb-1.5 text-xs">3</div>
             Delivery / Mobilization
           </div>
         </div>
 
-        <div className="bg-[#F9F8F5] p-4 rounded-xl text-xs text-slate-600 border border-[#E2DED4] space-y-1 mb-6">
+        <div className="bg-tint p-4 rounded-xl text-xs text-slate-600 border border-border space-y-1 mb-6">
           <p><strong>Hotlines:</strong> +966 56 867 6710 | +966 53 832 1732</p>
           <p><strong>Sales Desk Email:</strong> sales@gulffast.co</p>
         </div>
@@ -100,7 +100,7 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-[#25D366] hover:bg-[#1EBE57] text-white font-bold rounded-xl text-xs transition-colors inline-flex items-center justify-center gap-2"
+              className="px-6 py-2.5 bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-green-dark)] text-white font-bold rounded-xl text-xs transition-colors inline-flex items-center justify-center gap-2"
             >
               Chat on WhatsApp Now →
             </a>
@@ -110,7 +110,7 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
               setSubmitted(false);
               setStep(presetNeed ? 2 : 1);
             }}
-            className="px-6 py-2.5 bg-[#F0EBE3] hover:bg-[#E2DED4] text-[#0F172A] font-semibold rounded-xl text-xs transition-colors border border-[#E2DED4]"
+            className="px-6 py-2.5 bg-background hover:bg-border text-primary font-semibold rounded-xl text-xs transition-colors border border-border"
           >
             Submit Another Request
           </button>
@@ -120,13 +120,13 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
   }
 
   return (
-    <div className="bg-white border border-[#E2DED4] rounded-2xl p-6 sm:p-8 text-[#2B2620] shadow-sm">
-      <div className="flex items-center justify-between border-b border-[#E2DED4] pb-4 mb-6">
+    <div className="bg-white border border-border rounded-2xl p-6 sm:p-8 text-foreground shadow-sm">
+      <div className="flex items-center justify-between border-b border-border pb-4 mb-6">
         <div>
-          <h3 className="text-xl font-extrabold text-[#0F172A]">Request Direct Quote</h3>
+          <h3 className="text-xl font-extrabold text-primary">Request Direct Quote</h3>
           <p className="text-xs text-slate-500 mt-0.5 font-medium">GulfFast Al Khobar Direct Supplier Desk • Fast Response</p>
         </div>
-        <span className="bg-[#FFF7ED] text-[#C0714A] border border-[#FFEDD5] text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+        <span className="bg-accent-strong/10 text-accent-strong border border-accent-strong/20 text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
           Step {step} of 3
         </span>
       </div>
@@ -134,38 +134,38 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
       {/* Step indicator */}
       <div className="flex items-center gap-2 mb-6">
         {[1, 2, 3].map((s) => (
-          <div key={s} className={`h-1.5 flex-1 rounded-full ${s <= step ? 'bg-[#0F172A]' : 'bg-[#E2DED4]'}`} />
+          <div key={s} className={`h-1.5 flex-1 rounded-full ${s <= step ? 'bg-primary' : 'bg-border'}`} />
         ))}
       </div>
 
       {/* Step 1: Select need */}
       {step === 1 && (
         <div className="space-y-3">
-          <p className="text-xs font-bold text-[#0F172A] mb-2">What do you need?</p>
+          <p className="text-xs font-bold text-primary mb-2">What do you need?</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <button
               type="button"
               onClick={() => selectNeed('equipment')}
-              className="p-5 rounded-xl border-2 border-[#E2DED4] hover:border-[#0F172A] text-center transition-colors"
+              className="p-5 rounded-xl border-2 border-border hover:border-primary text-center transition-colors"
             >
               <span className="block text-2xl mb-2">🏗️</span>
-              <span className="font-bold text-sm text-[#0F172A]">Equipment</span>
+              <span className="font-bold text-sm text-primary">Equipment</span>
             </button>
             <button
               type="button"
               onClick={() => selectNeed('manpower')}
-              className="p-5 rounded-xl border-2 border-[#E2DED4] hover:border-[#0F172A] text-center transition-colors"
+              className="p-5 rounded-xl border-2 border-border hover:border-primary text-center transition-colors"
             >
               <span className="block text-2xl mb-2">👷</span>
-              <span className="font-bold text-sm text-[#0F172A]">Manpower</span>
+              <span className="font-bold text-sm text-primary">Manpower</span>
             </button>
             <button
               type="button"
               onClick={() => selectNeed('both')}
-              className="p-5 rounded-xl border-2 border-[#E2DED4] hover:border-[#0F172A] text-center transition-colors"
+              className="p-5 rounded-xl border-2 border-border hover:border-primary text-center transition-colors"
             >
               <span className="block text-2xl mb-2">🤝</span>
-              <span className="font-bold text-sm text-[#0F172A]">Both</span>
+              <span className="font-bold text-sm text-primary">Both</span>
             </button>
           </div>
         </div>
@@ -176,12 +176,12 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
         <form onSubmit={(e) => { e.preventDefault(); setStep(3); }} className="space-y-4">
           {(need === 'equipment' || need === 'both') && (
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1 text-xs">Equipment Category *</label>
+              <label className="block text-primary font-bold mb-1 text-xs">Equipment Category *</label>
               <select
                 required
                 value={equipmentCategory}
                 onChange={(e) => setEquipmentCategory(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] text-xs font-medium"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-xs font-medium"
               >
                 <option value="">Select equipment category…</option>
                 {equipmentCategories.map((cat) => (
@@ -193,12 +193,12 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
 
           {(need === 'manpower' || need === 'both') && (
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1 text-xs">Manpower Trade *</label>
+              <label className="block text-primary font-bold mb-1 text-xs">Manpower Trade *</label>
               <select
                 required
                 value={manpowerCategory}
                 onChange={(e) => setManpowerCategory(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] text-xs font-medium"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-xs font-medium"
               >
                 <option value="">Select manpower trade…</option>
                 {manpowerCategories.map((cat) => (
@@ -210,12 +210,12 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1 text-xs">City / Site Location *</label>
+              <label className="block text-primary font-bold mb-1 text-xs">City / Site Location *</label>
               <select
                 required
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] text-xs font-bold"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-xs font-bold"
               >
                 {cities.map((c) => (
                   <option key={c.slug} value={c.name}>{c.name}</option>
@@ -225,11 +225,11 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
             </div>
 
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1 text-xs">Duration / Urgency</label>
+              <label className="block text-primary font-bold mb-1 text-xs">Duration / Urgency</label>
               <select
                 value={duration}
                 onChange={(e) => setDuration(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] text-xs font-bold"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-xs font-bold"
               >
                 {DURATION_OPTIONS.map((d) => (
                   <option key={d} value={d}>{d}</option>
@@ -239,13 +239,13 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
           </div>
 
           <div>
-            <label className="block text-[#0F172A] font-bold mb-1 text-xs">Quantity (if relevant)</label>
+            <label className="block text-primary font-bold mb-1 text-xs">Quantity (if relevant)</label>
             <input
               type="text"
               placeholder="e.g. 2 units / 5 workers"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] text-xs font-medium"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-xs font-medium"
             />
           </div>
 
@@ -253,13 +253,13 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
             <button
               type="button"
               onClick={() => setStep(1)}
-              className="text-xs font-bold text-slate-500 hover:text-[#0F172A]"
+              className="text-xs font-bold text-slate-500 hover:text-primary"
             >
               ← Back
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs shadow-sm transition-all"
+              className="px-6 py-2.5 rounded-xl bg-primary hover:bg-accent-strong text-white font-bold text-xs shadow-sm transition-all"
             >
               Continue →
             </button>
@@ -272,49 +272,49 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1">Full Name *</label>
+              <label className="block text-primary font-bold mb-1">Full Name *</label>
               <input
                 type="text"
                 required
                 placeholder="e.g. Eng. Abdullah Al-Mansoor"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] font-medium"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1">Company / Contractor Name *</label>
+              <label className="block text-primary font-bold mb-1">Company / Contractor Name *</label>
               <input
                 type="text"
                 required
                 placeholder="e.g. Al-Khobar Contracting LLC"
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] font-medium"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1">Mobile / WhatsApp (+966) *</label>
+              <label className="block text-primary font-bold mb-1">Mobile / WhatsApp (+966) *</label>
               <input
                 type="tel"
                 required
                 placeholder="+966 5X XXX XXXX"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] font-medium"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-[#0F172A] font-bold mb-1">Work Email Address (Optional)</label>
+              <label className="block text-primary font-bold mb-1">Work Email Address (Optional)</label>
               <input
                 type="email"
                 placeholder="name@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F8F5] border border-[#E2DED4] text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F172A] font-medium"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
               />
             </div>
           </div>
@@ -323,7 +323,7 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="text-xs font-bold text-slate-500 hover:text-[#0F172A] self-start sm:self-auto"
+              className="text-xs font-bold text-slate-500 hover:text-primary self-start sm:self-auto"
             >
               ← Back
             </button>
@@ -334,7 +334,7 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full sm:w-auto order-1 sm:order-2 px-8 py-3 rounded-xl bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto order-1 sm:order-2 px-8 py-3 rounded-xl bg-primary hover:bg-accent-strong text-white font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-2"
               >
                 {submitting ? (
                   <>

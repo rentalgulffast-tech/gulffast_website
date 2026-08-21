@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function IndustriesPage() {
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#1E293B] min-h-screen">
+    <div className="py-10 bg-background text-foreground min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <Breadcrumbs
@@ -22,11 +22,11 @@ export default function IndustriesPage() {
           ]}
         />
 
-        <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <span className="text-[#C0714A] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+        <div className="my-6 border-b border-border pb-6">
+          <span className="text-accent-strong font-bold text-xs uppercase tracking-wider bg-accent-strong/10 px-3 py-1 rounded-full border border-accent-strong/20">
             Industrial Sectors &amp; Field Expertise
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mt-2">
             Industries Served in Saudi Arabia
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
@@ -37,12 +37,12 @@ export default function IndustriesPage() {
         {/* Industry Grid */}
         <div className="space-y-8 my-8">
           {industries.map((industry, idx) => (
-            <div key={industry.slug} className="bg-white border border-[#E2DED4] rounded-2xl p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div key={industry.slug} className="bg-white border border-border rounded-2xl p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-3">
-                <span className="text-[#C0714A] font-bold text-xs uppercase tracking-wider">
+                <span className="text-accent-strong font-bold text-xs uppercase tracking-wider">
                   {String(idx + 1).padStart(2, '0')}. Sector Focus
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-primary">
                   {industry.name}
                 </h2>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -50,15 +50,15 @@ export default function IndustriesPage() {
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs pt-2">
                   {industry.highlights.map((highlight) => (
-                    <span key={highlight} className="bg-[#F0EBE3] px-3 py-1 rounded-xl border border-[#E2DED4] text-[#0F172A] font-bold">
+                    <span key={highlight} className="bg-background px-3 py-1 rounded-xl border border-border text-primary font-bold">
                       {highlight}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="lg:col-span-4 bg-[#F9F8F5] p-6 rounded-xl border border-[#E2DED4] text-center space-y-3">
-                <h3 className="text-base font-bold text-[#0F172A]">{industry.tagline}</h3>
-                <Link href={`/industries/${industry.slug}`} className="block w-full py-2.5 bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs rounded-xl transition-colors shadow-sm">
+              <div className="lg:col-span-4 bg-tint p-6 rounded-xl border border-border text-center space-y-3">
+                <h3 className="text-base font-bold text-primary">{industry.tagline}</h3>
+                <Link href={`/industries/${industry.slug}`} className="block w-full py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors shadow-sm">
                   View {industry.name} Solutions →
                 </Link>
               </div>

@@ -16,7 +16,7 @@ export default function FaqPage() {
   const faqSchema = generateFaqSchema(allFaqs.map((f) => ({ question: f.question, answer: f.answer })));
 
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="py-10 bg-background text-foreground min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -31,11 +31,11 @@ export default function FaqPage() {
           ]}
         />
 
-        <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <span className="text-[#C0714A] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+        <div className="my-6 border-b border-border pb-6">
+          <span className="text-accent-strong font-bold text-xs uppercase tracking-wider bg-accent-strong/10 px-3 py-1 rounded-full border border-accent-strong/20">
             Sitewide Information &amp; Policy Guidance
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mt-2">
             Frequently Asked Questions
           </h1>
           <p className="text-slate-600 text-sm max-w-2xl mt-2 leading-relaxed">
@@ -49,7 +49,7 @@ export default function FaqPage() {
             <a
               key={topic.slug}
               href={`#${topic.slug}`}
-              className="bg-white border border-[#E2DED4] text-[#0F172A] hover:bg-[#F0EBE3] px-3 py-1.5 rounded-xl text-xs font-bold transition-colors"
+              className="bg-white border border-border text-primary hover:bg-background px-3 py-1.5 rounded-xl text-xs font-bold transition-colors"
             >
               {topic.topic}
             </a>
@@ -64,21 +64,21 @@ export default function FaqPage() {
         ))}
 
         {/* Direct Contact Callout */}
-        <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 text-center my-10 space-y-4 shadow-sm">
-          <h2 className="text-xl font-extrabold text-[#0F172A]">Have a Specific Project Requirement Not Covered Here?</h2>
+        <div className="bg-white border border-border rounded-2xl p-8 text-center my-10 space-y-4 shadow-sm">
+          <h2 className="text-xl font-extrabold text-primary">Have a Specific Project Requirement Not Covered Here?</h2>
           <p className="text-slate-600 text-xs max-w-xl mx-auto leading-relaxed">
             Speak directly with our technical sales engineers at our Al Khobar headquarters.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <a
               href="tel:+966568676710"
-              className="px-6 py-2.5 bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs rounded-xl transition-colors shadow-sm"
+              className="px-6 py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors shadow-sm"
             >
               Call +966 56 867 6710
             </a>
             <a
               href="mailto:sales@gulffast.co"
-              className="px-6 py-2.5 bg-[#F0EBE3] hover:bg-[#E2DED4] text-[#0F172A] font-bold text-xs rounded-xl transition-colors border border-[#E2DED4]"
+              className="px-6 py-2.5 bg-background hover:bg-border text-primary font-bold text-xs rounded-xl transition-colors border border-border"
             >
               Email sales@gulffast.co
             </a>

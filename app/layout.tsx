@@ -1,8 +1,23 @@
 import type { Metadata } from 'next';
+import { Poppins, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StickyWhatsApp from '@/components/StickyWhatsApp';
 import './globals.css';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap'
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
   title: {
@@ -50,8 +65,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="bg-[#F0EBE3] text-[#2B2620] antialiased font-sans selection:bg-[#C0714A] selection:text-white flex flex-col min-h-screen">
+    <html lang="en" className={`scroll-smooth ${poppins.variable} ${inter.variable}`}>
+      <body className="bg-background text-foreground antialiased font-body selection:bg-accent-strong selection:text-white flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

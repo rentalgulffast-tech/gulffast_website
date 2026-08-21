@@ -90,19 +90,16 @@ export default function EquipmentPlaceholder({ cluster, className = '' }: Equipm
   return (
     <div
       aria-hidden="true"
-      className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden ${className}`}
-      style={{
-        background: 'radial-gradient(120% 90% at 30% 15%, #fff 0%, #EFE8DD 55%, #E4DACA 100%)',
-      }}
+      className={`relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-tint ${className}`}
     >
       <svg
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#0F172A"
-        strokeWidth={1.4}
+        stroke="var(--primary)"
+        strokeWidth={1.2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-[42%] w-[42%] opacity-[0.42]"
+        className="h-[38%] w-[38%] opacity-[0.17] transition-transform duration-500 ease-[cubic-bezier(.22,.8,.3,1)] group-hover:scale-[1.09]"
       >
         {icon}
       </svg>

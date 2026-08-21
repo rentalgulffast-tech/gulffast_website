@@ -43,7 +43,7 @@ export default async function IndustryPage({ params }: PageProps) {
   );
 
   return (
-    <div className="py-10 bg-[#F0EBE3] text-[#2B2620] min-h-screen">
+    <div className="py-10 bg-background text-foreground min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -59,11 +59,11 @@ export default async function IndustryPage({ params }: PageProps) {
           ]}
         />
 
-        <div className="my-6 border-b border-[#E2DED4] pb-6">
-          <span className="text-[#C0714A] font-bold text-xs uppercase tracking-wider bg-[#FFF7ED] px-3 py-1 rounded-full border border-[#FFEDD5]">
+        <div className="my-6 border-b border-border pb-6">
+          <span className="text-accent-strong font-bold text-xs uppercase tracking-wider bg-accent-strong/10 px-3 py-1 rounded-full border border-accent-strong/20">
             Industrial Sector Focus
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mt-2">
             {industry.name} Industry Solutions in Saudi Arabia
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
@@ -71,23 +71,23 @@ export default async function IndustryPage({ params }: PageProps) {
           </p>
         </div>
 
-        <div className="bg-white border border-[#E2DED4] rounded-2xl p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-8">
+        <div className="bg-white border border-border rounded-2xl p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-8">
           <div className="lg:col-span-8 space-y-3">
             <p className="text-slate-600 text-sm leading-relaxed">
               {industry.description}
             </p>
             <div className="flex flex-wrap gap-2 text-xs pt-2">
               {industry.highlights.map((highlight) => (
-                <span key={highlight} className="bg-[#F0EBE3] px-3 py-1 rounded-xl border border-[#E2DED4] text-[#0F172A] font-bold">
+                <span key={highlight} className="bg-background px-3 py-1 rounded-xl border border-border text-primary font-bold">
                   {highlight}
                 </span>
               ))}
             </div>
           </div>
-          <div className="lg:col-span-4 bg-[#F9F8F5] p-6 rounded-xl border border-[#E2DED4] text-center space-y-3">
-            <h3 className="text-base font-bold text-[#0F172A]">Need {industry.name} Project Support?</h3>
+          <div className="lg:col-span-4 bg-tint p-6 rounded-xl border border-border text-center space-y-3">
+            <h3 className="text-base font-bold text-primary">Need {industry.name} Project Support?</h3>
             <p className="text-xs text-slate-600">Our Al Khobar desk manages gate pass issuance and third-party inspection certificates.</p>
-            <Link href="/request-a-quote" className="block w-full py-2.5 bg-[#0F172A] hover:bg-[#C0714A] text-white font-bold text-xs rounded-xl transition-colors shadow-sm">
+            <Link href="/request-a-quote" className="block w-full py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors shadow-sm">
               Request {industry.name} Quote →
             </Link>
           </div>
@@ -96,16 +96,16 @@ export default async function IndustryPage({ params }: PageProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
           <Link
             href="/equipment"
-            className="bg-white border border-[#E2DED4] rounded-2xl p-6 hover:border-[#0F172A] transition-colors shadow-sm block"
+            className="bg-white border border-border rounded-2xl p-6 hover:border-primary transition-colors shadow-sm block"
           >
-            <h3 className="font-bold text-[#0F172A] text-sm mb-1">Browse Equipment Categories →</h3>
+            <h3 className="font-bold text-primary text-sm mb-1">Browse Equipment Categories →</h3>
             <p className="text-xs text-slate-500">Excavators, cranes, generators, trucks, and more.</p>
           </Link>
           <Link
             href="/manpower"
-            className="bg-white border border-[#E2DED4] rounded-2xl p-6 hover:border-[#0F172A] transition-colors shadow-sm block"
+            className="bg-white border border-border rounded-2xl p-6 hover:border-primary transition-colors shadow-sm block"
           >
-            <h3 className="font-bold text-[#0F172A] text-sm mb-1">Browse Manpower Categories →</h3>
+            <h3 className="font-bold text-primary text-sm mb-1">Browse Manpower Categories →</h3>
             <p className="text-xs text-slate-500">Welders, riggers, operators, and safety officers.</p>
           </Link>
         </div>

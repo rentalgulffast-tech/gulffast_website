@@ -16,14 +16,14 @@ export default function WhyChooseUsChecklist() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {POINTS.map((point) => (
-        <div key={point.title} className="flex items-start gap-3 bg-white border border-[#E2DED4] rounded-2xl p-5 shadow-sm">
-          <span className="shrink-0 w-9 h-9 rounded-xl bg-[#FFF7ED] border border-[#FFEDD5] text-[#C0714A] flex items-center justify-center">
+        <div key={point.title} className="flex items-start gap-3 bg-white border border-border rounded-2xl p-5 shadow-sm">
+          <span className="shrink-0 w-9 h-9 rounded-xl bg-accent-strong/10 border border-accent-strong/20 text-accent-strong flex items-center justify-center">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
           </span>
           <div>
-            <h3 className="font-bold text-[#0F172A] text-sm mb-1">{point.title}</h3>
+            <h3 className="font-bold text-primary text-sm mb-1">{point.title}</h3>
             <p className="text-xs text-slate-600 leading-relaxed">{point.text}</p>
           </div>
         </div>
