@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'GulfFast Rentals & Manpower' }],
   creator: 'GulfFast Trading & Industrial Supply',
-  metadataBase: new URL('https://gulffast-rentals.com'),
+  metadataBase: new URL('https://rental.gulffast.co'),
   alternates: {
     canonical: '/'
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://gulffast-rentals.com',
+    url: 'https://rental.gulffast.co',
     title: 'GulfFast Rentals & Manpower | Equipment & Manpower Supply Saudi Arabia',
     description: 'Direct supplier of certified heavy equipment rental and Aramco/TUV certified manpower supply across Saudi Arabia.',
     siteName: 'GulfFast Rentals & Manpower'

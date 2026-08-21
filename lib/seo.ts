@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   name: 'GulfFast Rentals & Manpower',
   companyLegal: 'GulfFast Trading & Industrial Supply',
   parentDomain: 'https://www.gulffast.co',
-  url: 'https://gulffast-rentals.com', // Placeholder canonical domain
+  url: 'https://rental.gulffast.co',
   phoneNumbers: ['+966 56 867 6710', '+966 53 832 1732'],
   email: 'sales@gulffast.co',
   foundingYear: '1999',
