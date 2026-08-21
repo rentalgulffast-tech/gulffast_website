@@ -43,3 +43,7 @@ next-env.d.ts
 mockup-*.html
 *.ps1
 _contact-sheet.html
+
+mockup-*.html
+*.ps1
+_contact-sheet.html
