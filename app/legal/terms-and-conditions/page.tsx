@@ -1,8 +1,10 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { CONTACT, telHref, mailtoHref } from '@/lib/contact';
+import { BRAND_LEGAL_NAME } from '@/lib/brand';
 
 export const metadata = {
   title: 'Terms and Conditions | GulfFast Rentals & Manpower KSA',
-  description: 'Terms and conditions governing equipment rental and manpower supply services provided by Arabian Gulf Fast Contracting Co. (GulfFast) in Saudi Arabia.',
+  description: `Terms and conditions governing equipment rental and manpower supply services provided by ${BRAND_LEGAL_NAME} (GulfFast) in Saudi Arabia.`,
   alternates: {
     canonical: '/legal/terms-and-conditions'
   }
@@ -37,7 +39,7 @@ export default function TermsAndConditionsPage() {
           <section className="space-y-2">
             <h2 className="text-lg font-extrabold text-primary">1. Acceptance of Terms</h2>
             <p>
-              These Terms and Conditions govern your use of this website and any equipment rental or manpower supply services requested from Arabian Gulf Fast Contracting Co. (&quot;GulfFast&quot;, &quot;we&quot;, &quot;us&quot;). By submitting a quote request or engaging our services, you agree to be bound by these terms.
+              These Terms and Conditions govern your use of this website and any equipment rental or manpower supply services requested from {BRAND_LEGAL_NAME} (&quot;GulfFast&quot;, &quot;we&quot;, &quot;us&quot;). By submitting a quote request or engaging our services, you agree to be bound by these terms.
             </p>
           </section>
 
@@ -87,9 +89,9 @@ export default function TermsAndConditionsPage() {
             <h2 className="text-lg font-extrabold text-primary">8. Contact Us</h2>
             <p>
               For questions about these Terms and Conditions, contact us at{' '}
-              <a href="mailto:sales@gulffast.co" className="text-accent-strong font-semibold hover:underline">sales@gulffast.co</a>{' '}
+              <a href={mailtoHref()} className="text-accent-strong font-semibold hover:underline">{CONTACT.email}</a>{' '}
               or{' '}
-              <a href="tel:+966568676710" className="text-accent-strong font-semibold hover:underline">+966 56 867 6710</a>.
+              <a href={telHref(CONTACT.phonePrimary)} className="text-accent-strong font-semibold hover:underline">{CONTACT.phonePrimary}</a>.
             </p>
           </section>
 

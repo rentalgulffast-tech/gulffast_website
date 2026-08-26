@@ -2,6 +2,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FaqAccordion from '@/components/FaqAccordion';
 import { faqTopics, getAllFaqs } from '@/lib/faq';
 import { generateFaqSchema } from '@/lib/seo';
+import { CONTACT, telHref, mailtoHref } from '@/lib/contact';
 
 export const metadata = {
   title: 'Frequently Asked Questions (FAQ) | GulfFast Rentals KSA',
@@ -71,16 +72,16 @@ export default function FaqPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <a
-              href="tel:+966568676710"
+              href={telHref(CONTACT.phonePrimary)}
               className="px-6 py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors shadow-sm"
             >
-              Call +966 56 867 6710
+              Call {CONTACT.phonePrimary}
             </a>
             <a
-              href="mailto:sales@gulffast.co"
+              href={mailtoHref()}
               className="px-6 py-2.5 bg-background hover:bg-border text-primary font-bold text-xs rounded-xl transition-colors border border-border"
             >
-              Email sales@gulffast.co
+              Email {CONTACT.email}
             </a>
           </div>
         </div>

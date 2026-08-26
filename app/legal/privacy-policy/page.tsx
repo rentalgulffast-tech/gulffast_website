@@ -1,8 +1,10 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { CONTACT, telHref, mailtoHref } from '@/lib/contact';
+import { BRAND_LEGAL_NAME } from '@/lib/brand';
 
 export const metadata = {
   title: 'Privacy Policy | GulfFast Rentals & Manpower KSA',
-  description: 'How Arabian Gulf Fast Contracting Co. (GulfFast) collects, uses, and protects personal data submitted through quote requests and site inquiries in Saudi Arabia.',
+  description: `How ${BRAND_LEGAL_NAME} (GulfFast) collects, uses, and protects personal data submitted through quote requests and site inquiries in Saudi Arabia.`,
   alternates: {
     canonical: '/legal/privacy-policy'
   }
@@ -37,7 +39,7 @@ export default function PrivacyPolicyPage() {
           <section className="space-y-2">
             <h2 className="text-lg font-extrabold text-primary">1. Introduction</h2>
             <p>
-              Arabian Gulf Fast Contracting Co. (&quot;GulfFast&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), headquartered at Building No.6623, Prince Abdulmohsin Ibn Abdulaziz Street, Madinat Al Ummal District, Al Khobar, Saudi Arabia, respects your privacy and is committed to protecting personal data collected through this website in accordance with the Kingdom of Saudi Arabia&apos;s Personal Data Protection Law (PDPL) and its implementing regulations.
+              {BRAND_LEGAL_NAME} (&quot;GulfFast&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), headquartered at Building No.6623, Prince Abdulmohsin Ibn Abdulaziz Street, Madinat Al Ummal District, Al Khobar, Saudi Arabia, respects your privacy and is committed to protecting personal data collected through this website in accordance with the Kingdom of Saudi Arabia&apos;s Personal Data Protection Law (PDPL) and its implementing regulations.
             </p>
           </section>
 
@@ -80,9 +82,9 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-lg font-extrabold text-primary">7. Contact Us</h2>
             <p>
               For questions about this Privacy Policy or to exercise your data protection rights, contact us at{' '}
-              <a href="mailto:sales@gulffast.co" className="text-accent-strong font-semibold hover:underline">sales@gulffast.co</a>{' '}
+              <a href={mailtoHref()} className="text-accent-strong font-semibold hover:underline">{CONTACT.email}</a>{' '}
               or{' '}
-              <a href="tel:+966568676710" className="text-accent-strong font-semibold hover:underline">+966 56 867 6710</a>.
+              <a href={telHref(CONTACT.phonePrimary)} className="text-accent-strong font-semibold hover:underline">{CONTACT.phonePrimary}</a>.
             </p>
           </section>
 

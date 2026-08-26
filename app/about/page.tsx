@@ -2,10 +2,11 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import WhyChooseUsChecklist from '@/components/WhyChooseUsChecklist';
 import CertificationsBadges from '@/components/CertificationsBadges';
+import { BRAND_LEGAL_NAME } from '@/lib/brand';
 
 export const metadata = {
   title: 'About GulfFast | Direct Industrial Equipment & Manpower Supplier KSA',
-  description: 'Learn about Arabian Gulf Fast Contracting Co. (GulfFast), established in 1999 in Al Khobar. Direct equipment owner and Aramco-certified manpower supplier.',
+  description: `Learn about ${BRAND_LEGAL_NAME} (GulfFast), established in 1999 in Al Khobar. Direct equipment owner and Aramco-certified manpower supplier.`,
   alternates: {
     canonical: '/about'
   }
@@ -28,7 +29,7 @@ export default function AboutPage() {
             Established in KSA Since 1999
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mt-2">
-            Arabian Gulf Fast Contracting Co. (GulfFast)
+            {BRAND_LEGAL_NAME} (GulfFast)
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
             Headquartered in Al Khobar, Saudi Arabia, GulfFast is a premier direct owner of heavy construction machinery, transportation fleets, and certified technical manpower for major industrial and infrastructure developments.

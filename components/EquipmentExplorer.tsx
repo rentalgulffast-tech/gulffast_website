@@ -12,6 +12,11 @@ export interface EquipmentListItem {
   clusterSlug: string;
 }
 
+interface EquipmentCityOption {
+  name: string;
+  slug: string;
+}
+
 export interface EquipmentListEntry {
   item: EquipmentListItem;
   // Pre-rendered server component — EquipmentCard reads the local filesystem
@@ -28,23 +33,29 @@ interface EquipmentClusterOption {
 interface EquipmentExplorerProps {
   entries: EquipmentListEntry[];
   clusters: EquipmentClusterOption[];
+  cities: EquipmentCityOption[];
   tier1Count: number;
   totalOwnedUnits: number;
 }
 
-export default function EquipmentExplorer({ entries, clusters, tier1Count, totalOwnedUnits }: EquipmentExplorerProps) {
+export default function EquipmentExplorer({ entries, clusters, cities, tier1Count, totalOwnedUnits }: EquipmentExplorerProps) {
   const [search, setSearch] = useState('');
   const [ownedOnly, setOwnedOnly] = useState(false);
   const [selectedCluster, setSelectedCluster] = useState<string | null>(null);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
   const searchFiltered = useMemo(() => {
     const query = search.trim().toLowerCase();
     return entries.filter(({ item }) => {
       if (ownedOnly && item.ownedCount <= 0) return false;
+      // Every category with any city coverage is dispatched to all of our covered
+      // cities uniformly — there's no per-city availability data — so selecting a
+      // specific city just narrows to categories with confirmed city dispatch.
+      if (selectedCity && item.cityCount <= 0) return false;
       if (query && !item.name.toLowerCase().includes(query)) return false;
       return true;
     });
-  }, [entries, search, ownedOnly]);
+  }, [entries, search, ownedOnly, selectedCity]);
 
   const visibleEntries = useMemo(
     () =>
@@ -120,6 +131,23 @@ export default function EquipmentExplorer({ entries, clusters, tier1Count, total
           ))}
         </ul>
 
+        <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted">City / Region</h3>
+        <select
+          value={selectedCity ?? ''}
+          onChange={(e) => setSelectedCity(e.target.value || null)}
+          className="mb-6 w-full rounded-md border border-border bg-white px-3 py-2.5 text-sm text-foreground focus:border-accent focus:outline-none"
+        >
+          <option value="">All cities</option>
+          {cities.map((city) => (
+            <option key={city.slug} value={city.slug}>{city.name}</option>
+          ))}
+        </select>
+        {selectedCity && (
+          <p className="mb-6 -mt-4 text-xs leading-relaxed text-muted">
+            Showing categories with confirmed direct dispatch to {cities.find((c) => c.slug === selectedCity)?.name} and our other covered cities.
+          </p>
+        )}
+
         <label className="flex items-start gap-2.5 rounded-lg border border-border bg-card-background p-3 text-[13px]">
           <input
             type="checkbox"
@@ -140,7 +168,7 @@ export default function EquipmentExplorer({ entries, clusters, tier1Count, total
         <div className="mb-4 flex items-baseline">
           <div className="text-sm text-muted">
             {`${tier1Count} primary categories · ${totalOwnedUnits} owned units`}
-            {(search.trim() || ownedOnly || selectedCluster) &&
+            {(search.trim() || ownedOnly || selectedCluster || selectedCity) &&
               ` · ${visibleEntries.length} shown${ownedOnly ? ` (${ownedShown} owned)` : ''}`}
           </div>
         </div>

@@ -1,17 +1,13 @@
 'use client';
 
-import { WHATSAPP_NUMBER } from '@/lib/site-stats';
+import { CONTACT } from '@/lib/contact';
 
 const WHATSAPP_MESSAGE = encodeURIComponent('Hello GulfFast, I would like to request a quote.');
 
 export default function StickyWhatsApp() {
-  // No real GulfFast WhatsApp number configured yet — render nothing rather than
-  // point at the wrong business or a dead link. See lib/site-stats.ts.
-  if (!WHATSAPP_NUMBER) return null;
-
   return (
     <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+      href={`https://wa.me/${CONTACT.whatsappNumber}?text=${WHATSAPP_MESSAGE}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with GulfFast on WhatsApp"

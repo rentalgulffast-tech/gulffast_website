@@ -5,6 +5,8 @@ import { getEquipmentCategories, getEquipmentTier1Categories } from '@/lib/equip
 import { equipmentClusters, getClusterForCategory } from '@/lib/equipment-clusters';
 import { cities } from '@/lib/cities';
 import { generateServiceSchema } from '@/lib/seo';
+import { CONTACT, telHref } from '@/lib/contact';
+import SupplierIntakeForm from '@/components/SupplierIntakeForm';
 
 export const metadata = {
   title: 'Heavy Equipment Rental Services in Saudi Arabia | GulfFast',
@@ -83,6 +85,7 @@ export default function EquipmentHubPage() {
         <EquipmentExplorer
           entries={entries}
           clusters={equipmentClusters}
+          cities={cities}
           tier1Count={tier1Categories.length}
           totalOwnedUnits={totalOwnedUnits}
         />
@@ -94,11 +97,24 @@ export default function EquipmentHubPage() {
             All equipment includes options for bare-rental or operated &amp; maintained (O&amp;M) leases with Aramco-certified operators and mobile maintenance technicians.
           </p>
           <a
-            href="tel:+966568676710"
+            href={telHref(CONTACT.phonePrimary)}
             className="inline-block px-6 py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
           >
-            Call Direct Equipment Desk: +966 56 867 6710
+            Call Direct Equipment Desk: {CONTACT.phonePrimary}
           </a>
+        </div>
+
+        {/* Supplier / Equipment Owner Intake */}
+        <div className="my-10">
+          <div className="mb-5">
+            <h2 className="text-xl font-extrabold text-primary border-l-4 border-accent pl-3">
+              Own Equipment? List It With GulfFast
+            </h2>
+            <p className="text-slate-600 text-xs max-w-2xl mt-2 leading-relaxed">
+              Equipment owners and suppliers across Saudi Arabia can register machinery with our partner network. Tell us what you have and where it&apos;s based.
+            </p>
+          </div>
+          <SupplierIntakeForm />
         </div>
 
       </div>

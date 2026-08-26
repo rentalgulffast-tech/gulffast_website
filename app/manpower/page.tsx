@@ -3,6 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CategoryCard from '@/components/CategoryCard';
 import { getManpowerCategories, getManpowerTier1Categories } from '@/lib/manpower';
 import { generateServiceSchema } from '@/lib/seo';
+import { CONTACT, telHref } from '@/lib/contact';
 
 export const metadata = {
   title: 'Certified Manpower Supply Services in Saudi Arabia | GulfFast',
@@ -97,10 +98,10 @@ export default function ManpowerHubPage() {
             GulfFast handles full mobilization including Iqama verification, Aramco/SABIC gate passes, trade coupon testing, food, housing camps, and site transport.
           </p>
           <a
-            href="tel:+966568676710"
+            href={telHref(CONTACT.phonePrimary)}
             className="inline-block px-6 py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
           >
-            Call Direct Workforce Desk: +966 56 867 6710
+            Call Direct Workforce Desk: {CONTACT.phonePrimary}
           </a>
         </div>
 

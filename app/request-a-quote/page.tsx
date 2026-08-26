@@ -1,5 +1,6 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
 import QuoteForm from '@/components/QuoteForm';
+import { CONTACT } from '@/lib/contact';
 
 export const metadata = {
   title: 'Request a Quote | Heavy Equipment & Manpower | GulfFast KSA',
@@ -55,7 +56,7 @@ export default async function RequestQuotePage({ searchParams }: PageProps) {
           </div>
           <div className="bg-white border border-border p-4 rounded-2xl text-center space-y-1 shadow-sm">
             <span className="text-primary font-bold text-sm block">📞 Hotline Support</span>
-            <p>Emergency dispatches: +966 56 867 6710 / +966 53 832 1732.</p>
+            <p>{`Emergency dispatches: ${CONTACT.phonePrimary} / ${CONTACT.phoneSecondary}.`}</p>
           </div>
         </div>
 

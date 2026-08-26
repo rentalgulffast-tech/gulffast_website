@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { getEquipmentCategories } from '@/lib/equipment';
 import { getManpowerCategories } from '@/lib/manpower';
 import { cities } from '@/lib/cities';
-import { WHATSAPP_NUMBER } from '@/lib/site-stats';
+import { CONTACT } from '@/lib/contact';
 
 type NeedType = 'equipment' | 'manpower' | 'both';
 
@@ -42,19 +42,50 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const selectNeed = (value: NeedType) => {
     setNeed(value);
     setStep(2);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setSubmitError(null);
+
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'quote',
+          need,
+          equipmentCategory: equipmentCategory || undefined,
+          manpowerCategory: manpowerCategory || undefined,
+          city,
+          duration,
+          quantity: quantity || undefined,
+          fullName,
+          companyName,
+          phone,
+          email: email || undefined
+        })
+      });
+
+      const data: { ok: boolean; error?: string } = await res.json();
+
+      if (!res.ok || !data.ok) {
+        setSubmitError(data.error || `We could not send your request. Please call ${CONTACT.phonePrimary} directly.`);
+        return;
+      }
+
       setSubmitted(true);
-    }, 600);
+    } catch {
+      setSubmitError(`We could not reach our server. Please call ${CONTACT.phonePrimary} or WhatsApp us directly.`);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const requestedItem = [equipmentCategory, manpowerCategory].filter(Boolean).join(' / ') || 'your project';
@@ -89,22 +120,19 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
         </div>
 
         <div className="bg-tint p-4 rounded-xl text-xs text-slate-600 border border-border space-y-1 mb-6">
-          <p><strong>Hotlines:</strong> +966 56 867 6710 | +966 53 832 1732</p>
-          <p><strong>Sales Desk Email:</strong> sales@gulffast.co</p>
+          <p><strong>Hotlines:</strong> {CONTACT.phonePrimary} | {CONTACT.phoneSecondary}</p>
+          <p><strong>Sales Desk Email:</strong> {CONTACT.email}</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {/* No real GulfFast WhatsApp number configured yet — see lib/site-stats.ts */}
-          {WHATSAPP_NUMBER && (
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-green-dark)] text-white font-bold rounded-xl text-xs transition-colors inline-flex items-center justify-center gap-2"
-            >
-              Chat on WhatsApp Now →
-            </a>
-          )}
+          <a
+            href={`https://wa.me/${CONTACT.whatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2.5 bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-green-dark)] text-white font-bold rounded-xl text-xs transition-colors inline-flex items-center justify-center gap-2"
+          >
+            Chat on WhatsApp Now →
+          </a>
           <button
             onClick={() => {
               setSubmitted(false);
@@ -318,6 +346,13 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
               />
             </div>
           </div>
+
+          {submitError && (
+            <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl p-4 text-xs leading-relaxed">
+              <strong className="block mb-1">Your request could not be sent.</strong>
+              {submitError}
+            </div>
+          )}
 
           <div className="mt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
             <button

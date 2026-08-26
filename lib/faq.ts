@@ -1,3 +1,5 @@
+import { BRAND_LEGAL_NAME } from '@/lib/brand';
+
 export interface FaqEntry {
   question: string;
   answer: string;
@@ -141,7 +143,7 @@ export const faqTopics: FaqTopic[] = [
       },
       {
         question: 'What Commercial Registration and business documentation does GulfFast hold?',
-        answer: 'GulfFast (Arabian Gulf Fast Contracting Co.) operates under Saudi Commercial Registration and VAT registration; full documentation is provided to clients as part of contracting.'
+        answer: `GulfFast (${BRAND_LEGAL_NAME}) operates under Saudi Commercial Registration and VAT registration; full documentation is provided to clients as part of contracting.`
       },
       {
         question: 'How does GulfFast vet manpower before deployment?',

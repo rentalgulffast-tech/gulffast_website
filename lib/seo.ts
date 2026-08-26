@@ -1,10 +1,12 @@
+import { CONTACT } from '@/lib/contact';
+
 export const SITE_CONFIG = {
   name: 'GulfFast Rentals & Manpower',
   companyLegal: 'GulfFast Trading & Industrial Supply',
   parentDomain: 'https://www.gulffast.co',
   url: 'https://rental.gulffast.co',
-  phoneNumbers: ['+966 56 867 6710', '+966 53 832 1732'],
-  email: 'sales@gulffast.co',
+  phoneNumbers: [CONTACT.phonePrimary, CONTACT.phoneSecondary],
+  email: CONTACT.email,
   foundingYear: '1999',
   address: {
     street: 'Building No.6623, Prince Abdulmohsin Ibn Abdulaziz Street, Madinat Al Ummal Dist.',

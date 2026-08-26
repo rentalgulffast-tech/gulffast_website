@@ -4,7 +4,8 @@ import { generateOrganizationSchema, generateLocalBusinessSchema } from '@/lib/s
 import { getEquipmentTier1Categories } from '@/lib/equipment';
 import { getManpowerTier1Categories } from '@/lib/manpower';
 import { cities } from '@/lib/cities';
-import { WHATSAPP_NUMBER } from '@/lib/site-stats';
+import { CONTACT, telHref, mailtoHref } from '@/lib/contact';
+import { BRAND_LEGAL_NAME } from '@/lib/brand';
 import CertificationsBadges from '@/components/CertificationsBadges';
 
 export default function Footer() {
@@ -40,7 +41,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs leading-relaxed max-w-md">
-              GulfFast (Arabian Gulf Fast Contracting Co.) is an established direct heavy equipment rental and certified manpower supply provider serving Aramco, SABIC, SEC, and major EPC contractors across Saudi Arabia since 1999.
+              GulfFast ({BRAND_LEGAL_NAME}) is an established direct heavy equipment rental and certified manpower supply provider serving Aramco, SABIC, SEC, and major EPC contractors across Saudi Arabia since 1999.
             </p>
 
             <div className="space-y-2 pt-2 text-xs">
@@ -60,24 +61,22 @@ export default function Footer() {
                 </svg>
                 <span>
                   <strong className="text-white/80">Hotlines:</strong>{' '}
-                  <a href="tel:+966568676710" className="hover:text-white transition-colors font-semibold">+966 56 867 6710</a>{' '}/{' '}
-                  <a href="tel:+966538321732" className="hover:text-white transition-colors font-semibold">+966 53 832 1732</a>
+                  <a href={telHref(CONTACT.phonePrimary)} className="hover:text-white transition-colors font-semibold">{CONTACT.phonePrimary}</a>{' '}/{' '}
+                  <a href={telHref(CONTACT.phoneSecondary)} className="hover:text-white transition-colors font-semibold">{CONTACT.phoneSecondary}</a>
                 </span>
               </div>
 
-              {WHATSAPP_NUMBER && (
-                <div className="flex items-center gap-2.5">
-                  <svg className="w-4 h-4 shrink-0" style={{ color: 'var(--whatsapp-green)' }} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.017 2C6.492 2 2.017 6.475 2.017 12c0 1.9.53 3.729 1.53 5.312L2 22l4.812-1.514A9.94 9.94 0 0012.017 22c5.524 0 10-4.476 10-10s-4.476-10-10-10z" />
-                  </svg>
-                  <span>
-                    <strong className="text-white/80">WhatsApp:</strong>{' '}
-                    <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-semibold">
-                      {WHATSAPP_NUMBER}
-                    </a>
-                  </span>
-                </div>
-              )}
+              <div className="flex items-center gap-2.5">
+                <svg className="w-4 h-4 shrink-0" style={{ color: 'var(--whatsapp-green)' }} fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.017 2C6.492 2 2.017 6.475 2.017 12c0 1.9.53 3.729 1.53 5.312L2 22l4.812-1.514A9.94 9.94 0 0012.017 22c5.524 0 10-4.476 10-10s-4.476-10-10-10z" />
+                </svg>
+                <span>
+                  <strong className="text-white/80">WhatsApp:</strong>{' '}
+                  <a href={`https://wa.me/${CONTACT.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-semibold">
+                    {CONTACT.phonePrimary}
+                  </a>
+                </span>
+              </div>
 
               <div className="flex items-center gap-2.5">
                 <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,7 +84,7 @@ export default function Footer() {
                 </svg>
                 <span>
                   <strong className="text-white/80">Email:</strong>{' '}
-                  <a href="mailto:sales@gulffast.co" className="hover:text-white transition-colors">sales@gulffast.co</a>
+                  <a href={mailtoHref()} className="hover:text-white transition-colors">{CONTACT.email}</a>
                 </span>
               </div>
 
@@ -169,7 +168,7 @@ export default function Footer() {
 
         {/* Bottom Legal / Copyright Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>{`© ${new Date().getFullYear()} Arabian Gulf Fast Contracting Co. (GulfFast). All rights reserved.`}</p>
+          <p>{`© ${new Date().getFullYear()} ${BRAND_LEGAL_NAME} (GulfFast). All rights reserved.`}</p>
           <div className="flex items-center gap-4 flex-wrap justify-center">
             <span>Al Khobar Headquarters, Saudi Arabia</span>
             <span>•</span>

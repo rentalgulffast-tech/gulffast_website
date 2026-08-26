@@ -1,9 +1,11 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
 import QuoteForm from '@/components/QuoteForm';
+import { CONTACT, telHref, mailtoHref } from '@/lib/contact';
+import { BRAND_LEGAL_NAME } from '@/lib/brand';
 
 export const metadata = {
   title: 'Contact GulfFast Head Office | Al Khobar, Saudi Arabia',
-  description: 'Contact Arabian Gulf Fast Contracting Co. (GulfFast) head office in Al Khobar, KSA. Direct hotline: +966 56 867 6710, email: sales@gulffast.co.',
+  description: `Contact ${BRAND_LEGAL_NAME} (GulfFast) head office in Al Khobar, KSA. Direct hotline: ${CONTACT.phonePrimary}, email: ${CONTACT.email}.`,
   alternates: {
     canonical: '/contact'
   }
@@ -58,8 +60,8 @@ export default function ContactPage() {
                   <span className="text-base shrink-0">📞</span>
                   <div>
                     <strong className="text-primary block">Direct Sales Hotlines:</strong>
-                    <a href="tel:+966568676710" className="text-accent-strong font-bold block hover:underline">+966 56 867 6710</a>
-                    <a href="tel:+966538321732" className="text-accent-strong font-bold block hover:underline">+966 53 832 1732</a>
+                    <a href={telHref(CONTACT.phonePrimary)} className="text-accent-strong font-bold block hover:underline">{CONTACT.phonePrimary}</a>
+                    <a href={telHref(CONTACT.phoneSecondary)} className="text-accent-strong font-bold block hover:underline">{CONTACT.phoneSecondary}</a>
                   </div>
                 </div>
 
@@ -67,7 +69,7 @@ export default function ContactPage() {
                   <span className="text-base shrink-0">✉️</span>
                   <div>
                     <strong className="text-primary block">Official Email:</strong>
-                    <a href="mailto:sales@gulffast.co" className="text-primary font-semibold hover:underline">sales@gulffast.co</a>
+                    <a href={mailtoHref()} className="text-primary font-semibold hover:underline">{CONTACT.email}</a>
                   </div>
                 </div>
 

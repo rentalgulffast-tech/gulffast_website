@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { WHATSAPP_NUMBER } from '@/lib/site-stats';
+import { CONTACT, telHref, mailtoHref } from '@/lib/contact';
+import { BRAND_LEGAL_NAME, BRAND_TAGLINE } from '@/lib/brand';
 import Pill from '@/components/Pill';
 
 export default function Header() {
@@ -38,44 +39,40 @@ export default function Header() {
           <div className="flex items-center gap-4 flex-wrap justify-center md:justify-start">
             <span className="inline-flex items-center gap-1.5 text-white font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              Arabian Gulf Fast Contracting Co. (Est. 1999)
+              {BRAND_LEGAL_NAME} (Est. 1999)
             </span>
             <span className="hidden sm:inline w-px h-3.5 bg-white/15"></span>
             <span>Al Khobar, KSA • Direct Industrial Supplier</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="tel:+966568676710" className="hover:text-white transition-colors flex items-center gap-1 font-semibold text-white">
+            <a href={telHref(CONTACT.phonePrimary)} className="hover:text-white transition-colors flex items-center gap-1 font-semibold text-white">
               <svg className="w-3.5 h-3.5 text-accent" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.49 2.53.76 3.88.76a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.27 1.11l-2.17 2.2z"/>
               </svg>
-              +966 56 867 6710
+              {CONTACT.phonePrimary}
             </a>
             <span className="w-px h-3.5 bg-white/15"></span>
-            <a href="tel:+966538321732" className="hover:text-white transition-colors font-semibold text-white">
-              +966 53 832 1732
+            <a href={telHref(CONTACT.phoneSecondary)} className="hover:text-white transition-colors font-semibold text-white">
+              {CONTACT.phoneSecondary}
             </a>
             <span className="hidden lg:inline w-px h-3.5 bg-white/15"></span>
-            <a href="mailto:sales@gulffast.co" className="hidden lg:inline hover:text-white transition-colors">
-              sales@gulffast.co
+            <a href={mailtoHref()} className="hidden lg:inline hover:text-white transition-colors">
+              {CONTACT.email}
             </a>
-            {WHATSAPP_NUMBER && (
-              <>
-                <span className="w-px h-3.5 bg-white/15"></span>
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Chat with GulfFast on WhatsApp"
-                  className="hover:text-white transition-colors flex items-center gap-1 font-semibold text-white"
-                >
-                  <svg className="w-3.5 h-3.5" style={{ color: 'var(--whatsapp-green)' }} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                    <path d="M12.017 2C6.492 2 2.017 6.475 2.017 12c0 1.9.53 3.729 1.53 5.312L2 22l4.812-1.514A9.94 9.94 0 0012.017 22c5.524 0 10-4.476 10-10s-4.476-10-10-10zm0 18.184a8.15 8.15 0 01-4.16-1.14l-.298-.177-3.096.974.99-3.02-.194-.31a8.157 8.157 0 01-1.242-4.323c0-4.51 3.672-8.184 8.183-8.184 4.51 0 8.184 3.673 8.184 8.184 0 4.511-3.673 8.184-8.184 8.184z"/>
-                  </svg>
-                  WhatsApp
-                </a>
-              </>
-            )}
+            <span className="w-px h-3.5 bg-white/15"></span>
+            <a
+              href={`https://wa.me/${CONTACT.whatsappNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with GulfFast on WhatsApp"
+              className="hover:text-white transition-colors flex items-center gap-1 font-semibold text-white"
+            >
+              <svg className="w-3.5 h-3.5" style={{ color: 'var(--whatsapp-green)' }} fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12.017 2C6.492 2 2.017 6.475 2.017 12c0 1.9.53 3.729 1.53 5.312L2 22l4.812-1.514A9.94 9.94 0 0012.017 22c5.524 0 10-4.476 10-10s-4.476-10-10-10zm0 18.184a8.15 8.15 0 01-4.16-1.14l-.298-.177-3.096.974.99-3.02-.194-.31a8.157 8.157 0 01-1.242-4.323c0-4.51 3.672-8.184 8.183-8.184 4.51 0 8.184 3.673 8.184 8.184 0 4.511-3.673 8.184-8.184 8.184z"/>
+              </svg>
+              WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -99,8 +96,13 @@ export default function Header() {
               priority
               className="h-10 w-auto"
             />
-            <span className="font-display text-primary font-bold tracking-[0.02em] text-xl leading-none">
-              GULFFAST
+            <span className="flex flex-col leading-none">
+              <span className="font-display text-primary font-bold tracking-[0.02em] text-xl leading-none">
+                GULFFAST
+              </span>
+              <span className="text-muted text-[10px] font-semibold uppercase tracking-[0.14em] mt-0.5">
+                {BRAND_TAGLINE}
+              </span>
             </span>
           </Link>
 
