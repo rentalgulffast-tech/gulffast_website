@@ -55,22 +55,22 @@ export default function HomePage() {
         />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-16 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
           <div>
-            <Reveal as="span" className="block text-[11.5px] font-bold uppercase tracking-[0.18em] text-accent-ink">
+            <Reveal as="span" immediate className="block text-[11.5px] font-bold uppercase tracking-[0.18em] text-accent-ink">
               Equipment &amp; Manpower Supply · Saudi Arabia
             </Reveal>
-            <Reveal delay={1}>
+            <Reveal immediate>
               <h1 className="my-4 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-primary sm:text-[56px]">
                 Heavy equipment and certified manpower, <span className="text-accent-strong">site-ready</span> on arrival.
               </h1>
             </Reveal>
-            <Reveal delay={2}>
+            <Reveal immediate>
               <p className="mb-8 max-w-[52ch] text-base text-muted sm:text-[17px]">
                 Earthmoving, lifting, power and site-support fleets — plus Aramco and TUV certified trade
                 crews — dispatched across the Eastern Province, Riyadh and the Western Region from our Al
                 Khobar and Jubail yards.
               </p>
             </Reveal>
-            <Reveal delay={3} className="flex flex-wrap gap-3.5">
+            <Reveal immediate className="flex flex-wrap gap-3.5">
               <Pill href="/request-a-quote">Request a Quote</Pill>
               <Pill href="/equipment" variant="ghost">
                 Browse {stats.equipmentCategoryCount} Categories
@@ -78,7 +78,7 @@ export default function HomePage() {
             </Reveal>
           </div>
 
-          <Reveal delay={2} className="relative">
+          <Reveal immediate className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] shadow-[0_20px_44px_-18px_rgba(20,34,74,0.28)]">
               <Image
                 src="/images/hero-equipment.jpg"

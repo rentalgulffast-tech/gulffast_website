@@ -7,6 +7,12 @@ interface RevealProps {
   delay?: 0 | 1 | 2 | 3;
   className?: string;
   as?: 'div' | 'section' | 'span' | 'article';
+  /**
+   * Render visible on first paint with no reveal animation. Use for
+   * above-the-fold content that must not wait on hydration or the
+   * IntersectionObserver (e.g. the homepage hero).
+   */
+  immediate?: boolean;
 }
 
 const DELAY_CLASS: Record<0 | 1 | 2 | 3, string> = {
@@ -16,11 +22,19 @@ const DELAY_CLASS: Record<0 | 1 | 2 | 3, string> = {
   3: 'reveal-d3'
 };
 
-export default function Reveal({ children, delay = 0, className = '', as = 'div' }: RevealProps) {
+export default function Reveal({
+  children,
+  delay = 0,
+  className = '',
+  as = 'div',
+  immediate = false
+}: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
+    if (immediate) return;
+
     const el = ref.current;
     if (!el) return;
 
@@ -43,9 +57,15 @@ export default function Reveal({ children, delay = 0, className = '', as = 'div'
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [immediate]);
 
   const Tag = as;
+
+  // Above-the-fold: no reveal class means no opacity:0, so it paints
+  // immediately without waiting for JS to hydrate.
+  if (immediate) {
+    return <Tag className={className || undefined}>{children}</Tag>;
+  }
 
   return (
     <Tag
