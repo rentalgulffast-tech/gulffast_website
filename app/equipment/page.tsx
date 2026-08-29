@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import EquipmentCard from '@/components/EquipmentCard';
 import EquipmentExplorer, { EquipmentListEntry } from '@/components/EquipmentExplorer';
@@ -6,7 +7,6 @@ import { equipmentClusters, getClusterForCategory } from '@/lib/equipment-cluste
 import { cities } from '@/lib/cities';
 import { generateServiceSchema } from '@/lib/seo';
 import { CONTACT, telHref } from '@/lib/contact';
-import SupplierIntakeForm from '@/components/SupplierIntakeForm';
 
 export const metadata = {
   title: 'Heavy Equipment Rental Services in Saudi Arabia | GulfFast',
@@ -104,17 +104,21 @@ export default function EquipmentHubPage() {
           </a>
         </div>
 
-        {/* Supplier / Equipment Owner Intake */}
+        {/* Supplier / Equipment Owner Intake — full registration form lives on /suppliers */}
         <div className="my-10">
-          <div className="mb-5">
-            <h2 className="text-xl font-extrabold text-primary border-l-4 border-accent pl-3">
-              Own Equipment? List It With GulfFast
-            </h2>
-            <p className="text-slate-600 text-xs max-w-2xl mt-2 leading-relaxed">
-              Equipment owners and suppliers across Saudi Arabia can register machinery with our partner network. Tell us what you have and where it&apos;s based.
+          <div className="bg-white border border-border rounded-2xl p-8 text-center space-y-3 shadow-sm">
+            <h2 className="text-xl font-extrabold text-primary">Own Equipment? List It With GulfFast</h2>
+            <p className="text-slate-600 text-xs max-w-2xl mx-auto leading-relaxed">
+              Equipment owners and suppliers across Saudi Arabia can register machinery with our fleet sourcing desk.
+              Submissions are private and nothing is published.
             </p>
+            <Link
+              href="/suppliers"
+              className="inline-block px-6 py-2.5 bg-primary hover:bg-accent-strong text-white font-bold text-xs rounded-xl transition-colors mt-2 shadow-sm"
+            >
+              Register as a Supplier →
+            </Link>
           </div>
-          <SupplierIntakeForm />
         </div>
 
       </div>
