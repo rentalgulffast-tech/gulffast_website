@@ -43,6 +43,14 @@ export default function Header() {
             </span>
             <span className="hidden sm:inline w-px h-3.5 bg-white/15"></span>
             <span>Al Khobar, KSA • Direct Industrial Supplier</span>
+            <span className="hidden sm:inline w-px h-3.5 bg-white/15"></span>
+            <Link href="/careers" className="hover:text-white transition-colors">
+              Careers
+            </Link>
+            <span className="hidden sm:inline w-px h-3.5 bg-white/15"></span>
+            <Link href="/suppliers" className="hover:text-white transition-colors">
+              For Suppliers
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <a href={telHref(CONTACT.phonePrimary)} className="hover:text-white transition-colors flex items-center gap-1 font-semibold text-white">
