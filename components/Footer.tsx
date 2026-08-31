@@ -7,6 +7,7 @@ import { cities } from '@/lib/cities';
 import { CONTACT, telHref, mailtoHref } from '@/lib/contact';
 import { BRAND_LEGAL_NAME } from '@/lib/brand';
 import CertificationsBadges from '@/components/CertificationsBadges';
+import { CREDENTIALS, ISO_CERTIFICATES } from '@/lib/credentials';
 
 export default function Footer() {
   const orgSchema = generateOrganizationSchema();
@@ -41,7 +42,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs leading-relaxed max-w-md">
-              GulfFast ({BRAND_LEGAL_NAME}) is an established direct heavy equipment rental and certified manpower supply provider serving Aramco, SABIC, SEC, and major EPC contractors across Saudi Arabia since 1999.
+              GulfFast ({BRAND_LEGAL_NAME}) is an established direct heavy equipment rental and certified manpower supply provider serving oil and gas, petrochemical, power, and construction projects across Saudi Arabia since 1999.
             </p>
 
             <div className="space-y-2 pt-2 text-xs">
@@ -88,8 +89,9 @@ export default function Footer() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-2.5 pt-1 text-white/40">
-                <span>CR No: 2051256547 • VAT: 311441936900003 • ISO 9001:2015</span>
+              <div className="flex flex-col gap-1 pt-1 text-white/40">
+                <span>{`CR ${CREDENTIALS.crNumber} • VAT ${CREDENTIALS.vatNumber} • Unified No. ${CREDENTIALS.unifiedNationalNumber}`}</span>
+                <span>{ISO_CERTIFICATES.map((cert) => cert.standard).join(' • ')}</span>
               </div>
             </div>
           </div>

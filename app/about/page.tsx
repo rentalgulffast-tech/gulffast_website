@@ -3,6 +3,7 @@ import Link from 'next/link';
 import WhyChooseUsChecklist from '@/components/WhyChooseUsChecklist';
 import CertificationsBadges from '@/components/CertificationsBadges';
 import { BRAND_LEGAL_NAME } from '@/lib/brand';
+import { CREDENTIALS, ISO_CERTIFICATES, ISO_CERTIFYING_BODY, ISO_VALID_UNTIL } from '@/lib/credentials';
 
 export const metadata = {
   title: 'About GulfFast | Direct Industrial Equipment & Manpower Supplier KSA',
@@ -55,10 +56,10 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-white border border-border rounded-2xl p-6 shadow-sm">
-            <h3 className="text-2xl font-black text-primary mb-1 font-mono">ISO &amp; Aramco</h3>
-            <p className="text-xs font-bold uppercase tracking-wider text-accent-strong">Site Compliance</p>
+            <h3 className="text-2xl font-black text-primary mb-1 font-mono">ISO Certified</h3>
+            <p className="text-xs font-bold uppercase tracking-wider text-accent-strong">Quality, Environment, Safety</p>
             <p className="text-slate-600 text-xs mt-2 leading-relaxed">
-              ISO 9001:2015 certified, valid CR &amp; VAT registrations, with Aramco &amp; SABIC site access clearance.
+              Certified to ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018, with valid CR and VAT registrations.
             </p>
           </div>
         </div>
@@ -71,20 +72,36 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
             <div className="bg-tint p-4 rounded-xl border border-border">
               <span className="text-slate-500 block font-medium">Commercial Registration:</span>
-              <strong className="text-primary font-mono text-sm">CR No: 2051256547</strong>
+              <strong className="text-primary font-mono text-sm">CR No: {CREDENTIALS.crNumber}</strong>
             </div>
             <div className="bg-tint p-4 rounded-xl border border-border">
               <span className="text-slate-500 block font-medium">VAT Certificate:</span>
-              <strong className="text-primary font-mono text-sm">VAT: 311441936900003</strong>
+              <strong className="text-primary font-mono text-sm">VAT: {CREDENTIALS.vatNumber}</strong>
             </div>
             <div className="bg-tint p-4 rounded-xl border border-border">
-              <span className="text-slate-500 block font-medium">Quality Management:</span>
-              <strong className="text-primary font-mono text-sm">ISO 9001:2015 Certified</strong>
+              <span className="text-slate-500 block font-medium">Unified National Number:</span>
+              <strong className="text-primary font-mono text-sm">{CREDENTIALS.unifiedNationalNumber}</strong>
             </div>
             <div className="bg-tint p-4 rounded-xl border border-border">
               <span className="text-slate-500 block font-medium">Operations HQ:</span>
               <strong className="text-primary text-xs">Madinat Al Ummal, Al Khobar</strong>
             </div>
+          </div>
+
+          <div className="pt-2">
+            <h3 className="text-slate-500 font-medium text-xs mb-3">Certified Management Systems</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+              {ISO_CERTIFICATES.map((cert) => (
+                <div key={cert.standard} className="bg-tint p-4 rounded-xl border border-border">
+                  <strong className="text-primary font-mono text-sm block">{cert.standard}</strong>
+                  <span className="text-slate-500 block font-medium mt-1">{cert.scope}</span>
+                  <span className="text-slate-500 block font-mono mt-1">Cert. {cert.certificateNumber}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-500 text-[11px] mt-3 leading-relaxed">
+              Issued by {ISO_CERTIFYING_BODY}. Valid to {ISO_VALID_UNTIL}.
+            </p>
           </div>
         </div>
 
