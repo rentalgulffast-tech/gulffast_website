@@ -4,6 +4,7 @@ import { getManpowerCategories, getManpowerLandingPages } from '@/lib/manpower';
 import { cities } from '@/lib/cities';
 import { industries } from '@/lib/industries';
 import { getBlogPosts } from '@/lib/data';
+import { getSolutions } from '@/lib/solutions';
 import { SITE_CONFIG } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
     { url: `${baseUrl}/equipment`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
     { url: `${baseUrl}/manpower`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/solutions`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/urgent`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/industries`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/projects`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
@@ -69,6 +72,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  // Solution and audience landing pages (5)
+  const solutionRoutes: MetadataRoute.Sitemap = getSolutions().map((solution) => ({
+    url: `${baseUrl}/solutions/${solution.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.85
+  }));
+
   // Blog post routes
   const blogRoutes: MetadataRoute.Sitemap = getBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -84,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...equipmentCityRoutes,
     ...manpowerCategoryRoutes,
     ...manpowerCityRoutes,
+    ...solutionRoutes,
     ...blogRoutes
   ];
 }

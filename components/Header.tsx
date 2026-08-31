@@ -23,6 +23,7 @@ export default function Header() {
   const navItems = [
     { name: 'Equipment', href: '/equipment' },
     { name: 'Manpower', href: '/manpower' },
+    { name: 'Solutions', href: '/solutions' },
     { name: 'Industries', href: '/industries' },
     { name: 'Projects', href: '/projects' },
     { name: 'Blog', href: '/blog' },
@@ -43,6 +44,11 @@ export default function Header() {
             </span>
             <span className="hidden sm:inline w-px h-3.5 bg-white/15"></span>
             <span>Al Khobar, KSA • Direct Industrial Supplier</span>
+            <span className="hidden sm:inline w-px h-3.5 bg-white/15"></span>
+            <Link href="/urgent" className="inline-flex items-center gap-1.5 text-accent hover:text-white font-bold transition-colors">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+              Urgent Requirements
+            </Link>
             <span className="hidden sm:inline w-px h-3.5 bg-white/15"></span>
             <Link href="/careers" className="hover:text-white transition-colors">
               Careers
