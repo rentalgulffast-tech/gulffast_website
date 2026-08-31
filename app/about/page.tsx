@@ -71,11 +71,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
             <div className="bg-tint p-4 rounded-xl border border-border">
               <span className="text-slate-500 block font-medium">Commercial Registration:</span>
-              <strong className="text-primary font-mono text-sm">CR No: 2051234567</strong>
+              <strong className="text-primary font-mono text-sm">CR No: 2051256547</strong>
             </div>
             <div className="bg-tint p-4 rounded-xl border border-border">
               <span className="text-slate-500 block font-medium">VAT Certificate:</span>
-              <strong className="text-primary font-mono text-sm">VAT: 310123456700003</strong>
+              <strong className="text-primary font-mono text-sm">VAT: 311441936900003</strong>
             </div>
             <div className="bg-tint p-4 rounded-xl border border-border">
               <span className="text-slate-500 block font-medium">Quality Management:</span>

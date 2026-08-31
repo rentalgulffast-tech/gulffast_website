@@ -89,7 +89,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-2.5 pt-1 text-white/40">
-                <span>CR No: 2051234567 • VAT: 310123456700003 • ISO 9001:2015</span>
+                <span>CR No: 2051256547 • VAT: 311441936900003 • ISO 9001:2015</span>
               </div>
             </div>
           </div>
