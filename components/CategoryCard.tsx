@@ -31,7 +31,7 @@ export default function CategoryCard({ name, slug, tier, basePath, meta }: Categ
 
       <div className="pt-4 border-t border-border flex items-center justify-between">
         <span className="text-[11px] text-slate-500 font-medium flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Aramco / SABIC Ready
+          <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Gate-Pass Ready
         </span>
         <Link
           href={`${basePath}/${slug}`}

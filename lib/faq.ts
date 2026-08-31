@@ -124,8 +124,8 @@ export const faqTopics: FaqTopic[] = [
     slug: 'compliance-and-safety',
     faqs: [
       {
-        question: 'Is GulfFast approved to work on Saudi Aramco and SABIC sites?',
-        answer: 'Yes. GulfFast holds Aramco and SABIC vendor gate pass approval, and our equipment and Aramco-designated manpower categories are prepared to meet the relevant site safety instructions.'
+        question: 'Can GulfFast mobilize to Saudi Aramco and SABIC sites?',
+        answer: 'Yes. We prepare equipment and personnel to the relevant site safety instructions and support the gate pass documentation your project needs, including Third-Party Inspection records for machinery and Iqama and trade certification records for personnel. Final site access approval always rests with the site operator and the sponsoring main contractor.'
       },
       {
         question: 'What certifications back your rigger and scaffolder trades specifically?',

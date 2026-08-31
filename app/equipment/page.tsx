@@ -78,7 +78,7 @@ export default function EquipmentHubPage() {
             Heavy Equipment Rental Services in Saudi Arabia
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
-            GulfFast owns and operates a comprehensive machinery fleet engineered for harsh Middle Eastern climates and certified to Saudi Aramco, SABIC, and SEC safety specifications. Operating from our Al Khobar operations yard with 24/7 technical mobilization.
+            GulfFast owns and operates a comprehensive machinery fleet engineered for harsh Middle Eastern climates and maintained to the safety specifications applied on Saudi Aramco, SABIC, and SEC sites. Operating from our Al Khobar operations yard with 24/7 technical mobilization.
           </p>
         </div>
 
