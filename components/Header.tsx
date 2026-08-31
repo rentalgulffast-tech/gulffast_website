@@ -23,7 +23,7 @@ const NAV_ITEMS = [
 const SECONDARY_ITEMS = [
   { name: 'Urgent Requirements', href: '/urgent' },
   { name: 'Register Equipment (Suppliers)', href: '/suppliers' },
-  { name: 'Careers', href: '/careers' },
+  { name: 'Register for Work', href: '/careers' },
   { name: 'Blog', href: '/blog' },
   { name: 'FAQ', href: '/faq' }
 ];
@@ -90,7 +90,7 @@ export default function Header() {
               href="/careers"
               className="hidden sm:inline hover:text-white transition-colors whitespace-nowrap"
             >
-              Careers
+              Register for Work
             </Link>
           </div>
 

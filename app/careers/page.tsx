@@ -4,8 +4,8 @@ import { BRAND_LEGAL_NAME } from '@/lib/brand';
 import { CONTACT } from '@/lib/contact';
 
 export const metadata = {
-  title: 'Careers — Register to Work With GulfFast | KSA',
-  description: `Apply to work directly with ${BRAND_LEGAL_NAME} (GulfFast) in Saudi Arabia. Register your trade, experience, and certifications, upload your CV, and our recruitment desk will contact you about work opportunities.`,
+  title: 'Register for Work — Trades, Operators & Site Staff | GulfFast KSA',
+  description: `Register your availability to work with ${BRAND_LEGAL_NAME} (GulfFast) in Saudi Arabia. Add your trade, experience and certifications, upload your CV, and our deployment desk will contact you when suitable project work comes up.`,
   alternates: {
     canonical: '/careers'
   }
@@ -19,21 +19,22 @@ export default function CareersPage() {
         <Breadcrumbs
           items={[
             { name: 'Home', url: '/' },
-            { name: 'Careers', url: '/careers' }
+            { name: 'Register for Work', url: '/careers' }
           ]}
         />
 
         <div className="my-6 border-b border-border pb-6">
           <span className="text-accent-strong font-bold text-xs uppercase tracking-wider bg-accent-strong/10 px-3 py-1 rounded-full border border-accent-strong/20">
-            Candidate Registration
+            Candidate Registration — Availability
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mt-2">
-            Register to Work With GulfFast
+            Register for Work with GulfFast
           </h1>
           <p className="text-slate-600 text-sm max-w-3xl mt-2 leading-relaxed">
-            {BRAND_LEGAL_NAME} (GulfFast) hires certified tradespeople, equipment operators, and site professionals
-            for Aramco, SABIC, SEC, and EPC projects across Saudi Arabia. Register your details below and our
-            recruitment desk will contact you when a suitable opening comes up.
+            {BRAND_LEGAL_NAME} (GulfFast) supplies certified tradespeople, equipment operators and site
+            professionals to oil and gas, petrochemical, power and construction projects across Saudi Arabia.
+            This is not a list of vacancies — register your trade, certifications and availability, and our
+            deployment desk will contact you when project work matching your trade comes up.
           </p>
         </div>
 
