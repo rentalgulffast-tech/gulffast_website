@@ -22,10 +22,10 @@ const NAV_ITEMS = [
 /** Secondary destinations: in the mobile drawer and the footer, not the top nav. */
 const SECONDARY_ITEMS = [
   { name: 'Urgent Requirements', href: '/urgent' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'FAQ', href: '/faq' },
+  { name: 'Register Equipment (Suppliers)', href: '/suppliers' },
   { name: 'Careers', href: '/careers' },
-  { name: 'For Suppliers', href: '/suppliers' }
+  { name: 'Blog', href: '/blog' },
+  { name: 'FAQ', href: '/faq' }
 ];
 
 function PhoneIcon() {
@@ -70,8 +70,6 @@ export default function Header() {
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
               {`${BRAND_LEGAL_NAME} (Est. 1999)`}
             </span>
-            <span className="hidden xl:inline w-px h-3.5 bg-white/15 shrink-0"></span>
-            <span className="hidden xl:inline whitespace-nowrap">Al Khobar, KSA • Direct Industrial Supplier</span>
             <span className="hidden lg:inline w-px h-3.5 bg-white/15 shrink-0"></span>
             <Link
               href="/urgent"
@@ -79,6 +77,20 @@ export default function Header() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0"></span>
               Urgent Requirements
+            </Link>
+            <span className="hidden sm:inline w-px h-3.5 bg-white/15 shrink-0"></span>
+            <Link
+              href="/suppliers"
+              className="hidden sm:inline hover:text-white transition-colors whitespace-nowrap"
+            >
+              Register Equipment
+            </Link>
+            <span className="hidden sm:inline w-px h-3.5 bg-white/15 shrink-0"></span>
+            <Link
+              href="/careers"
+              className="hidden sm:inline hover:text-white transition-colors whitespace-nowrap"
+            >
+              Careers
             </Link>
           </div>
 
