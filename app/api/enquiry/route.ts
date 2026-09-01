@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import { Resend } from 'resend';
 import { CONTACT } from '@/lib/contact';
+import { logToSheet } from '@/lib/sheet-log';
 import { isRateLimited } from '@/lib/rate-limit';
 
 export const runtime = 'nodejs';
@@ -199,6 +200,40 @@ export async function POST(request: NextRequest) {
     console.error('Failed to send enquiry email:', error);
     return NextResponse.json({ ok: false, error: GENERIC_SEND_FAILURE }, { status: 502 });
   }
+
+  after(async () => {
+    await logToSheet(
+      enquiry.formType === 'supplier'
+        ? {
+            type: 'supplier',
+            record: {
+              company: enquiry.company,
+              contactName: enquiry.contactName,
+              phone: enquiry.phone,
+              email: enquiry.email,
+              category: enquiry.category,
+              brandModel: enquiry.brandModel,
+              city: enquiry.city,
+              details: enquiry.details
+            }
+          }
+        : {
+            type: 'quote',
+            record: {
+              fullName: enquiry.fullName,
+              companyName: enquiry.companyName,
+              phone: enquiry.phone,
+              email: enquiry.email,
+              need: enquiry.need,
+              equipmentCategory: enquiry.equipmentCategory,
+              manpowerCategory: enquiry.manpowerCategory,
+              city: enquiry.city,
+              duration: enquiry.duration,
+              quantity: enquiry.quantity
+            }
+          }
+    );
+  });
 
   return NextResponse.json({ ok: true });
 }

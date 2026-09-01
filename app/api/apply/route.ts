@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import { Resend } from 'resend';
 import { CONTACT } from '@/lib/contact';
+import { logToSheet } from '@/lib/sheet-log';
 import { isRateLimited } from '@/lib/rate-limit';
 import { manpowerCategories } from '@/lib/manpower-categories';
 
@@ -180,6 +181,27 @@ export async function POST(request: NextRequest) {
     console.error('Failed to send the application email.');
     return NextResponse.json({ ok: false, error: GENERIC_SEND_FAILURE }, { status: 502 });
   }
+
+  // Mirror into the Google Sheet after the response is sent, so the visitor
+  // never waits on it and a sheet outage cannot affect the submission.
+  after(async () => {
+    await logToSheet({
+      type: 'candidate',
+      record: {
+        fullName: candidate.fullName,
+        jobCategory: candidate.jobCategory,
+        nationality: candidate.nationality,
+        yearsExperience: candidate.yearsExperience,
+        currentLocation: candidate.currentLocation,
+        phone: candidate.phone,
+        email: candidate.email,
+        skills: candidate.skills,
+        certifications: candidate.certifications,
+        preferredSalary: candidate.preferredSalary
+      },
+      cvBase64: cvBuffer.toString('base64')
+    });
+  });
 
   return NextResponse.json({ ok: true });
 }
