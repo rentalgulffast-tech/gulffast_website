@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { getEquipmentCategories } from '@/lib/equipment';
 import { cities } from '@/lib/cities';
 import { CONTACT } from '@/lib/contact';
+import { trackEvent } from '@/lib/analytics';
 
 export default function SupplierIntakeForm() {
   const equipmentCategories = getEquipmentCategories();
@@ -14,6 +15,10 @@ export default function SupplierIntakeForm() {
   const [email, setEmail] = useState('');
   const [category, setCategory] = useState('');
   const [brandModel, setBrandModel] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [capacity, setCapacity] = useState('');
+  const [monthlyRate, setMonthlyRate] = useState('');
+  const [withOperator, setWithOperator] = useState('');
   const [city, setCity] = useState('Al Khobar');
   const [details, setDetails] = useState('');
 
@@ -38,6 +43,10 @@ export default function SupplierIntakeForm() {
           email: email || undefined,
           category,
           brandModel: brandModel || undefined,
+          quantity,
+          capacity: capacity || undefined,
+          monthlyRate: monthlyRate || undefined,
+          withOperator,
           city,
           details: details || undefined
         })
@@ -50,6 +59,7 @@ export default function SupplierIntakeForm() {
         return;
       }
 
+      trackEvent('generate_lead', { form: 'supplier_registration', category });
       setSubmitted(true);
     } catch {
       setSubmitError(`We could not reach our server. Please call ${CONTACT.phonePrimary} or WhatsApp us directly.`);
@@ -153,6 +163,59 @@ export default function SupplierIntakeForm() {
               onChange={(e) => setBrandModel(e.target.value)}
               className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
             />
+          </div>
+
+          <div>
+            <label className="block text-primary font-bold mb-1">How many units? *</label>
+            <input
+              type="number"
+              min="1"
+              required
+              placeholder="e.g. 3"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
+            />
+          </div>
+
+          <div>
+            <label className="block text-primary font-bold mb-1">Capacity / Rating (Optional)</label>
+            <input
+              type="text"
+              placeholder="e.g. 20 ton, 250 kVA, 750 CFM"
+              value={capacity}
+              onChange={(e) => setCapacity(e.target.value)}
+              className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
+            />
+          </div>
+
+          <div>
+            <label className="block text-primary font-bold mb-1">Monthly Rate, SAR (Optional)</label>
+            <input
+              type="text"
+              placeholder="e.g. 12,000 per month"
+              value={monthlyRate}
+              onChange={(e) => setMonthlyRate(e.target.value)}
+              className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-medium"
+            />
+            <p className="text-[10px] text-muted mt-1 leading-relaxed">
+              Leave blank if you would rather discuss rates directly.
+            </p>
+          </div>
+
+          <div>
+            <label className="block text-primary font-bold mb-1">Supplied With *</label>
+            <select
+              required
+              value={withOperator}
+              onChange={(e) => setWithOperator(e.target.value)}
+              className="w-full px-3.5 py-2.5 rounded-xl bg-tint border border-border text-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary font-bold"
+            >
+              <option value="">Select…</option>
+              <option value="With operator">With operator</option>
+              <option value="Without operator (bare rental)">Without operator (bare rental)</option>
+              <option value="Either — with or without operator">Either — with or without operator</option>
+            </select>
           </div>
 
           <div className="sm:col-span-2">

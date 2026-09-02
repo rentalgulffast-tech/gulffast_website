@@ -5,6 +5,7 @@ import { getEquipmentCategories } from '@/lib/equipment';
 import { getManpowerCategories } from '@/lib/manpower';
 import { cities } from '@/lib/cities';
 import { CONTACT } from '@/lib/contact';
+import { trackEvent } from '@/lib/analytics';
 
 type NeedType = 'equipment' | 'manpower' | 'both';
 
@@ -80,6 +81,7 @@ export default function QuoteForm({ defaultCategory = '', serviceType = 'general
         return;
       }
 
+      trackEvent('generate_lead', { form: 'quote_request', need: need ?? 'unspecified', city });
       setSubmitted(true);
     } catch {
       setSubmitError(`We could not reach our server. Please call ${CONTACT.phonePrimary} or WhatsApp us directly.`);

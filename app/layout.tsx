@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Analytics from '@/components/Analytics';
 import StickyWhatsApp from '@/components/StickyWhatsApp';
 import './globals.css';
 
@@ -71,6 +72,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <StickyWhatsApp />
+        <Analytics />
       </body>
     </html>
   );

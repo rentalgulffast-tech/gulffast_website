@@ -49,6 +49,10 @@ interface SupplierEnquiry {
   email?: string;
   category: string;
   brandModel?: string;
+  quantity: string;
+  capacity?: string;
+  monthlyRate?: string;
+  withOperator: string;
   city: string;
   details?: string;
 }
@@ -86,6 +90,8 @@ function validateSupplier(body: Record<string, unknown>): SupplierEnquiry | null
   if (!isNonEmptyString(body.contactName, 200)) return null;
   if (!isValidPhone(body.phone)) return null;
   if (!isNonEmptyString(body.category, 200)) return null;
+  if (!isNonEmptyString(body.quantity, 50)) return null;
+  if (!isNonEmptyString(body.withOperator, 60)) return null;
   if (!isNonEmptyString(body.city, 100)) return null;
   if (body.email !== undefined && body.email !== '' && !isValidEmail(body.email)) return null;
 
@@ -97,6 +103,10 @@ function validateSupplier(body: Record<string, unknown>): SupplierEnquiry | null
     email: isValidEmail(body.email) ? body.email : undefined,
     category: body.category,
     brandModel: isNonEmptyString(body.brandModel, 200) ? body.brandModel : undefined,
+    quantity: body.quantity,
+    capacity: isNonEmptyString(body.capacity, 200) ? body.capacity : undefined,
+    monthlyRate: isNonEmptyString(body.monthlyRate, 100) ? body.monthlyRate : undefined,
+    withOperator: body.withOperator,
     city: body.city,
     details: isNonEmptyString(body.details, MAX_TEXT_LENGTH) ? body.details : undefined
   };
@@ -132,6 +142,10 @@ function buildEmail(enquiry: Enquiry): { subject: string; text: string } {
       `Email: ${enquiry.email ?? '-'}`,
       `Equipment category: ${enquiry.category}`,
       `Brand / model: ${enquiry.brandModel ?? '-'}`,
+      `Quantity available: ${enquiry.quantity}`,
+      `Capacity / rating: ${enquiry.capacity ?? '-'}`,
+      `Monthly rate: ${enquiry.monthlyRate ?? 'not quoted'}`,
+      `Supplied with operator: ${enquiry.withOperator}`,
       `City: ${enquiry.city}`,
       '',
       `Details: ${enquiry.details ?? '-'}`
@@ -213,6 +227,10 @@ export async function POST(request: NextRequest) {
               email: enquiry.email,
               category: enquiry.category,
               brandModel: enquiry.brandModel,
+              quantity: enquiry.quantity,
+              capacity: enquiry.capacity,
+              monthlyRate: enquiry.monthlyRate,
+              withOperator: enquiry.withOperator,
               city: enquiry.city,
               details: enquiry.details
             }

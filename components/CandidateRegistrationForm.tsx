@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { manpowerCategories } from '@/lib/manpower-categories';
 import { CONTACT } from '@/lib/contact';
+import { trackEvent } from '@/lib/analytics';
 
 const MAX_CV_BYTES = 3 * 1024 * 1024;
 
@@ -44,6 +45,7 @@ export default function CandidateRegistrationForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const name = String(formData.get('fullName') || '');
+    const trade = String(formData.get('jobCategory') || 'unspecified');
 
     try {
       const res = await fetch('/api/apply', { method: 'POST', body: formData });
@@ -57,6 +59,7 @@ export default function CandidateRegistrationForm() {
       }
 
       setCandidateName(name);
+      trackEvent('generate_lead', { form: 'candidate_registration', trade });
       setSubmitted(true);
       form.reset();
     } catch {
