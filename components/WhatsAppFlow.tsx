@@ -96,7 +96,7 @@ export default function WhatsAppFlow() {
         `Needed: ${timing}`,
         '',
         'Sent from rental.gulffast.co'
-      ].filter(Boolean).join('\n'),
+      ].filter((line) => line !== null).join('\n'),
       true
     );
   };
@@ -215,7 +215,7 @@ export default function WhatsAppFlow() {
                   `Location: ${city}`,
                   need === 'other' ? null : `Quantity: ${quantity}`,
                   `Needed: ${timing}`
-                ].filter(Boolean).join('\n')}
+                ].filter((line) => line !== null).join('\n')}
               </div>
             </div>
           )}
