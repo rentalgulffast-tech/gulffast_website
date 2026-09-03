@@ -3,6 +3,7 @@ import { Poppins, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Analytics from '@/components/Analytics';
+import WhatsAppFlow from '@/components/WhatsAppFlow';
 import StickyWhatsApp from '@/components/StickyWhatsApp';
 import './globals.css';
 
@@ -73,6 +74,7 @@ export default function RootLayout({
         <Footer />
         <StickyWhatsApp />
         <Analytics />
+        <WhatsAppFlow />
       </body>
     </html>
   );

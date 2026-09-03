@@ -1,0 +1,256 @@
+'use client';
+
+import { useCallback, useEffect, useState } from 'react';
+import { getEquipmentTier1Categories } from '@/lib/equipment';
+import { getManpowerTier1Categories } from '@/lib/manpower';
+import { cities } from '@/lib/cities';
+import { CONTACT } from '@/lib/contact';
+import { trackEvent } from '@/lib/analytics';
+
+/**
+ * Guided WhatsApp enquiry.
+ *
+ * Intercepts every wa.me link on the site with one delegated listener, asks the
+ * questions a sales person would otherwise have to ask, then hands WhatsApp a
+ * finished message. No WhatsApp Business API, no monthly cost, and the sales
+ * person's phone behaves exactly as before.
+ *
+ * There is always an escape hatch — nobody is forced through the questions.
+ */
+
+type Need = 'equipment' | 'manpower' | 'other';
+
+const TIMING = [
+  'Immediately / emergency',
+  'Within 1 week',
+  'Within 1 month',
+  'Long-term contract'
+];
+
+const QUANTITY = ['1', '2 to 5', '6 to 10', 'More than 10'];
+
+export default function WhatsAppFlow() {
+  const [open, setOpen] = useState(false);
+  const [step, setStep] = useState(0);
+  const [need, setNeed] = useState<Need | null>(null);
+  const [category, setCategory] = useState('');
+  const [city, setCity] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [timing, setTiming] = useState('');
+
+  const equipment = getEquipmentTier1Categories();
+  const manpower = getManpowerTier1Categories();
+
+  const reset = useCallback(() => {
+    setStep(0); setNeed(null); setCategory(''); setCity(''); setQuantity(''); setTiming('');
+  }, []);
+
+  const close = useCallback(() => { setOpen(false); reset(); }, [reset]);
+
+  // Intercept every WhatsApp link on the site, including any added later.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.button !== 0) return;
+      const link = (event.target as HTMLElement | null)?.closest?.('a');
+      if (!link) return;
+      if (!(link.getAttribute('href') || '').includes('wa.me')) return;
+
+      event.preventDefault();
+      trackEvent('whatsapp_flow_open', { page_path: window.location.pathname });
+      setOpen(true);
+    };
+    document.addEventListener('click', onClick, { capture: true });
+    return () => document.removeEventListener('click', onClick, { capture: true });
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open, close]);
+
+  const sendTo = (text: string, structured: boolean) => {
+    trackEvent('generate_lead', {
+      form: 'whatsapp_flow',
+      need: need ?? 'unspecified',
+      category: category || 'unspecified',
+      city: city || 'unspecified',
+      structured: structured ? 'yes' : 'no'
+    });
+    window.open(`https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    close();
+  };
+
+  const skip = () => sendTo('Hello GulfFast, I would like to make an enquiry.', false);
+
+  const finish = () => {
+    const heading = need === 'equipment' ? 'EQUIPMENT RENTAL' : need === 'manpower' ? 'MANPOWER SUPPLY' : 'AN ENQUIRY';
+    sendTo(
+      [
+        `Hello GulfFast — I need ${heading}.`,
+        '',
+        need === 'other' ? null : `${need === 'manpower' ? 'Trade' : 'Category'}: ${category}`,
+        `Location: ${city}`,
+        need === 'other' ? null : `Quantity: ${quantity}`,
+        `Needed: ${timing}`,
+        '',
+        'Sent from rental.gulffast.co'
+      ].filter(Boolean).join('\n'),
+      true
+    );
+  };
+
+  if (!open) return null;
+
+  const categories = need === 'manpower' ? manpower : equipment;
+
+  const steps: { title: string; hint?: string; options: string[]; onPick: (v: string) => void }[] = [
+    {
+      title: 'What do you need?',
+      options: ['Equipment rental', 'Manpower supply', 'Something else'],
+      onPick: (v) => {
+        const n: Need = v === 'Equipment rental' ? 'equipment' : v === 'Manpower supply' ? 'manpower' : 'other';
+        setNeed(n);
+        setStep(n === 'other' ? 2 : 1);
+      }
+    },
+    {
+      title: need === 'manpower' ? 'Which trade?' : 'Which equipment?',
+      hint: 'Pick the closest — we can refine it on WhatsApp.',
+      options: [...categories.map((c) => c.name), 'Other / not listed'],
+      onPick: (v) => { setCategory(v); setStep(2); }
+    },
+    {
+      title: 'Which location?',
+      options: [...cities.map((c) => c.name), 'Other site in KSA'],
+      onPick: (v) => { setCity(v); setStep(need === 'other' ? 4 : 3); }
+    },
+    {
+      title: need === 'manpower' ? 'How many people?' : 'How many units?',
+      options: QUANTITY,
+      onPick: (v) => { setQuantity(v); setStep(4); }
+    },
+    {
+      title: 'When do you need it?',
+      options: TIMING,
+      onPick: (v) => { setTiming(v); }
+    }
+  ];
+
+  const current = steps[step];
+  const ready = Boolean(timing);
+  const totalSteps = need === 'other' ? 3 : 5;
+  const shownStep = need === 'other' && step > 1 ? step - 1 : step;
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-primary-deep/60 backdrop-blur-sm p-0 sm:p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="WhatsApp enquiry"
+      onClick={(e) => { if (e.target === e.currentTarget) close(); }}
+    >
+      <div className="bg-card-background w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[88vh] flex flex-col">
+
+        <div className="flex items-start justify-between gap-3 p-5 border-b border-border">
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-accent-ink">
+              WhatsApp enquiry
+            </p>
+            <h2 className="text-lg font-extrabold text-primary mt-0.5 leading-snug">
+              {ready ? 'Ready to send' : current.title}
+            </h2>
+            {!ready && current.hint && (
+              <p className="text-xs text-muted mt-1 leading-relaxed">{current.hint}</p>
+            )}
+          </div>
+          <button
+            type="button"
+            onClick={close}
+            aria-label="Close"
+            className="shrink-0 p-1.5 rounded-lg text-muted hover:text-primary hover:bg-tint"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div className="p-5 overflow-y-auto">
+          {!ready ? (
+            <>
+              <div className="flex gap-1.5 mb-4" aria-hidden="true">
+                {Array.from({ length: totalSteps }).map((_, i) => (
+                  <span
+                    key={i}
+                    className={`h-1 flex-1 rounded-full ${i <= shownStep ? 'bg-accent-strong' : 'bg-border'}`}
+                  />
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 gap-2">
+                {current.options.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => current.onPick(option)}
+                    className="text-left px-4 py-3 rounded-xl border border-border bg-background hover:border-primary/40 hover:bg-tint text-sm font-semibold text-foreground transition-colors"
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="space-y-3">
+              <p className="text-xs text-muted leading-relaxed">
+                This will open WhatsApp with your enquiry already written. You can edit it before sending.
+              </p>
+              <div className="bg-background border border-border rounded-xl p-4 text-xs text-foreground leading-relaxed whitespace-pre-line">
+                {[
+                  `Hello GulfFast — I need ${need === 'equipment' ? 'EQUIPMENT RENTAL' : need === 'manpower' ? 'MANPOWER SUPPLY' : 'AN ENQUIRY'}.`,
+                  '',
+                  need === 'other' ? null : `${need === 'manpower' ? 'Trade' : 'Category'}: ${category}`,
+                  `Location: ${city}`,
+                  need === 'other' ? null : `Quantity: ${quantity}`,
+                  `Needed: ${timing}`
+                ].filter(Boolean).join('\n')}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="p-5 pt-0 space-y-2">
+          {ready && (
+            <button
+              type="button"
+              onClick={finish}
+              className="w-full px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm transition-colors"
+            >
+              Open WhatsApp
+            </button>
+          )}
+          <div className="flex items-center justify-between gap-3">
+            {step > 0 && !ready ? (
+              <button
+                type="button"
+                onClick={() => setStep(need === 'other' && step === 2 ? 0 : step - 1)}
+                className="text-xs font-semibold text-muted hover:text-primary"
+              >
+                ← Back
+              </button>
+            ) : <span />}
+            <button
+              type="button"
+              onClick={skip}
+              className="text-xs font-semibold text-accent-strong hover:text-accent-ink"
+            >
+              Skip the questions, just chat →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
