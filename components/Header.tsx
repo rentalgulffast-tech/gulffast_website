@@ -8,13 +8,27 @@ import { CONTACT, telHref } from '@/lib/contact';
 import { BRAND_LEGAL_NAME, BRAND_TAGLINE } from '@/lib/brand';
 import Pill from '@/components/Pill';
 
-/** Primary navigation. Kept to seven items so the row fits at 1280px without clipping. */
+/**
+ * Primary navigation — SEVEN items, and that is a hard limit, not a preference.
+ *
+ * Measured, not guessed: eight uppercase labels at 13px with 0.09em tracking plus
+ * gap-6, the logo block and the Request a Quote pill come to roughly 1,354px of
+ * content inside the 1,216px available at a 1280px viewport. Seven fits; eight
+ * clips, which is the exact fault that was fixed here before.
+ *
+ * Pipeline is added because it is a distinct division with its own buyers and its
+ * own vocabulary. Projects moves to SECONDARY_ITEMS to make room — it is still
+ * reachable from the footer and the mobile drawer, and its case-study content is
+ * the part of the site still waiting on supporting documents.
+ *
+ * To add an eighth destination, move one out. Do not just append.
+ */
 const NAV_ITEMS = [
   { name: 'Equipment', href: '/equipment' },
   { name: 'Manpower', href: '/manpower' },
+  { name: 'Pipeline', href: '/pipeline' },
   { name: 'Solutions', href: '/solutions' },
   { name: 'Industries', href: '/industries' },
-  { name: 'Projects', href: '/projects' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' }
 ];
@@ -22,6 +36,7 @@ const NAV_ITEMS = [
 /** Secondary destinations: in the mobile drawer and the footer, not the top nav. */
 const SECONDARY_ITEMS = [
   { name: 'Urgent Requirements', href: '/urgent' },
+  { name: 'Projects', href: '/projects' },
   { name: 'Register Equipment (Suppliers)', href: '/suppliers' },
   { name: 'Register for Work', href: '/careers' },
   { name: 'Blog', href: '/blog' },

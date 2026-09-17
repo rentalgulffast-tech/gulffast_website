@@ -5,6 +5,7 @@ import { cities } from '@/lib/cities';
 import { industries } from '@/lib/industries';
 import { getBlogPosts } from '@/lib/data';
 import { getSolutions } from '@/lib/solutions';
+import { getPipelineUnits, getPipelineCities } from '@/lib/pipeline';
 import { SITE_CONFIG } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/manpower`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
     { url: `${baseUrl}/solutions`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/urgent`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/pipeline`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/industries`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/projects`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
@@ -80,6 +82,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85
   }));
 
+  // Pipeline Division: hub is in staticRoutes; 10 unit pages + 7 city pages here.
+  // Priority is deliberately high — these are the lowest-competition, highest-value
+  // terms on the site, and they are the pages we most want crawled after a change.
+  const pipelineUnitRoutes: MetadataRoute.Sitemap = getPipelineUnits().map((unit) => ({
+    url: `${baseUrl}/pipeline/${unit.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9
+  }));
+
+  const pipelineCityRoutes: MetadataRoute.Sitemap = getPipelineCities().map((city) => ({
+    url: `${baseUrl}/pipeline/equipment-rental/${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.85
+  }));
+
   // Blog post routes
   const blogRoutes: MetadataRoute.Sitemap = getBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -96,6 +115,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...manpowerCategoryRoutes,
     ...manpowerCityRoutes,
     ...solutionRoutes,
+    ...pipelineUnitRoutes,
+    ...pipelineCityRoutes,
     ...blogRoutes
   ];
 }
