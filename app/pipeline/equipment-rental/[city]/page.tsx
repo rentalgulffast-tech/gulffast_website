@@ -87,7 +87,7 @@ export default async function PipelineCityPage({ params }: PageProps) {
         <CategoryHero
           badgeText={`Pipeline Division · ${city.name}`}
           h1={h1}
-          intro={`${city.context} We dispatch pipeline spread equipment to ${city.name} from our own yard in Al Khobar — ${city.driveTime}.`}
+          intro={`${city.context} We dispatch pipeline spread equipment to ${city.name} from our own yard in Al Khobar — ${city.driveTime.replace(/\s*from our own yard$|\s*from our Al Khobar yard$/, '')}.`}
           ctaLabel="Request a Quote"
           ctaHref="/request-a-quote"
         />

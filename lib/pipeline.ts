@@ -133,6 +133,10 @@ export interface PipelineCity {
   /** why a pipeline contractor is working here — used in page copy, must stay factual */
   context: string;
   driveTime: string;
+  /** the shape of pipeline work here — drives the unit x city page copy */
+  workTypes: string;
+  /** how urgent work here typically is; changes what the page promises */
+  urgency: string;
 }
 
 export const pipelineCities: PipelineCity[] = [
@@ -141,49 +145,77 @@ export const pipelineCities: PipelineCity[] = [
     name: 'Jubail',
     context:
       'Jubail Industrial City concentrates more petrochemical plant, and therefore more in-plant and interconnecting pipework, than anywhere else in the Kingdom. Tie-ins, revamps and shutdown pipework run continuously alongside new-build.',
-    driveTime: 'roughly 90 minutes from our Al Khobar yard'
+    driveTime: 'roughly 90 minutes from our Al Khobar yard',
+    workTypes:
+      'Mostly in-plant and interconnecting pipework rather than open right of way: tie-ins, revamps, unit interconnects and shutdown pipework inside operating petrochemical plants.',
+    urgency:
+      'Shutdown-window driven. Dates are fixed months ahead and then absolutely immovable, so equipment is placed before the window opens, not on its first day.'
   },
   {
     slug: 'ras-tanura',
     name: 'Ras Tanura',
     context:
       'The refinery and the Juaymah export terminal sit on a dense gas and crude transmission network. Replacement and refurbishment of existing transmission lines is ongoing work rather than an occasional project.',
-    driveTime: 'roughly 90 minutes from our Al Khobar yard'
+    driveTime: 'roughly 90 minutes from our Al Khobar yard',
+    workTypes:
+      'Transmission line replacement and refurbishment on the gas and crude network feeding the refinery and the Juaymah export terminal, plus scraper trap and valve station work.',
+    urgency:
+      'A mix of planned replacement programmes and unplanned integrity work. Both are permit-controlled and both move faster than a general construction site.'
   },
   {
     slug: 'dhahran',
     name: 'Dhahran',
     context:
       'Dhahran is where the operator and most of the major EPC contractors keep their offices, and the surrounding field infrastructure carries flowlines, trunklines and gathering systems.',
-    driveTime: 'under 30 minutes from our Al Khobar yard'
+    driveTime: 'under 30 minutes from our Al Khobar yard',
+    workTypes:
+      'Field infrastructure rather than plant: flowlines, trunklines and gathering systems, plus the engineering offices where the scope is written before it reaches the ground.',
+    urgency:
+      'Programme-driven and usually planned, because the contractors here are working to a schedule set months earlier by the operator.'
   },
   {
     slug: 'dammam',
     name: 'Dammam',
     context:
       'Dammam covers the port, the industrial cities and the fabrication yards where pipe is spooled, coated and staged before it goes to the right of way.',
-    driveTime: 'under 30 minutes from our Al Khobar yard'
+    driveTime: 'under 30 minutes from our Al Khobar yard',
+    workTypes:
+      'Yard and staging work as much as field work — pipe spooling, coating, bevelling and pre-fabrication before material goes to the right of way, plus port and industrial-city pipework.',
+    urgency:
+      'Continuous rather than campaign-based. Equipment here is often on longer standing hire against a yard rather than a spread.'
   },
   {
     slug: 'al-khobar',
     name: 'Al Khobar',
     context:
       'Our own operations hub. Equipment is loaded here, and Al Khobar is the base from which the rest of the Eastern Province is served.',
-    driveTime: 'same-day from our own yard'
+    driveTime: 'same-day from our own yard',
+    workTypes:
+      'Our own operations base, plus local industrial and infrastructure pipework. This is where equipment is loaded, inspected and made ready before it goes anywhere else.',
+    urgency:
+      'Same-day where the machine is in the yard. This is the shortest response time we can offer on anything.'
   },
   {
     slug: 'abqaiq',
     name: 'Abqaiq',
     context:
       'Abqaiq is the hub of the crude stabilisation and transmission network, feeding the Abqaiq–Ras Tanura and East-West systems. Pipeline work here is permit-controlled and scheduling-critical.',
-    driveTime: 'roughly 90 minutes from our Al Khobar yard'
+    driveTime: 'roughly 90 minutes from our Al Khobar yard',
+    workTypes:
+      'Crude stabilisation and transmission work on the network feeding the Abqaiq–Ras Tanura and East-West systems: tie-ins, replacement sections and integrity-driven pipework.',
+    urgency:
+      'Heavily permit-controlled and schedule-critical. Access approvals govern the programme more than equipment availability does.'
   },
   {
     slug: 'yanbu',
     name: 'Yanbu',
     context:
       'The western terminus of the East-West pipeline system and a refining and petrochemical hub in its own right. Longer mobilisation, planned rather than emergency.',
-    driveTime: 'cross-country mobilisation, planned in advance'
+    driveTime: 'cross-country mobilisation, planned in advance',
+    workTypes:
+      'The western terminus of the East-West pipeline system, plus refinery and petrochemical pipework in the industrial city.',
+    urgency:
+      'Planned only. This is a cross-country mobilisation of roughly 1,200 km from Al Khobar, so it is quoted and scheduled in advance rather than mobilised at short notice.'
   }
 ];
 
@@ -1077,4 +1109,107 @@ export function getPipelineCities(): PipelineCity[] {
 
 export function getPipelineCityBySlug(slug: string): PipelineCity | undefined {
   return pipelineCities.find((c) => c.slug === slug);
+}
+
+/**
+ * Work-stage x city angles — the content that makes 77 unit x city pages defensible
+ * rather than doorway pages.
+ *
+ * Google's guidance is explicit that near-identical pages generated per city are
+ * treated as doorway pages. The defence is that each page must say something true
+ * that only applies to that combination. These 35 paragraphs (5 work stages x 7
+ * cities) carry that, and the unit page layers its own specifics on top. If you add
+ * a city, you owe it 5 new paragraphs — do not template the city name into an
+ * existing one.
+ */
+export const GROUP_CITY_ANGLE: Record<PipelineGroupSlug, Record<string, string>> = {
+  'lay-and-lift': {
+    jubail:
+      'Lifting inside an operating Jubail plant is a congestion problem before it is a capacity problem. Pipe racks, existing services and live units restrict where a machine can stand and how far it can slew, so the governing constraint is usually radius and access rather than tonnage. Send the plot plan with the enquiry and the sizing conversation gets much shorter.',
+    'ras-tanura':
+      'Replacement work on the transmission network around Ras Tanura means lifting into an existing corridor, often alongside lines that stay live. Lowering-in a replacement section next to in-service pipe changes the lift plan: spacing is dictated by what you must not touch, not by what is convenient for the machines.',
+    dhahran:
+      'Flowline and gathering-system work around Dhahran is open-country lowering-in, which is the duty side booms were built for. Being under 30 minutes from our yard matters most here, because field work generates the short-notice equipment swaps that a 90-minute haul makes expensive.',
+    dammam:
+      'Around Dammam the lifting is often in a yard rather than a ditch: loading and unloading coated joints, feeding the bevelling and coating stations, and staging strings before they go to site. Coating damage is the risk that matters, which is why cradles and correct slinging get specified alongside the machine.',
+    'al-khobar':
+      'Al Khobar is where the machines already are. For lifting and pipe handling here we are quoting against a same-day response, and we can have somebody look at the lift before committing to a capacity — which is not something we can honestly promise anywhere else on this list.',
+    abqaiq:
+      'Lowering-in around Abqaiq is governed by access approval rather than by equipment. The crude stabilisation and transmission corridors are permit-controlled, and a machine that cannot get through the gate is worth nothing on paper. We place equipment against your approved access window, not against a calendar date.',
+    yanbu:
+      'Yanbu lifting work is planned mobilisation. The machines travel roughly 1,200 km on our own low beds, so the lead time is real and the quote reflects it. For a scheduled tie-in or a planned section replacement that is fine; for a breakdown it is not, and we will tell you so.'
+  },
+  'welding-and-joining': {
+    jubail:
+      'Jubail welding is tie-in and revamp welding inside live plant, which means short runs of joints under a permit rather than a moving string. Line-up quality still decides the repair rate, and a repair inside a shutdown window costs the window, not just the joint. That is the argument for an internal clamp even on a handful of joints.',
+    'ras-tanura':
+      'Tie-ins into the existing Ras Tanura network are the textbook arc blow scenario: the line in the ground has been under cathodic protection for years and carries a residual field that deflects the arc. If welders are struggling at the tie-in and not on the new pipe, the pipe is magnetised — and that is a ten-minute fix, not a welder problem.',
+    dhahran:
+      'Field welding on flowlines and trunklines around Dhahran is string welding, where weld rate is the number that matters and the equipment either supports it or does not. A paywelder with the right station count and an internal clamp sized to the schedule are what move joints-per-day; everything else is detail.',
+    dammam:
+      'Much of the welding around Dammam happens in the fabrication yards before pipe ever reaches site — spools, pre-fabricated sections and bevelled joints. Yard welding is more forgiving on logistics and less forgiving on consistency, because everything gets inspected before it ships.',
+    'al-khobar':
+      'For welding equipment out of Al Khobar we can get a clamp or a welding set to you the same day. On short tie-ins that is often the whole value: the equipment arrives before the permit does, rather than after it.',
+    abqaiq:
+      'Welding on the Abqaiq crude network is permit-controlled hot work in a hydrocarbon environment, so the sequence is decided by the permit regime as much as by the weld procedure. Cold cutting, demagnetising and internal line-up all sit upstream of the first arc, and getting them wrong pushes everything right.',
+    yanbu:
+      'Welding equipment for Yanbu is mobilised as a planned set rather than piecemeal. Because a forgotten item cannot be corrected with a 90-minute drive, we go through the welding scope in detail before anything is loaded.'
+  },
+  'bending-and-cutting': {
+    jubail:
+      'In an operating Jubail plant, cutting method is a permit decision. Hot work in a hydrocarbon area during a shutdown competes with every other permit on site, and the permit queue is the critical path for everyone. Cold cutting removes the ignition source and often removes the dependency, which buys schedule rather than saving on a hire rate.',
+    'ras-tanura':
+      'Cutting into the live gas and crude transmission system at Ras Tanura is cold cutting work by default. There is no version of this where a torch is the sensible answer, and the machine has to produce a weld-ready bevel in the same pass because the tie-in window does not allow for grinding afterwards.',
+    dhahran:
+      'Field bending around Dhahran follows the surveyed ditch profile, which is why bending machines mobilise before the welding spread and are released after it. Being close to our yard helps when the survey changes and the bend schedule changes with it.',
+    dammam:
+      'Around Dammam, bending and bevelling often happen in the yard against a fixed geometry rather than a surveyed ditch. That makes the acceptance criteria easier to hold and the inspection tighter, since everything is checked before it leaves.',
+    'al-khobar':
+      'Cold cutting and bevelling equipment for Al Khobar work goes out same-day from our own yard. For a small replacement section that is usually the difference between doing it this week and doing it next.',
+    abqaiq:
+      'Abqaiq work is overwhelmingly tie-ins and replacement sections into a live crude system, which makes cold cutting the default and the demagnetizer the item people forget. Both belong in the same enquiry, because you will need the second one about an hour after you need the first.',
+    yanbu:
+      'For Yanbu, bending and cutting equipment is quoted against a defined scope and mobilised as a set. Tell us the line sizes, wall thicknesses and bend schedule up front — a missing size band cannot be corrected quickly at this distance.'
+  },
+  'testing-and-commissioning': {
+    jubail:
+      'Hydrostatic testing inside a Jubail plant is usually short sections at high pressure rather than long lines at volume, and the binding constraint is often test water: sourcing it, and getting permitted disposal for it afterwards. Start the disposal approval before the test, because it is routinely slower than the test itself.',
+    'ras-tanura':
+      'Testing a replacement transmission section at Ras Tanura means a large volume and a long fill, so the pump is sized by fill time as much as by test pressure. A pump that reaches the pressure but takes two days to get there has cost you the window regardless.',
+    dhahran:
+      'Testing field lines around Dhahran means long sections, overnight holds and a crew on site through the night logging pressure and temperature. Test pump, generator and tower lights come from the same yard on the same quote, which is the practical reason to take them together.',
+    dammam:
+      'Around Dammam much of the pressure testing is on pre-fabricated spools and yard-built sections before shipping, which is shorter-duration hire and a different pump size from a mainline test.',
+    'al-khobar':
+      'Test equipment for Al Khobar work goes out the same day, and we can supply the lighting and power for the hold period at the same time rather than as a second booking.',
+    abqaiq:
+      'Testing on the Abqaiq network happens inside an approved access window, so the equipment has to be on site and proven before the window opens. We place test pumps early rather than on the first morning, because a pump that will not start at 6am has cost a day nobody budgeted.',
+    yanbu:
+      'Hydrostatic test equipment for Yanbu is planned mobilisation. Confirm the section volume and test pressure before we load, since sending the wrong pump size 1,200 km is a mistake that takes a week to correct.'
+  },
+  'transport-and-support': {
+    jubail:
+      'Moving equipment into an operating Jubail plant is a gate-pass and route problem as much as a haulage one. Vehicle passes, escort requirements and restricted in-plant routes all take longer than the 90-minute drive, so tell us the move as early as you know it.',
+    'ras-tanura':
+      'Access to the Ras Tanura refinery and the Juaymah terminal is controlled, and abnormal loads need route planning on top of that. We own the low beds, so at least the transport itself is not a third party with its own schedule sitting between you and your date.',
+    dhahran:
+      'Being under 30 minutes from Dhahran is what makes short-notice equipment swaps affordable here. On field work, the machine you need tomorrow is frequently not the machine you specified last month, and a short haul is what makes changing your mind cheap.',
+    dammam:
+      'Transport around Dammam is constant rather than occasional — pipe, spools and equipment moving between port, yards and site. Standing hire on a low bed with a driver usually beats per-move booking once you are relocating more than once or twice a week.',
+    'al-khobar':
+      'Al Khobar is the yard. Loading happens here, so for local work the transport leg is effectively zero and a boom truck can be with you within the hour on most days.',
+    abqaiq:
+      'Abnormal loads into the Abqaiq area need permits and, for the heavier machines, escorts. A 90 t side boom is not a load that moves on the spur of the moment, and we would rather tell you the real permit lead time at enquiry stage than discover it together on the day.',
+    yanbu:
+      'Yanbu is a cross-country haul of roughly 1,200 km. It is entirely routine for us on planned work and entirely unsuitable for an emergency. If the requirement is urgent, say so at the enquiry and we will be honest about whether we are the right supplier for it.'
+  }
+};
+
+export function getGroupCityAngle(group: PipelineGroupSlug, citySlug: string): string | undefined {
+  return GROUP_CITY_ANGLE[group]?.[citySlug];
+}
+
+/** Every unit x city combination, for generateStaticParams. */
+export function getPipelineUnitCityPairs(): Array<{ slug: string; city: string }> {
+  return pipelineUnits.flatMap((u) => pipelineCities.map((c) => ({ slug: u.slug, city: c.slug })));
 }

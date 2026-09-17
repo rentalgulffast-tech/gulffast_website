@@ -5,7 +5,7 @@ import { cities } from '@/lib/cities';
 import { industries } from '@/lib/industries';
 import { getBlogPosts } from '@/lib/data';
 import { getSolutions } from '@/lib/solutions';
-import { getPipelineUnits, getPipelineCities } from '@/lib/pipeline';
+import { getPipelineUnits, getPipelineCities, getPipelineUnitCityPairs } from '@/lib/pipeline';
 import { SITE_CONFIG } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -99,6 +99,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85
   }));
 
+  // 11 units x 7 cities = 77 unit-in-city pages. Priority 0.8 — below the unit pages
+  // they roll up to, so the parent stays the canonical answer for the generic query.
+  const pipelineUnitCityRoutes: MetadataRoute.Sitemap = getPipelineUnitCityPairs().map((pair) => ({
+    url: `${baseUrl}/pipeline/${pair.slug}/${pair.city}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8
+  }));
+
   // Blog post routes
   const blogRoutes: MetadataRoute.Sitemap = getBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -117,6 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...solutionRoutes,
     ...pipelineUnitRoutes,
     ...pipelineCityRoutes,
+    ...pipelineUnitCityRoutes,
     ...blogRoutes
   ];
 }
