@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getEquipmentTier1Categories } from '@/lib/equipment';
 import { getManpowerTier1Categories } from '@/lib/manpower';
 import { cities } from '@/lib/cities';
@@ -8,49 +8,48 @@ import { CONTACT } from '@/lib/contact';
 import { trackEvent } from '@/lib/analytics';
 
 /**
- * Guided WhatsApp enquiry.
+ * Guided WhatsApp enquiry — three taps, then WhatsApp.
  *
- * Intercepts every wa.me link on the site with one delegated listener, collects
- * who is asking and what they need, then hands WhatsApp a finished message.
- * No WhatsApp Business API, no monthly cost, and the sales person's phone
- * behaves exactly as before.
+ * Intercepts every wa.me link on the site with one delegated listener, asks the
+ * three things that decide who picks the enquiry up, and hands WhatsApp a
+ * finished message. No WhatsApp Business API, no monthly cost, and the sales
+ * person's phone behaves exactly as before.
+ *
+ * WHY IT IS THIS SHORT (reduced from 8 steps to 3, 28 Sep 2026)
+ * -------------------------------------------------------------
+ * The flow used to open by asking name, company and email, then went on to
+ * quantity, timing and free-text notes before a review screen. Two problems:
+ *
+ *  1. It asked for identity BEFORE the person had said what they wanted, which
+ *     is the classic place people abandon a form.
+ *  2. It was asking for identity WhatsApp is about to hand over anyway — the
+ *     moment they send, you have their phone number and profile name.
+ *
+ * Quantity, timing and any detail are better asked in the chat itself. It is a
+ * conversation, not a form, and the sales person can ask in one line.
+ *
+ * Do not add steps back without a reason stronger than "it would be nice to
+ * know". Every extra tap costs completions.
  *
  * There is always an escape hatch — nobody is forced through the questions.
  */
 
 type Need = 'equipment' | 'manpower' | 'other';
-type StepId = 'contact' | 'need' | 'category' | 'city' | 'quantity' | 'timing' | 'notes' | 'review';
-
-const TIMING = ['Immediately / emergency', 'Within 1 week', 'Within 1 month', 'Long-term contract'];
-
-const INPUT =
-  'w-full px-3.5 py-2.5 rounded-xl bg-background border border-border text-foreground text-base ' +
-  'focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary';
+type StepId = 'need' | 'category' | 'city';
 
 export default function WhatsAppFlow() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const [name, setName] = useState('');
-  const [company, setCompany] = useState('');
-  const [email, setEmail] = useState('');
   const [need, setNeed] = useState<Need | null>(null);
   const [category, setCategory] = useState('');
-  const [city, setCity] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [timing, setTiming] = useState('');
-  const [notes, setNotes] = useState('');
-
-  const firstFieldRef = useRef<HTMLInputElement>(null);
 
   const equipment = getEquipmentTier1Categories();
   const manpower = getManpowerTier1Categories();
 
+  // "Something else" has no category to pick, so it is one step shorter.
   const steps: StepId[] = useMemo(
-    () =>
-      need === 'other'
-        ? ['contact', 'need', 'city', 'timing', 'notes', 'review']
-        : ['contact', 'need', 'category', 'city', 'quantity', 'timing', 'notes', 'review'],
+    () => (need === 'other' ? ['need', 'city'] : ['need', 'category', 'city']),
     [need]
   );
 
@@ -59,8 +58,8 @@ export default function WhatsAppFlow() {
   const close = useCallback(() => {
     setOpen(false);
     setIndex(0);
-    setName(''); setCompany(''); setEmail('');
-    setNeed(null); setCategory(''); setCity(''); setQuantity(''); setTiming(''); setNotes('');
+    setNeed(null);
+    setCategory('');
   }, []);
 
   // Intercept every WhatsApp link on the site, including any added later.
@@ -84,39 +83,43 @@ export default function WhatsAppFlow() {
     return () => document.removeEventListener('keydown', onKey);
   }, [open, close]);
 
-  useEffect(() => {
-    if (open) firstFieldRef.current?.focus();
-  }, [open, step]);
-
-  const message = () => {
+  /**
+   * Built from the answers so far. `chosenCity` is passed in rather than read
+   * from state because the city tap sends immediately — a setState in the same
+   * event handler would not have flushed yet.
+   */
+  const message = (chosenNeed: Need, chosenCategory: string, chosenCity: string) => {
     const heading =
-      need === 'equipment' ? 'EQUIPMENT RENTAL' : need === 'manpower' ? 'MANPOWER SUPPLY' : 'AN ENQUIRY';
+      chosenNeed === 'equipment' ? 'EQUIPMENT RENTAL'
+        : chosenNeed === 'manpower' ? 'MANPOWER SUPPLY'
+          : 'AN ENQUIRY';
     return [
       `Hello GulfFast — I need ${heading}.`,
       '',
-      `Name: ${name}`,
-      `Company: ${company}`,
-      email ? `Email: ${email}` : null,
-      '',
-      need === 'other' ? null : `${need === 'manpower' ? 'Trade' : 'Category'}: ${category}`,
-      `Location: ${city}`,
-      need === 'other' ? null : `Quantity: ${quantity}`,
-      `Needed: ${timing}`,
-      notes ? '' : null,
-      notes ? `Details: ${notes}` : null,
+      chosenNeed === 'other'
+        ? null
+        : `${chosenNeed === 'manpower' ? 'Trade' : 'Category'}: ${chosenCategory}`,
+      `Location: ${chosenCity}`,
       '',
       'Sent from rental.gulffast.co'
     ]
+      // NOT filter(Boolean) — '' is falsy and the blank lines are intentional.
       .filter((line) => line !== null)
       .join('\n');
   };
 
-  const sendTo = (text: string, structured: boolean) => {
+  const sendTo = (
+    text: string,
+    structured: boolean,
+    detail: { need: Need | null; category: string; city: string }
+  ) => {
+    // Parameter names must stay as-is: GTM reads form/need/category/city from
+    // the dataLayer via the DLV - * variables.
     trackEvent('generate_lead', {
       form: 'whatsapp_flow',
-      need: need ?? 'unspecified',
-      category: category || 'unspecified',
-      city: city || 'unspecified',
+      need: detail.need ?? 'unspecified',
+      category: detail.category || 'unspecified',
+      city: detail.city || 'unspecified',
       structured: structured ? 'yes' : 'no'
     });
     window.open(`https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
@@ -125,38 +128,45 @@ export default function WhatsAppFlow() {
 
   if (!open) return null;
 
-  const next = () => setIndex((i) => i + 1);
   const back = () => setIndex((i) => Math.max(0, i - 1));
 
   const pickOption = (value: string) => {
     if (step === 'need') {
       const n: Need = value === 'Equipment rental' ? 'equipment' : value === 'Manpower supply' ? 'manpower' : 'other';
       setNeed(n);
-    } else if (step === 'category') setCategory(value);
-    else if (step === 'city') setCity(value);
-    else if (step === 'timing') setTiming(value);
-    next();
+      setIndex((i) => i + 1);
+      return;
+    }
+
+    if (step === 'category') {
+      setCategory(value);
+      setIndex((i) => i + 1);
+      return;
+    }
+
+    // City is the last step — send straight to WhatsApp rather than showing a
+    // review screen. The message is still editable in WhatsApp before sending.
+    if (step === 'city') {
+      const chosenNeed = need ?? 'other';
+      sendTo(message(chosenNeed, category, value), true, {
+        need: chosenNeed,
+        category,
+        city: value
+      });
+    }
   };
 
-  const OPTIONS: Partial<Record<StepId, string[]>> = {
+  const OPTIONS: Record<StepId, string[]> = {
     need: ['Equipment rental', 'Manpower supply', 'Something else'],
     category: [...(need === 'manpower' ? manpower : equipment).map((c) => c.name), 'Other / not listed'],
-    city: [...cities.map((c) => c.name), 'Other site in KSA'],
-    timing: TIMING
+    city: [...cities.map((c) => c.name), 'Other site in KSA']
   };
 
   const TITLES: Record<StepId, string> = {
-    contact: 'Who are we speaking with?',
     need: 'What do you need?',
     category: need === 'manpower' ? 'Which trade?' : 'Which equipment?',
-    city: 'Which location?',
-    quantity: need === 'manpower' ? 'How many people?' : 'How many units?',
-    timing: 'When do you need it?',
-    notes: 'Anything else we should know?',
-    review: 'Ready to send'
+    city: 'Which location?'
   };
-
-  const contactReady = name.trim().length > 1 && company.trim().length > 1;
 
   return (
     <div
@@ -172,14 +182,9 @@ export default function WhatsAppFlow() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-accent-ink">WhatsApp enquiry</p>
             <h2 className="text-lg font-extrabold text-primary mt-0.5 leading-snug">{TITLES[step]}</h2>
-            {step === 'contact' && (
+            {step === 'city' && (
               <p className="text-xs text-muted mt-1 leading-relaxed">
-                So our team can prepare your quotation before replying.
-              </p>
-            )}
-            {step === 'notes' && (
-              <p className="text-xs text-muted mt-1 leading-relaxed">
-                Specifications, site conditions, certification requirements — optional.
+                Last question — this opens WhatsApp with your enquiry ready to send.
               </p>
             )}
           </div>
@@ -202,115 +207,21 @@ export default function WhatsAppFlow() {
             ))}
           </div>
 
-          {step === 'contact' && (
-            <div className="space-y-3">
-              <div>
-                <label className="block text-xs font-bold text-primary mb-1">Your name *</label>
-                <input ref={firstFieldRef} type="text" value={name} onChange={(e) => setName(e.target.value)} className={INPUT} />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-primary mb-1">Company *</label>
-                <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} className={INPUT} />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-primary mb-1">Email (optional)</label>
-                <input type="email" inputMode="email" placeholder="name@company.com" value={email} onChange={(e) => setEmail(e.target.value)} className={INPUT} />
-              </div>
-            </div>
-          )}
-
-          {OPTIONS[step] && (
-            <div className="grid grid-cols-1 gap-2">
-              {OPTIONS[step]!.map((option) => (
-                <button
-                  key={option}
-                  type="button"
-                  onClick={() => pickOption(option)}
-                  className="text-left px-4 py-3 rounded-xl border border-border bg-background hover:border-primary/40 hover:bg-tint text-sm font-semibold text-foreground transition-colors"
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {step === 'quantity' && (
-            <input
-              ref={firstFieldRef}
-              type="text"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && quantity.trim()) next(); }}
-              placeholder={need === 'manpower' ? 'e.g. 12 scaffolders' : 'e.g. 3 units, 20 ton'}
-              className={INPUT}
-            />
-          )}
-
-          {step === 'notes' && (
-            <textarea
-              rows={4}
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              placeholder="Type here…"
-              className={`${INPUT} resize-none`}
-            />
-          )}
-
-          {step === 'review' && (
-            <div className="space-y-3">
-              <p className="text-xs text-muted leading-relaxed">
-                This opens WhatsApp with your enquiry already written. You can edit it before sending.
-              </p>
-              <div className="bg-background border border-border rounded-xl p-4 text-xs text-foreground leading-relaxed whitespace-pre-line">
-                {message()}
-              </div>
-            </div>
-          )}
+          <div className="grid grid-cols-1 gap-2">
+            {OPTIONS[step].map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => pickOption(option)}
+                className="text-left px-4 py-3 rounded-xl border border-border bg-background hover:border-primary/40 hover:bg-tint text-sm font-semibold text-foreground transition-colors"
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="p-5 pt-0 space-y-2">
-          {step === 'contact' && (
-            <button
-              type="button"
-              disabled={!contactReady}
-              onClick={next}
-              className="w-full px-5 py-3 rounded-xl bg-primary hover:bg-accent-strong disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold text-sm transition-colors"
-            >
-              Continue
-            </button>
-          )}
-
-          {step === 'quantity' && (
-            <button
-              type="button"
-              disabled={!quantity.trim()}
-              onClick={next}
-              className="w-full px-5 py-3 rounded-xl bg-primary hover:bg-accent-strong disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold text-sm transition-colors"
-            >
-              Continue
-            </button>
-          )}
-
-          {step === 'notes' && (
-            <button
-              type="button"
-              onClick={next}
-              className="w-full px-5 py-3 rounded-xl bg-primary hover:bg-accent-strong text-white font-bold text-sm transition-colors"
-            >
-              {notes.trim() ? 'Continue' : 'Skip this'}
-            </button>
-          )}
-
-          {step === 'review' && (
-            <button
-              type="button"
-              onClick={() => sendTo(message(), true)}
-              className="w-full px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm transition-colors"
-            >
-              Open WhatsApp
-            </button>
-          )}
-
+        <div className="p-5 pt-0">
           <div className="flex items-center justify-between gap-3">
             {index > 0 ? (
               <button type="button" onClick={back} className="text-xs font-semibold text-muted hover:text-primary">
@@ -319,7 +230,13 @@ export default function WhatsAppFlow() {
             ) : <span />}
             <button
               type="button"
-              onClick={() => sendTo('Hello GulfFast, I would like to make an enquiry.', false)}
+              onClick={() =>
+                sendTo('Hello GulfFast, I would like to make an enquiry.', false, {
+                  need,
+                  category,
+                  city: ''
+                })
+              }
               className="text-xs font-semibold text-accent-strong hover:text-accent-ink"
             >
               Skip the questions, just chat →
